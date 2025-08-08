@@ -709,10 +709,7 @@ func _generate_league_phase_matches(cup_type: CupType, matchday: int) -> Array:
 		return []
 	
 	# ✅ KOMPLETT-SCHEDULE EINMAL GENERIEREN (alle 8 Spieltage) 
-	# DEBUG: Cache zurücksetzen für neue Auslosung
-	if cup_data.has("league_phase_fixtures"):
-		print("🔄 DEBUG: Liga-Phase Cache wird zurückgesetzt für neue Auslosung")
-		cup_data.erase("league_phase_fixtures")
+	# Cache bleibt bestehen für alle 8 Spieltage
 	
 	if not cup_data.has("league_phase_fixtures"):
 		print("🎯 EU-Pokal %s: EINMALIGE Auslosung aller Gegner für Liga-Phase (%d Teams)" % [cup_data.name, teams.size()])
@@ -777,17 +774,25 @@ func _generate_complete_league_phase_schedule(cup_type: CupType, teams: Array) -
 		var home_games = max_matchdays / 2
 		var away_games = max_matchdays / 2
 		
-		# Aus jedem Topf 2 Gegner ziehen (1 Heim, 1 Auswärts)
+		# Aus jedem Topf 2 Gegner ziehen (1 Heim, 1 Auswärts) - MIT DUPLIKAT-CHECK
+		var used_opponents = []  # Bereits verwendete Gegner speichern
 		for pot in pots:
 			var pot_opponents = pot.duplicate()
 			pot_opponents.erase(team)  # Nicht gegen sich selbst
+			
+			# DUPLIKAT-CHECK: Bereits verwendete Gegner ausschließen
+			for used in used_opponents:
+				pot_opponents.erase(used)
+			
 			pot_opponents.shuffle()
 			
-			# 2 Gegner aus diesem Topf
+			# 2 Gegner aus diesem Topf (keine Duplikate möglich)
 			for i in range(min(2, pot_opponents.size())):
 				if opponents.size() < max_matchdays:
+					var opponent = pot_opponents[i]
+					used_opponents.append(opponent)  # Als verwendet markieren
 					opponents.append({
-						"opponent": pot_opponents[i],
+						"opponent": opponent,
 						"is_home": (i == 0 and home_games > 0) or away_games <= 0
 					})
 					if opponents.back().is_home:
@@ -1587,16 +1592,18 @@ func _simulate_two_leg_playoff(fixture: Dictionary, user_team_id: String) -> Dic
 	elif team2_total > team1_total:
 		winner = team2
 	else:
-		# Auswärtstorregel oder Elfmeterschießen
-		var team2_away_goals = first_leg.away_goals
-		var team1_away_goals = second_leg.away_goals
+		# MODERNE UEFA-REGELN 2025/2026: Keine Auswärtstorregel mehr
+		# Bei Gleichstand → Verlängerung + Elfmeterschießen im Rückspiel
+		var extra_time_result = _simulate_extra_time_and_penalties(second_leg)
 		
-		if team2_away_goals > team1_away_goals:
-			winner = team2  # Auswärtstorregel
-		elif team1_away_goals > team2_away_goals:
-			winner = team1  # Auswärtstorregel
+		if extra_time_result.has_winner:
+			winner = extra_time_result.winner
+			# Verlängerungs-Tore zum Rückspiel hinzufügen
+			second_leg.home_goals += extra_time_result.extra_home_goals
+			second_leg.away_goals += extra_time_result.extra_away_goals
+			second_leg.extra_time = extra_time_result
 		else:
-			# Elfmeterschießen (vereinfacht)
+			# Fallback (sollte nicht passieren)
 			winner = team1 if randf() < 0.5 else team2
 	
 	# Team-Namen für Anzeige
@@ -1615,6 +1622,98 @@ func _simulate_two_leg_playoff(fixture: Dictionary, user_team_id: String) -> Dic
 		"winner": winner,
 		"user_involved": user_involved
 	}
+
+func _simulate_extra_time_and_penalties(match_result: Dictionary) -> Dictionary:
+	"""MODERNE UEFA-REGELN: Verlängerung + Elfmeterschießen bei Gleichstand"""
+	var home_team = match_result.home_team
+	var away_team = match_result.away_team
+	
+	# VERLÄNGERUNG (2x 15 Min)
+	var extra_home_goals = 0
+	var extra_away_goals = 0
+	
+	# Vereinfachte Verlängerungs-Simulation (je 15% Chance pro Team pro Halbzeit)
+	for half in range(2):  # 2 Halbzeiten á 15 Min
+		if randf() < 0.15:  # 15% Chance auf Tor für Heimteam
+			extra_home_goals += 1
+		if randf() < 0.15:  # 15% Chance auf Tor für Auswärtsteam  
+			extra_away_goals += 1
+	
+	if extra_home_goals != extra_away_goals:
+		# Verlängerung entscheidet
+		var winner = home_team if extra_home_goals > extra_away_goals else away_team
+		return {
+			"has_winner": true,
+			"winner": winner,
+			"extra_home_goals": extra_home_goals,
+			"extra_away_goals": extra_away_goals,
+			"decided_by": "extra_time"
+		}
+	
+	# ELFMETERSCHIEESSEN - nutze bestehende Funktion
+	var penalty_result = {
+		"home_goals": extra_home_goals,
+		"away_goals": extra_away_goals
+	}
+	var penalty_final = _simulate_penalty_shootout(home_team, away_team, penalty_result)
+	
+	return {
+		"has_winner": true,
+		"winner": penalty_final.winner,
+		"extra_home_goals": extra_home_goals,
+		"extra_away_goals": extra_away_goals,
+		"penalty_result": penalty_final,
+		"decided_by": "penalties"
+	}
+
+func simulate_eu_ko_round(cup_type: CupType, round_name: String, user_team_id: String = "") -> Dictionary:
+	"""Universelle Funktion für alle EU-Pokal KO-Runden mit Hin/Rückspiel"""
+	var cup_data = active_cups[cup_type]
+	var qualified_teams = cup_data.get("qualified_teams", [])
+	
+	var fixtures = _draw_knockout_matches(qualified_teams)
+	var ko_results = []
+	var ko_winners = []
+	var user_match = null
+	
+	# Alle KO-Paarungen simulieren (Hin + Rück)
+	for fixture in fixtures:
+		var ko_result = _simulate_two_leg_playoff(fixture, user_team_id)
+		ko_results.append(ko_result)
+		ko_winners.append(ko_result.winner)
+		
+		if ko_result.user_involved:
+			user_match = ko_result
+	
+	# Sieger für nächste Runde qualifizieren
+	cup_data.qualified_teams = ko_winners
+	cup_data.current_round += 1
+	
+	print("%s %s beendet - %d Teams weiter" % [cup_data.name, round_name, ko_winners.size()])
+	
+	return {
+		"cup_type": cup_type,
+		"round_name": round_name,
+		"ko_winners": ko_winners,
+		"user_match": user_match,
+		"ko_results": ko_results
+	}
+
+func _draw_knockout_matches(teams: Array) -> Array:
+	"""Auslosung für KO-Runden (Hin/Rück-Paarungen)"""
+	var fixtures = []
+	var shuffled_teams = teams.duplicate()
+	shuffled_teams.shuffle()
+	
+	# Paarungen bilden
+	for i in range(0, shuffled_teams.size(), 2):
+		if i + 1 < shuffled_teams.size():
+			fixtures.append({
+				"home_team": shuffled_teams[i],
+				"away_team": shuffled_teams[i + 1]
+			})
+	
+	return fixtures
 
 func _generate_next_dfb_round(cup_type: CupType, next_round: int):
 	"""Generiert realistische Neuauslosung für DFB-Pokal nach jeder Runde"""
@@ -2278,10 +2377,10 @@ func finalize_league_phase_and_draw_playoffs(cup_type: CupType):
 		remove_team_from_cup(team_id, cup_type)
 		print("   ❌ ELIMINIERT: %s (Platz %d)" % [team_id, team_standing.position])
 	
-	# 4. Cup in K.O.-Phase überführen 
-	cup_data.current_round = 9  # Nach Liga-Phase beginnen K.O.-Spiele
+	# 4. Cup in Playoff-Phase überführen 
+	cup_data.current_round = 9  # Nach Liga-Phase beginnen Playoffs
 	cup_data.league_phase_complete = true
-	cup_data.phase = "ko_stage"
+	cup_data.phase = "playoff"
 	
 	# 5. Playoff-Auslosung durchführen (Platz 9-24)
 	_draw_playoff_round(cup_type, playoff_teams)

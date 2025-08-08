@@ -115,15 +115,25 @@ ZIEL: Detailliertes Match-Erlebnis mit Live-Events
 
 STATUS: ✅ VOLLSTÄNDIG IMPLEMENTIERT UND GETESTET
 
-2.1 EVENT-SYSTEM ✅
+2.1 EVENT-SYSTEM ✅ + 🔧 OPTIMIERUNGEN (2025-08-08)
 ------------------
 ```
 EventEngine Singleton:
 - Minuten-basierte Event-Generierung (1-90 Minuten)
 - Event-Typen: NORMAL_ATTACK, FREISTOSS, ALLEINGANG, SPIELZUG, 
-  ELFMETER, VERLETZUNG, TACKLING, ABSEITSFALLE
+  ELFMETER, EIGENTOR, VERLETZUNG, TACKLING, ABSEITSFALLE,
+  GELBE_KARTE, ROTE_KARTE, ABWEHRFEHLER, ECKBALL, KOPFBALL,
+  RUECKPASS_SITUATION
 - Weighted Event-Pool basierend auf Team-Stärke
 - Training-beeinflusste Event-Wahrscheinlichkeiten
+
+🔧 NEUE OPTIMIERUNGEN:
+- ✅ Individual Player Strength Caching für Live-Team-Berechnung
+- ✅ Events-per-Minute Limitierung (max 1 Event/Minute außer Folgeevents)
+- ✅ Präzise Folgevent-Ketten: Abwehrfehler/Rückpass → Normal Attack, Eckball → Kopfball
+- ✅ Team-spezifische Folgeevents (gleiche Team-ID erforderlich)
+- ✅ Vollständige Event-Display-Integrität (alle Event-Typen haben success:true/false Fälle)
+- ✅ Doping-Referenz aus Karten-Gründen entfernt
 ```
 
 2.2 EVENT-GENERIERUNG ✅ 
@@ -462,6 +472,34 @@ PHASE 3 ⏳ GEPLANT:
 - ❌ Karriere-Modus (10 Jahre)
 - ❌ Popularitäts-System
 - ❌ Team-Wechsel nach Entlassung
+
+===============================================
+🔧 AKTUELLE OPTIMIERUNGEN & BUGFIXES (2025-08-08)
+===============================================
+
+BUGFIXES DURCHGEFÜHRT:
+✅ Unbekannte Events behoben:
+   - Event (4) EIGENTOR: success:false Fall implementiert
+   - Event-Display-Integrität: Alle Event-Typen vollständig abgedeckt
+   
+✅ Folgevent-System optimiert:
+   - Team-spezifische Folgeevents (keine Cross-Team Events mehr)
+   - Bayern Torchance löst nicht mehr Sachsen Leipzig Kopfball aus
+   - Präzise Event-Ketten-Logik implementiert
+
+✅ Karten-System bereinigt:
+   - "Verstoß gegen Anti-Doping-Regeln" aus card_reasons.json entfernt
+   - Realistische Karten-Gründe authentisch zum Original
+
+✅ Team-Stärke-Berechnung optimiert:
+   - Individual Player Strength Caching (Cached player strengths)
+   - Live Team-Stärke-Reduktion bei roten Karten/Verletzungen
+   - Echte Spielerstärke-Reduktion statt Prozentsätze
+
+DATENINTEGRITÄT:
+✅ 100% Event-Coverage: Alle EventType-Enums haben entsprechende Display-Handler
+✅ Debug-System: Vollständige Event-Analyse bei unbekannten Events
+✅ Type-Safety: Korrekte Datentyp-Behandlung in Event-Dictionaries
 
 ===============================================
 ⚡ PERFORMANCE OPTIMIERUNGEN - ABGESCHLOSSEN

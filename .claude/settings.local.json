@@ -26,6 +26,11 @@
       "Bash(\"C:\\Program Files\\Godot_4.4.1-stable\\Godot_v4.4.1-stable_win64.exe\" --headless --script scripts/tools/add_formations.gd)",
       "Bash(\"C:\\Program Files\\Godot_4.4.1-stable\\Godot_v4.4.1-stable_win64.exe\" --headless --script scripts/test_schedule_debug.gd)",
       "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
       "Bash(git add:*)"
     ],
     "deny": []

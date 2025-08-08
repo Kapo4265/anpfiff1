@@ -249,11 +249,12 @@ func _update_player_stats(home_team: String, away_team: String, events: Array):
 		var is_goal = false
 		if success:
 			match event_type:
-				EventEngine.EventType.NORMAL_ATTACK, EventEngine.EventType.FREISTOSS, EventEngine.EventType.ALLEINGANG, EventEngine.EventType.ELFMETER:
+				EventEngine.EventType.NORMAL_ATTACK, EventEngine.EventType.FREISTOSS, EventEngine.EventType.ALLEINGANG, EventEngine.EventType.ELFMETER, EventEngine.EventType.KOPFBALL, EventEngine.EventType.SPIELZUG:
 					is_goal = true
 		
 		if not is_goal:
 			continue
+		
 		
 		if player_id == "p0001":
 			print("StatisticsCollector: FEHLER - Platzhalter player_id 'p0001' gefunden! EventEngine muss echte IDs verwenden!")

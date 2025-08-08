@@ -469,7 +469,6 @@ func _simulate_unified_cup_matches(week_info: Dictionary, user_team_id: String) 
 		if user_match:
 			print("MatchdayEngine: USER POKAL-MATCH - %s vs %s" % [user_match.home_team, user_match.away_team])
 			
-			# Vollständige Event-Simulation für User
 			var user_result = MatchEngine.simulate_match_instant(user_match.home_team, user_match.away_team)
 			
 			# Pokal-spezifische Erweiterung (Verlängerung/Elfmeterschießen)

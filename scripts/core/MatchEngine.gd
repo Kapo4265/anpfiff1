@@ -98,18 +98,22 @@ func _simulate_result_only(home_team_id: String, away_team_id: String) -> Dictio
 		var away_team = TeamData.new(away_team_data)
 		away_strength = away_team.calculate_team_strength(false, "Normal", "Normal")
 	
-	# Glücksfaktor: ±15% der schwächeren Team-Stärke
+	# Glücksfaktor: ±20% der schwächeren Team-Stärke für mehr Variation
 	var weaker_strength = min(home_strength, away_strength)
-	var luck_factor = (randf() - 0.5) * 0.3 * weaker_strength  # -15% bis +15%
+	var luck_factor = (randf() - 0.5) * 0.4 * weaker_strength  # -20% bis +20%
 	
 	# Angepasste Stärken mit Glück
 	var final_home_strength = home_strength + luck_factor
 	var final_away_strength = away_strength - luck_factor
 	
+	# Exponential scaling für stärkere Teams (mehr Variation in Ergebnissen)
+	var strength_ratio = max(home_strength, away_strength) / min(home_strength, away_strength)
+	var bonus_factor = 1.0 + (strength_ratio - 1.0) * 0.3  # Stärkere Teams bekommen mehr Tor-Potenzial
+	
 	# Tor-Berechnung: Stärke direkt in Tor-Potenzial umwandeln
 	# Basis-Formel: (stärke / 25) = durchschnittliche Tore
-	var home_goal_potential = final_home_strength / 25.0
-	var away_goal_potential = final_away_strength / 25.0
+	var home_goal_potential = (final_home_strength / 25.0) * (bonus_factor if home_strength > away_strength else 1.0)
+	var away_goal_potential = (final_away_strength / 25.0) * (bonus_factor if away_strength > home_strength else 1.0)
 	
 	# Integer-Umwandlung mit Nachkomma als Wahrscheinlichkeit
 	current_home_goals = int(home_goal_potential)
@@ -207,7 +211,7 @@ func _calculate_cached_team_strength(team_id: String, is_home: bool) -> float:
 func _on_event_generated(event_data: Dictionary):
 	if event_data.success:
 		# Normale Tore (für das eigene Team)
-		if event_data.type in [EventEngine.EventType.NORMAL_ATTACK, EventEngine.EventType.FREISTOSS, EventEngine.EventType.ALLEINGANG, EventEngine.EventType.ELFMETER]:
+		if event_data.type in [EventEngine.EventType.NORMAL_ATTACK, EventEngine.EventType.FREISTOSS, EventEngine.EventType.ALLEINGANG, EventEngine.EventType.ELFMETER, EventEngine.EventType.KOPFBALL, EventEngine.EventType.SPIELZUG]:
 			if event_data.team_id == EventEngine.home_team_id:
 				current_home_goals += 1
 			else:
@@ -225,7 +229,7 @@ func _count_goals_from_events(team_id: String, events: Array) -> int:
 	for event in events:
 		if event.success:
 			# Normale Tore für das eigene Team
-			if event.team_id == team_id and event.type in [EventEngine.EventType.NORMAL_ATTACK, EventEngine.EventType.FREISTOSS, EventEngine.EventType.ALLEINGANG, EventEngine.EventType.ELFMETER]:
+			if event.team_id == team_id and event.type in [EventEngine.EventType.NORMAL_ATTACK, EventEngine.EventType.FREISTOSS, EventEngine.EventType.ALLEINGANG, EventEngine.EventType.ELFMETER, EventEngine.EventType.KOPFBALL, EventEngine.EventType.SPIELZUG]:
 				goal_count += 1
 			# Eigentore des Gegners zählen für unser Team
 			elif event.team_id != team_id and event.type == EventEngine.EventType.EIGENTOR:

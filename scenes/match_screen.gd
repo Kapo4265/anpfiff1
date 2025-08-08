@@ -36,6 +36,7 @@ var current_away_goals: int = 0
 var is_match_running: bool = false
 var is_match_paused: bool = false
 var current_match_type: String = ""  # "league" or "cup"
+var current_cup_info: Dictionary = {}  # EU-Pokal Hinspiel-Info
 
 # Conference Data
 var conference_matches: Array = []
@@ -75,9 +76,11 @@ func connect_signals():
 	if not EventEngine.live_ticker_message.is_connected(_on_live_ticker_message):
 		EventEngine.live_ticker_message.connect(_on_live_ticker_message)
 	
-	# MatchEngine signals - NUR für User-Match
+	# MatchEngine signals - für User-Match (Liga + Pokal)
 	if not MatchEngine.match_started.is_connected(_on_match_started):
 		MatchEngine.match_started.connect(_on_match_started)
+	if not MatchEngine.match_result.is_connected(_on_match_result):
+		MatchEngine.match_result.connect(_on_match_result)
 	# DEAKTIVIERT: match_ended wird über user_match_completed abgewickelt
 	# if not MatchEngine.match_ended.is_connected(_on_match_ended):
 	# 	MatchEngine.match_ended.connect(_on_match_ended)
@@ -217,6 +220,14 @@ func _on_all_matches_completed():
 func _on_match_started(home_id: String, away_id: String):
 	commentary_box.text += "\n\n1' - ANPFIFF! Das Spiel beginnt!"
 
+func _on_match_result(home_team: String, away_team: String, home_goals: int, away_goals: int):
+	"""Empfängt Tor-Signale vom MatchEngine und aktualisiert Score-Display für Liga + Pokal"""
+	# Nur für User-Match Events verarbeiten
+	if (home_team == home_team_id and away_team == away_team_id) or (home_team == away_team_id and away_team == home_team_id):
+		current_home_goals = home_goals
+		current_away_goals = away_goals
+		update_score_display()
+
 func _on_minute_changed(minute: int):
 	if not is_match_paused:
 		# NACHSPIELZEIT-ANZEIGE: 90+X statt normale Minuten
@@ -249,6 +260,10 @@ func _on_event_generated(event_data: Dictionary):
 			is_goal = true
 		elif event_type == EventEngine.EventType.EIGENTOR:
 			is_goal = true  # Eigentor zählt für gegnerisches Team
+		elif event_type == EventEngine.EventType.KOPFBALL:
+			is_goal = true
+		elif event_type == EventEngine.EventType.SPIELZUG:
+			is_goal = true
 	
 	if is_goal:
 		var team_id = event_data.get("team_id", "")
@@ -313,6 +328,53 @@ func _on_match_ended():
 
 func update_score_display():
 	score_label.text = "%d : %d" % [current_home_goals, current_away_goals]
+
+func set_cup_info(cup_info: Dictionary):
+	"""Setzt Cup-Info für Hinspiel-Anzeige bei Rückspielen"""
+	print("🏆 DEBUG: Cup-Info empfangen: %s" % cup_info)
+	current_cup_info = cup_info
+	_update_cup_display()
+
+func _update_cup_display():
+	"""Aktualisiert Cup-Info Display im ConferencePanel"""
+	if current_cup_info.is_empty():
+		return
+	
+	# Zeige Cup-Info im ConferencePanel
+	if current_cup_info.has("leg_type") and current_cup_info.leg_type == "second_leg":
+		# Zeige Hinspiel-Ergebnis bei Rückspielen
+		var first_leg = current_cup_info.get("first_leg_result", {})
+		if not first_leg.is_empty():
+			var home_goals = first_leg.get("home_goals", 0)
+			var away_goals = first_leg.get("away_goals", 0)
+			var cup_info_text = "🏆 HINSPIEL: %s %d:%d %s" % [
+				first_leg.get("home_team_name", "Home"), 
+				home_goals, 
+				away_goals,
+				first_leg.get("away_team_name", "Away")
+			]
+			
+			# Füge Cup-Info zum Commentary hinzu
+			commentary_box.text += "\n\n" + cup_info_text
+		else:
+			commentary_box.text += "\n\n🏆 RÜCKSPIEL - EU-POKAL"
+	else:
+		var round_name = current_cup_info.get("round_name", "EU-Pokal")
+		commentary_box.text += "\n\n🏆 " + round_name
+
+func _test_cup_info():
+	"""TEST: Simuliere Cup-Info für Debugging"""
+	var test_cup_info = {
+		"leg_type": "second_leg",
+		"round_name": "Achtelfinale",
+		"first_leg_result": {
+			"home_goals": 2,
+			"away_goals": 1,
+			"home_team_name": "Bayern München",
+			"away_team_name": "Barcelona"
+		}
+	}
+	set_cup_info(test_cup_info)
 
 func _auto_setup_from_matchday_engine():
 	"""KERN 5: Vollständige Initialisierung für eigenständige match_screen"""
@@ -604,78 +666,229 @@ func generate_event_summary(events: Array) -> String:
 	var sorted_events = events.duplicate()
 	sorted_events.sort_custom(func(a, b): return a.minute < b.minute)
 	
+	# Events nach Minute gruppieren für Folgevent-Anzeige
+	var events_by_minute = {}
 	for event in sorted_events:
-		# Handle leere player_id für Lightning-Matches (Verlängerung/Elfmeter)
-		var player_name = "Unbekannt"
-		if event.has("player_id") and event.player_id != "":
-			var player_data = GameManager.get_player(event.player_id)
-			var player = PlayerData.new(player_data)
-			player_name = player.get_full_name()
+		var minute = event.minute
+		if not events_by_minute.has(minute):
+			events_by_minute[minute] = []
+		events_by_minute[minute].append(event)
+	
+	# Chronologisch durch alle Minuten
+	var minutes = events_by_minute.keys()
+	minutes.sort()
+	
+	for minute in minutes:
+		var minute_events = events_by_minute[minute]
 		
-		var team_data = GameManager.get_team(event.team_id)
-		var team_name = team_data["team_name"]
+		# Prüfe ob echte Folgeevents existieren (spezifische Event-Ketten)
+		var has_real_followup = _has_followup_event_chain(minute_events)
 		
-		match event.type:
-			EventEngine.EventType.NORMAL_ATTACK:
-				if event.success:
-					summary += "\n%d' ⚽ TOR - %s (%s)" % [event.minute, player_name, team_name]
-				else:
-					summary += "\n%d' 🎯 Torchance - %s (%s)" % [event.minute, player_name, team_name]
-			
-			EventEngine.EventType.FREISTOSS:
-				if event.success:
-					summary += "\n%d' ⚽ FREISTOSS-TOR - %s (%s)" % [event.minute, player_name, team_name]
-				else:
-					summary += "\n%d' 🎯 Freistoß - %s (%s)" % [event.minute, player_name, team_name]
-			
-			EventEngine.EventType.ALLEINGANG:
-				if event.success:
-					summary += "\n%d' ⚽ ALLEINGANG-TOR - %s (%s)" % [event.minute, player_name, team_name]
-				else:
-					summary += "\n%d' 🏃 Alleingang - %s (%s)" % [event.minute, player_name, team_name]
-			
-			EventEngine.EventType.ELFMETER:
-				if event.success:
-					summary += "\n%d' ⚽ ELFMETER-TOR - %s (%s)" % [event.minute, player_name, team_name]
-				else:
-					summary += "\n%d' ❌ ELFMETER VERSCHOSSEN - %s (%s)" % [event.minute, player_name, team_name]
-			
-			EventEngine.EventType.VERLETZUNG:
-				summary += "\n%d' 🤕 VERLETZUNG - %s (%s)" % [event.minute, player_name, team_name]
-			
-			EventEngine.EventType.TACKLING:
-				if event.success:
-					summary += "\n%d' 🟨 GELBE KARTE - %s (%s)" % [event.minute, player_name, team_name]
-				else:
-					summary += "\n%d' ⚔️ Tackling - %s (%s)" % [event.minute, player_name, team_name]
-			
-			EventEngine.EventType.ABSEITSFALLE:
-				summary += "\n%d' 🚩 Abseits - %s (%s)" % [event.minute, player_name, team_name]
-			
-			EventEngine.EventType.GELBE_KARTE:
-				if event.success:
-					var reason = event.get("reason", "Unsportliches Verhalten")
-					summary += "\n%d' 🟨 GELBE KARTE - %s (%s) - %s" % [event.minute, player_name, team_name, reason]
-			
-			EventEngine.EventType.ROTE_KARTE:
-				if event.success:
-					var reason = event.get("reason", "Tätlichkeit")
-					summary += "\n%d' 🟥 ROTE KARTE - %s (%s) - %s" % [event.minute, player_name, team_name, reason]
-			
-			# Verlängerungs- und Elfmeter-Events (Lightning-Matches)
-			"goal":
-				if event.get("extra_time", false):
-					summary += "\n%d' ⚽ TOR (Verlängerung) - %s (%s)" % [event.minute, player_name, team_name]
-				else:
-					summary += "\n%d' ⚽ TOR - %s (%s)" % [event.minute, player_name, team_name]
-			
-			"penalty_scored":
-				summary += "\n120' ⚽ ELFMETER VERWANDELT - %s (%s)" % [player_name, team_name]
-			
-			"penalty_missed":
-				summary += "\n120' ❌ ELFMETER VERSCHOSSEN - %s (%s)" % [player_name, team_name]
+		if has_real_followup:
+			# Echte Folgeevents: Haupt-Event zuerst, dann Folgeevents
+			for i in range(minute_events.size()):
+				var event = minute_events[i]
+				var is_followup = _is_followup_event(event, minute_events)
+				summary += _format_single_event(event, is_followup)
+		else:
+			# Normale Events (keine echten Folgeevents)
+			for event in minute_events:
+				summary += _format_single_event(event, false)
 	
 	return summary if summary != "" else "\nKeine Events"
+
+func _has_followup_event_chain(events: Array) -> bool:
+	"""Prüft ob echte Folgeevents existieren (nur die 3 spezifischen Event-Typen)"""
+	var main_events = []
+	var followup_events = []
+	
+	for event in events:
+		match event.type:
+			# Diese Events können Folgeevents auslösen
+			EventEngine.EventType.ABWEHRFEHLER, EventEngine.EventType.RUECKPASS_SITUATION, EventEngine.EventType.ECKBALL:
+				main_events.append(event)
+			# Diese Events sind mögliche Folgeevents
+			EventEngine.EventType.NORMAL_ATTACK, EventEngine.EventType.KOPFBALL:
+				followup_events.append(event)
+	
+	# Nur dann echte Folgeevents, wenn sowohl Main- als auch Folgeevents existieren
+	return main_events.size() > 0 and followup_events.size() > 0
+
+func _is_followup_event(event: Dictionary, all_events: Array) -> bool:
+	"""Bestimmt ob Event ein Folgeevent ist (basierend auf Event-Ketten Logik)"""
+	match event.type:
+		EventEngine.EventType.NORMAL_ATTACK:
+			# Normal Attack ist Folgeevent wenn Abwehrfehler/Rückpass vom SELBEN TEAM in derselben Minute
+			for other_event in all_events:
+				if other_event.type in [EventEngine.EventType.ABWEHRFEHLER, EventEngine.EventType.RUECKPASS_SITUATION] and other_event.team_id == event.team_id:
+					return true
+			return false
+		EventEngine.EventType.KOPFBALL:
+			# Kopfball ist Folgeevent wenn Eckball vom SELBEN TEAM in derselben Minute
+			for other_event in all_events:
+				if other_event.type == EventEngine.EventType.ECKBALL and other_event.team_id == event.team_id:
+					return true
+			return false
+		_:
+			return false  # Alle anderen Events sind nie Folgeevents
+
+func _is_followup_normal_attack(event: Dictionary) -> bool:
+	"""Prüft ob Normal Attack ein Folgeevent nach Abwehrfehler/Rückpass ist"""
+	# Suche nach Abwehrfehler/Rückpass vom SELBEN TEAM in derselben Minute in der vollständigen Event-Liste
+	for match_event in EventEngine.match_events:
+		if match_event.minute == event.minute and match_event.type in [EventEngine.EventType.ABWEHRFEHLER, EventEngine.EventType.RUECKPASS_SITUATION] and match_event.team_id == event.team_id:
+			return true
+	return false
+
+func _is_followup_kopfball(event: Dictionary) -> bool:
+	"""Prüft ob Kopfball ein Folgeevent nach Eckball ist"""
+	# Suche nach Eckball vom SELBEN TEAM in derselben Minute in der vollständigen Event-Liste
+	for match_event in EventEngine.match_events:
+		if match_event.minute == event.minute and match_event.type == EventEngine.EventType.ECKBALL and match_event.team_id == event.team_id:
+			return true
+	return false
+
+func _format_single_event(event: Dictionary, is_followup: bool = false) -> String:
+	var prefix = "   └→ " if is_followup else "\n%d' " % event.minute
+	
+	# Handle leere player_id für Lightning-Matches (Verlängerung/Elfmeter)
+	var player_name = "Unbekannt"
+	if event.has("player_id") and event.player_id != "":
+		var player_data = GameManager.get_player(event.player_id)
+		if not player_data.is_empty():
+			var player = PlayerData.new(player_data)
+			player_name = player.get_full_name()
+	
+	var team_data = GameManager.get_team(event.team_id)
+	var team_name = team_data["team_name"]
+	
+	match event.type:
+		EventEngine.EventType.NORMAL_ATTACK:
+			if event.success:
+				return prefix + "⚽ TOR - %s (%s)" % [player_name, team_name]
+			else:
+				# Prüfe ob es ein Folgeevent nach Abwehrfehler/Rückpass ist
+				if _is_followup_normal_attack(event):
+					return prefix + "🎯 Torchance (nach Fehler) - %s (%s)" % [player_name, team_name]
+				else:
+					return prefix + "🎯 Torchance - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.FREISTOSS:
+			if event.success:
+				return prefix + "⚽ FREISTOSS-TOR - %s (%s)" % [player_name, team_name]
+			else:
+				return prefix + "🎯 Freistoß - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.ALLEINGANG:
+			if event.success:
+				return prefix + "⚽ ALLEINGANG-TOR - %s (%s)" % [player_name, team_name]
+			else:
+				return prefix + "🏃 Alleingang - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.ELFMETER:
+			if event.success:
+				return prefix + "⚽ ELFMETER-TOR - %s (%s)" % [player_name, team_name]
+			else:
+				return prefix + "❌ ELFMETER VERSCHOSSEN - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.VERLETZUNG:
+			return prefix + "🤕 VERLETZUNG - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.TACKLING:
+			if event.success:
+				return prefix + "🟨 GELBE KARTE - %s (%s)" % [player_name, team_name]
+			else:
+				return prefix + "⚔️ Tackling - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.ABSEITSFALLE:
+			return prefix + "🚩 Abseits - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.GELBE_KARTE:
+			var reason = event.get("reason", "Unsportliches Verhalten")
+			return prefix + "🟨 GELBE KARTE - %s (%s) - %s" % [player_name, team_name, reason]
+		
+		EventEngine.EventType.ROTE_KARTE:
+			var reason = event.get("reason", "Tätlichkeit")
+			return prefix + "🟥 ROTE KARTE - %s (%s) - %s" % [player_name, team_name, reason]
+		
+		EventEngine.EventType.ABWEHRFEHLER:
+			if event.success:
+				return prefix + "⚠️ ABWEHRFEHLER - %s (%s)" % [player_name, team_name]
+			else:
+				return prefix + "🛡️ Abwehrversuch - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.ECKBALL:
+			if event.success:
+				return prefix + "🚩 ECKBALL - %s (%s)" % [player_name, team_name]
+			else:
+				return prefix + "🚩 Eckball - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.KOPFBALL:
+			if event.success:
+				# Prüfe ob es ein Folgeevent nach Eckball ist  
+				if _is_followup_kopfball(event):
+					return prefix + "⚽ TOR (nach Eckball) - %s (%s)" % [player_name, team_name]
+				else:
+					return prefix + "⚽ KOPFBALL-TOR - %s (%s)" % [player_name, team_name]
+			else:
+				# Prüfe ob es ein Folgeevent nach Eckball ist
+				if _is_followup_kopfball(event):
+					return prefix + "🗣️ Kopfball (nach Eckball) - %s (%s)" % [player_name, team_name]
+				else:
+					return prefix + "🗣️ Kopfball - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.RUECKPASS_SITUATION:
+			if event.success:
+				return prefix + "⚠️ FEHLPASS - %s (%s)" % [player_name, team_name]
+			else:
+				return prefix + "🔄 Rückpass - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.SPIELZUG:
+			if event.success:
+				return prefix + "⚽ SPIELZUG-TOR - %s (%s)" % [player_name, team_name]
+			else:
+				return prefix + "⚡ Spielzug - %s (%s)" % [player_name, team_name]
+		
+		EventEngine.EventType.EIGENTOR:
+			if event.success:
+				return prefix + "⚽ EIGENTOR - %s (%s)" % [player_name, team_name]
+			else:
+				return prefix + "❌ Eigentor-Versuch - %s (%s)" % [player_name, team_name]
+		
+		# Lightning-Match Events
+		"goal":
+			if event.get("extra_time", false):
+				return prefix + "⚽ TOR (Verlängerung) - %s (%s)" % [player_name, team_name]
+			else:
+				return prefix + "⚽ TOR - %s (%s)" % [player_name, team_name]
+		
+		"penalty_scored":
+			return prefix + "⚽ ELFMETER VERWANDELT - %s (%s)" % [player_name, team_name]
+		
+		"penalty_missed":
+			return prefix + "❌ ELFMETER VERSCHOSSEN - %s (%s)" % [player_name, team_name]
+	
+	# Debug: Zeige Event-Type für unbekannte Events - VOLLSTÄNDIGE ANALYSE
+	print("🔍 UNBEKANNTES EVENT - VOLLSTÄNDIGE DATEN:")
+	print("  event.keys(): %s" % event.keys())
+	print("  event.has('type'): %s" % event.has("type"))
+	print("  event.type: %s (Type: %s)" % [event.get("type", "MISSING"), typeof(event.get("type", null))])
+	print("  event.success: %s" % event.get("success", "MISSING"))
+	print("  event.player_id: %s" % event.get("player_id", "MISSING"))
+	print("  event.team_id: %s" % event.get("team_id", "MISSING"))
+	print("  event.minute: %s" % event.get("minute", "MISSING"))
+	
+	# Alle EventEngine.EventType Werte zum Vergleich
+	print("  Vergleiche mit EventEngine.EventType:")
+	print("    GELBE_KARTE = %s" % EventEngine.EventType.GELBE_KARTE)
+	print("    ROTE_KARTE = %s" % EventEngine.EventType.ROTE_KARTE)
+	print("    Gleichheitstest: event.type == EventEngine.EventType.GELBE_KARTE: %s" % (event.get("type") == EventEngine.EventType.GELBE_KARTE))
+	
+	var event_type_name = "UNKNOWN"
+	if event.has("type"):
+		event_type_name = str(event.type)
+	print("⚠️ UNBEKANNTES EVENT: Type=%s, Success=%s, Player=%s, Team=%s" % [event_type_name, event.get("success", false), player_name, team_name])
+	return prefix + "❓ Unbekanntes Event (%s) - %s (%s)" % [event_type_name, player_name, team_name]
 
 func update_tactical_display():
 	playstyle_state.text = spielweise_names[current_spielweise]

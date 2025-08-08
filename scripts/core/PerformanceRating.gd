@@ -52,6 +52,37 @@ static func calculate_player_match_rating(player_id: String, events: Array) -> f
 				
 				EventEngine.EventType.ROTE_KARTE:
 					penalty_points += 2.5  # Rote Karte: -2.5
+				
+				EventEngine.EventType.ABWEHRFEHLER:
+					if event.get("success", false):
+						penalty_points += 1.5  # Abwehrfehler führt zu Tor: -1.5
+					else:
+						penalty_points += 0.3  # Abwehrfehler ohne Tor: -0.3
+				
+				EventEngine.EventType.ECKBALL:
+					if event.get("success", false):
+						bonus_points += 1.8  # Eckball-Tor: +1.8
+					else:
+						bonus_points += 0.2  # Eckball-Versuch: +0.2
+				
+				EventEngine.EventType.KOPFBALL:
+					if event.get("success", false):
+						bonus_points += 1.6  # Kopfball-Tor: +1.6
+					else:
+						bonus_points += 0.3  # Kopfball-Versuch: +0.3
+				
+				EventEngine.EventType.RUECKPASS_SITUATION:
+					if event.get("success", false):
+						penalty_points += 1.2  # Rückpass führt zu Tor: -1.2
+					else:
+						penalty_points += 0.2  # Rückpass-Fehler: -0.2
+				
+				EventEngine.EventType.SPIELZUG:
+					if event.get("success", false):
+						bonus_points += 2.2  # Spielzug-Tor: +2.2
+					else:
+						bonus_points += 0.4  # Spielzug-Versuch: +0.4
+		
 	
 	var final_rating = base_rating + bonus_points - penalty_points
 	return clamp(final_rating, 1.0, 10.0)  # Note zwischen 1.0 und 10.0
