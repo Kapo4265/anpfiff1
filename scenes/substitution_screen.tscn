@@ -1,0 +1,260 @@
+[gd_scene load_steps=4 format=3 uid="uid://c44v7bt4dc2u3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rv07u"]
+bg_color = Color(0.2, 0.2, 0.2, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.3, 0.3, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6n854"]
+bg_color = Color(0.5, 0.5, 0.5, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.3, 0.3, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppwk0"]
+bg_color = Color(0.5, 0.5, 0.5, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.3, 0.3, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="substitution_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="_TextureRect_13" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+expand_mode = 1
+stretch_mode = 6
+
+[node name="_Panel_14" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 560.0
+offset_right = 1832.0
+offset_bottom = 1072.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rv07u")
+
+[node name="_Label_15" type="Label" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 576.0
+offset_right = 536.0
+offset_bottom = 616.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "AUSWECHSLUNG"
+
+[node name="_Label_16" type="Label" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 616.0
+offset_right = 536.0
+offset_bottom = 646.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Dynamo München"
+
+[node name="_Label_17" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 656.0
+offset_right = 744.0
+offset_bottom = 686.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "AKTUELLE AUFSTELLUNG"
+
+[node name="_Label_18" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1112.0
+offset_top = 656.0
+offset_right = 1672.0
+offset_bottom = 686.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "VERFÜGBARE EINWECHSELSPIELER"
+
+[node name="StartelfPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 688.0
+offset_right = 936.0
+offset_bottom = 1062.0
+
+[node name="StartelfScrollContainer" type="ScrollContainer" parent="StartelfPanel"]
+layout_mode = 0
+offset_right = 784.0
+offset_bottom = 376.0
+
+[node name="StartelfScrollContainer#StartelfListVBox" type="VBoxContainer" parent="StartelfPanel/StartelfScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BankPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 962.0
+offset_top = 688.0
+offset_right = 1792.0
+offset_bottom = 1062.0
+
+[node name="BankScrollContainer" type="ScrollContainer" parent="BankPanel"]
+layout_mode = 0
+offset_right = 830.0
+offset_bottom = 376.0
+
+[node name="BankScrollContainer#BankListVBox" type="VBoxContainer" parent="BankPanel/BankScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EffortPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 136.0
+offset_right = 848.0
+offset_bottom = 216.0
+
+[node name="EffortTitleLabel" type="Label" parent="EffortPanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 178.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Einsatz"
+
+[node name="EffortMinus" type="Button" parent="EffortPanel"]
+layout_mode = 0
+offset_left = 216.0
+offset_right = 304.0
+offset_bottom = 80.0
+text = "-"
+
+[node name="EffortState" type="Label" parent="EffortPanel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 272.0
+offset_top = 24.0
+offset_right = 608.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 20
+text = "Normal"
+horizontal_alignment = 1
+
+[node name="EffortPlus" type="Button" parent="EffortPanel"]
+layout_mode = 0
+offset_left = 568.0
+offset_right = 656.0
+offset_bottom = 80.0
+text = "+"
+
+[node name="PlaystylePanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 966.0
+offset_top = 136.0
+offset_right = 1728.0
+offset_bottom = 216.0
+
+[node name="PlaystyleTitleLabel" type="Label" parent="PlaystylePanel"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 24.0
+offset_right = 226.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 20
+text = "Spielweise"
+
+[node name="PlaystyleMinus" type="Button" parent="PlaystylePanel"]
+layout_mode = 0
+offset_left = 232.0
+offset_right = 314.0
+offset_bottom = 80.0
+text = "-"
+
+[node name="PlaystyleState" type="Label" parent="PlaystylePanel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 346.0
+offset_top = 24.0
+offset_right = 658.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 20
+text = "Normal"
+horizontal_alignment = 1
+
+[node name="PlaystylePlus" type="Button" parent="PlaystylePanel"]
+layout_mode = 0
+offset_left = 680.0
+offset_right = 762.0
+offset_bottom = 80.0
+text = "+"
+
+[node name="_Label_47" type="Label" parent="."]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 576.0
+offset_right = 1736.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Bitte Spieler auswählen..."
+autowrap_mode = 3
+
+[node name="_Button_48" type="Button" parent="."]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 16.0
+offset_right = 1280.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxFlat_6n854")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6n854")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6n854")
+text = "WECHSEL DURCHFÜHREN"
+
+[node name="_Button_49" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 296.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxFlat_ppwk0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ppwk0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ppwk0")
+text = "ABBRECHEN"
+
+[node name="_Button_50" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1544.0
+offset_top = 16.0
+offset_right = 1888.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxFlat_6n854")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6n854")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6n854")
+text = "WEITER"

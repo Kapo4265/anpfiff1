@@ -1,0 +1,42 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Windows-Style Ordner für Finanzen -->
+  <defs>
+    <linearGradient id="folderGradientFinance" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#32CD32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#228B22;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tabGradientFinance" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90EE90;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#32CD32;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Ordner-Körper -->
+  <rect x="8" y="20" width="48" height="36" rx="2" ry="2" 
+        fill="url(#folderGradientFinance)" 
+        stroke="#006400" stroke-width="1"/>
+  
+  <!-- Ordner-Tab -->
+  <rect x="8" y="14" width="20" height="8" rx="2" ry="2" 
+        fill="url(#tabGradientFinance)" 
+        stroke="#006400" stroke-width="1"/>
+  
+  <!-- Euro-Symbol -->
+  <circle cx="32" cy="38" r="10" fill="none" stroke="#FFD700" stroke-width="2"/>
+  <path d="M 26 33 L 34 33 M 26 36 L 34 36 M 28 30 Q 24 33 24 38 Q 24 43 28 46" 
+        fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Geldscheine (stilisiert) -->
+  <rect x="18" y="30" width="8" height="5" rx="1" ry="1" 
+        fill="#90EE90" stroke="#006400" stroke-width="0.5" opacity="0.8"/>
+  <rect x="38" y="42" width="8" height="5" rx="1" ry="1" 
+        fill="#90EE90" stroke="#006400" stroke-width="0.5" opacity="0.8"/>
+  
+  <!-- Münzen -->
+  <circle cx="22" cy="44" r="2" fill="#FFD700" stroke="#CC8400" stroke-width="0.5"/>
+  <circle cx="42" cy="32" r="2" fill="#FFD700" stroke="#CC8400" stroke-width="0.5"/>
+  
+  <!-- Highlight-Effekt -->
+  <rect x="8" y="20" width="48" height="4" rx="2" ry="2" 
+        fill="rgba(255,255,255,0.3)"/>
+</svg>

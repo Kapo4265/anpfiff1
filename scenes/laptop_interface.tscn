@@ -1,0 +1,151 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck3sjcedjhy3a"]
+
+[ext_resource type="Script" uid="uid://laptop_interface_script" path="res://scripts/ui/laptop_interface.gd" id="1_laptop"]
+[ext_resource type="Texture2D" uid="uid://pc_bg_texture" path="res://assets/images/pc_background.png" id="2_pc_bg"]
+[ext_resource type="Texture2D" path="res://assets/images/folder_aufstellung.svg" id="3_folder_aufstellung"]
+[ext_resource type="Texture2D" path="res://assets/images/folder_finanzen.svg" id="4_folder_finanzen"]
+[ext_resource type="Texture2D" path="res://assets/images/folder_transfer.svg" id="5_folder_transfer"]
+[ext_resource type="Texture2D" path="res://assets/images/folder_optionen.svg" id="7_folder_optionen"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_folder"]
+bg_color = Color(1, 1, 1, 0)
+draw_center = false
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+
+[node name="LaptopInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_laptop")
+
+[node name="DesktopBackground" type="Sprite2D" parent="."]
+texture = ExtResource("2_pc_bg")
+centered = false
+
+[node name="DesktopContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -200.0
+offset_right = 500.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="FolderAufstellung" type="Button" parent="DesktopContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 180)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_folder")
+theme_override_styles/hover = SubResource("StyleBoxFlat_folder")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_folder")
+theme_override_styles/focus = SubResource("StyleBoxFlat_folder")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_folder")
+text = "AUFSTELLUNG"
+icon = ExtResource("3_folder_aufstellung")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+
+[node name="FolderFinanzen" type="Button" parent="DesktopContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 180)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_folder")
+theme_override_styles/hover = SubResource("StyleBoxFlat_folder")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_folder")
+theme_override_styles/focus = SubResource("StyleBoxFlat_folder")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_folder")
+text = "FINANZEN"
+icon = ExtResource("4_folder_finanzen")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+
+[node name="FolderTransfer" type="Button" parent="DesktopContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 180)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_folder")
+theme_override_styles/hover = SubResource("StyleBoxFlat_folder")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_folder")
+theme_override_styles/focus = SubResource("StyleBoxFlat_folder")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_folder")
+text = "TRANSFER & GEHÄLTER"
+icon = ExtResource("5_folder_transfer")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+
+
+[node name="FolderOptionen" type="Button" parent="DesktopContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 180)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_folder")
+theme_override_styles/hover = SubResource("StyleBoxFlat_folder")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_folder")
+theme_override_styles/focus = SubResource("StyleBoxFlat_folder")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_folder")
+text = "OPTIONEN"
+icon = ExtResource("7_folder_optionen")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+
+[node name="Taskbar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_folder")
+
+[node name="StartButton" type="Button" parent="Taskbar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "🏢 BÜRO"
+
+[connection signal="pressed" from="Taskbar/StartButton" to="." method="_on_start_button_pressed"]

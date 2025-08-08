@@ -1,0 +1,209 @@
+{
+  "comment": "EU-Team → Land Mapping für authentische Spielerzuweisung",
+  "format": "Stadt-Code → {Land, Nationalität, Mix-Level basierend auf Tier}",
+  "mix_levels": {
+    "pure": "100% national (wie Athletic Bilbao)",
+    "mostly": "80% national, 20% gemischt",  
+    "mixed": "60% national, 40% international (wie Barcelona)"
+  },
+  "mappings": {
+    "esp": {
+      "country": "Spanien",
+      "nationality": "Spanien", 
+      "cities": ["Madrid", "Barcelona", "Sevilla", "Valencia", "Bilbao"],
+      "note": "Real Madrid, Barcelona etc. - starke Teams gemischt"
+    },
+    "eng": {
+      "country": "England", 
+      "nationality": "England",
+      "cities": ["London", "Manchester", "Liverpool", "Birmingham", "Newcastle"],
+      "note": "Premier League Teams - meist gemischt"
+    },
+    "ita": {
+      "country": "Italien",
+      "nationality": "Italien", 
+      "cities": ["Milano", "Roma", "Torino", "Napoli", "Firenze"],
+      "note": "Serie A Teams - gemischt bis national"
+    },
+    "fra": {
+      "country": "Frankreich",
+      "nationality": "Frankreich",
+      "cities": ["Paris", "Lyon", "Marseille", "Lille"],
+      "note": "Ligue 1 Teams"
+    },
+    "ned": {
+      "country": "Niederlande", 
+      "nationality": "Niederlande",
+      "cities": ["Amsterdam", "Rotterdam", "Eindhoven", "Utrecht"],
+      "note": "Eredivisie Teams"
+    },
+    "por": {
+      "country": "Portugal",
+      "nationality": "Portugal", 
+      "cities": ["Lisboa", "Porto", "Braga"],
+      "note": "Liga NOS Teams"
+    },
+    "ger": {
+      "country": "Deutschland",
+      "nationality": "Deutschland",
+      "cities": ["Berlin", "München", "Hamburg", "Köln"],
+      "note": "Bereits in deutschen Ligen abgedeckt"
+    },
+    "tur": {
+      "country": "Türkei",
+      "nationality": "Türkei",
+      "cities": ["Istanbul", "Ankara", "Izmir"],
+      "note": "Süper Lig Teams"
+    },
+    "pol": {
+      "country": "Polen", 
+      "nationality": "Polen",
+      "cities": ["Warszawa", "Krakow", "Gdansk"],
+      "note": "Ekstraklasa Teams"
+    },
+    "bel": {
+      "country": "Belgien",
+      "nationality": "Belgien", 
+      "cities": ["Brussels", "Antwerp", "Gent"],
+      "note": "Pro League Teams"
+    },
+    "che": {
+      "country": "Schweiz",
+      "nationality": "Schweiz",
+      "cities": ["Zürich", "Basel", "Bern"],
+      "note": "Super League Teams"
+    },
+    "aut": {
+      "country": "Österreich", 
+      "nationality": "Österreich",
+      "cities": ["Wien", "Salzburg", "Graz", "Linz"],
+      "note": "Bundesliga Teams"
+    },
+    "cro": {
+      "country": "Kroatien",
+      "nationality": "Kroatien",
+      "cities": ["Zagreb", "Split", "Rijeka"],
+      "note": "HNL Teams"
+    },
+    "cze": {
+      "country": "Tschechien", 
+      "nationality": "Tschechien",
+      "cities": ["Praha", "Brno", "Ostrava"],
+      "note": "Liga Teams"
+    },
+    "hun": {
+      "country": "Ungarn",
+      "nationality": "Ungarn",
+      "cities": ["Budapest", "Debrecen", "Szeged"],
+      "note": "NB I Teams"
+    },
+    "den": {
+      "country": "Dänemark",
+      "nationality": "Dänemark", 
+      "cities": ["Copenhagen", "Aarhus", "Odense"],
+      "note": "Superliga Teams"
+    },
+    "swe": {
+      "country": "Schweden",
+      "nationality": "Schweden",
+      "cities": ["Stockholm", "Göteborg", "Malmö"],
+      "note": "Allsvenskan Teams"
+    },
+    "nor": {
+      "country": "Norwegen",
+      "nationality": "Skandinavien",
+      "cities": ["Oslo", "Bergen", "Trondheim"],
+      "note": "Eliteserien Teams"
+    },
+    "fin": {
+      "country": "Finnland", 
+      "nationality": "Skandinavien",
+      "cities": ["Helsinki", "Turku", "Kuopio"],
+      "note": "Veikkausliiga Teams"
+    },
+    "gre": {
+      "country": "Griechenland",
+      "nationality": "Griechenland",
+      "cities": ["Athens", "Thessaloniki", "Patras"],
+      "note": "Super League Teams"
+    },
+    "rom": {
+      "country": "Rumänien", 
+      "nationality": "International",
+      "cities": ["Bucharest", "Cluj", "Timisoara"],
+      "note": "Liga 1 Teams"
+    },
+    "bul": {
+      "country": "Bulgarien",
+      "nationality": "International", 
+      "cities": ["Sofia", "Plovdiv", "Varna"],
+      "note": "First League Teams"
+    },
+    "srb": {
+      "country": "Serbien",
+      "nationality": "Serbien",
+      "cities": ["Belgrade", "Novi Sad", "Nis"],
+      "note": "SuperLiga Teams"
+    },
+    "ukr": {
+      "country": "Ukraine", 
+      "nationality": "International",
+      "cities": ["Kiev", "Kharkiv", "Dnipro"],
+      "note": "Premier League Teams"
+    },
+    "rus": {
+      "country": "Russland",
+      "nationality": "International",
+      "cities": ["Moscow", "St. Petersburg", "Kazan"],
+      "note": "Premier League Teams"
+    },
+    "sco": {
+      "country": "Schottland",
+      "nationality": "England",
+      "cities": ["Glasgow", "Edinburgh", "Aberdeen"],
+      "note": "Scottish Premiership - zu England gruppiert"
+    },
+    "ire": {
+      "country": "Irland", 
+      "nationality": "England",
+      "cities": ["Dublin", "Cork", "Limerick"],
+      "note": "League of Ireland - zu England gruppiert"
+    },
+    "alb": {
+      "country": "Albanien",
+      "nationality": "International",
+      "cities": ["Tirana", "Durres", "Shkoder"],
+      "note": "Kategoria Superiore Teams"
+    },
+    "bos": {
+      "country": "Bosnien",
+      "nationality": "Bosnien", 
+      "cities": ["Sarajevo", "Banja Luka", "Tuzla"],
+      "note": "Premier Liga Teams"
+    },
+    "slk": {
+      "country": "Slowakei",
+      "nationality": "International",
+      "cities": ["Bratislava", "Kosice", "Zilina"],
+      "note": "Fortuna Liga Teams"
+    },
+    "slo": {
+      "country": "Slowenien", 
+      "nationality": "International",
+      "cities": ["Ljubljana", "Maribor", "Celje"],
+      "note": "PrvaLiga Teams"
+    },
+    "mkd": {
+      "country": "Mazedonien",
+      "nationality": "International",
+      "cities": ["Skopje", "Bitola", "Prilep"],
+      "note": "Prva Liga Teams"  
+    },
+    "mda": {
+      "country": "Moldau",
+      "nationality": "International", 
+      "cities": ["Chisinau", "Tiraspol", "Balti"],
+      "note": "Divizia Nationala Teams"
+    }
+  }
+}

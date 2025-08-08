@@ -1,0 +1,175 @@
+[gd_scene load_steps=11 format=3 uid="uid://dbhrmwk12raq4"]
+
+[ext_resource type="Script" uid="uid://cl2vmb76ikwxt" path="res://scripts/ui/Confirmation.gd" id="1_lwgcv"]
+[ext_resource type="Texture2D" uid="uid://7tt8caiqouyy" path="res://assets/images/stadium_background.png" id="2_tdwb5"]
+[ext_resource type="FontFile" uid="uid://c3tlb7sw4njgv" path="res://assets/fonts/pressstart2p-regular-webfont.ttf" id="3_b08pk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cuaf"]
+bg_color = Color(0.75, 0.75, 0.75, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsq87"]
+bg_color = Color(0.74902, 0.74902, 0.74902, 0.94902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bh6d"]
+bg_color = Color(0.4, 0.4, 0.4, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.3, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tafaw"]
+bg_color = Color(0.4, 0.4, 0.4, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.3, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8crg"]
+bg_color = Color(0.4, 0.4, 0.4, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.3, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60bob"]
+bg_color = Color(0.4, 0.4, 0.4, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.3, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mbf8v"]
+bg_color = Color(0.75, 0.75, 0.75, 0.95)
+
+[node name="confirmation" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lwgcv")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BackgroundImage" type="TextureRect" parent="BackgroundLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_tdwb5")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="OuterPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 390.0
+offset_right = 1458.0
+offset_bottom = 905.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cuaf")
+
+[node name="ConfirmationPanel" type="Panel" parent="OuterPanel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 894.0
+offset_bottom = 485.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fsq87")
+
+[node name="TitlePanel" type="Panel" parent="OuterPanel/ConfirmationPanel"]
+layout_mode = 0
+offset_right = 864.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0bh6d")
+
+[node name="TitleLabel" type="Label" parent="OuterPanel/ConfirmationPanel/TitlePanel"]
+layout_mode = 0
+offset_right = 864.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_b08pk")
+text = "Ihre Auswahl"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ManagerPanel" type="Panel" parent="OuterPanel/ConfirmationPanel"]
+layout_mode = 0
+offset_top = 95.0
+offset_right = 864.0
+offset_bottom = 162.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tafaw")
+
+[node name="ManagerNameLabel" type="Label" parent="OuterPanel/ConfirmationPanel/ManagerPanel"]
+layout_mode = 0
+offset_right = 864.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_b08pk")
+text = "Manager:"
+horizontal_alignment = 1
+
+[node name="TeamPanel" type="Panel" parent="OuterPanel/ConfirmationPanel"]
+layout_mode = 0
+offset_top = 178.0
+offset_right = 864.0
+offset_bottom = 260.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i8crg")
+
+[node name="TeamNameLabel" type="Label" parent="OuterPanel/ConfirmationPanel/TeamPanel"]
+layout_mode = 0
+offset_right = 864.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_b08pk")
+text = "Team:"
+horizontal_alignment = 1
+
+[node name="DifficultyPanel" type="Panel" parent="OuterPanel/ConfirmationPanel"]
+layout_mode = 0
+offset_top = 277.0
+offset_right = 864.0
+offset_bottom = 359.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_60bob")
+
+[node name="DifficultyLabel" type="Label" parent="OuterPanel/ConfirmationPanel/DifficultyPanel"]
+layout_mode = 0
+offset_right = 864.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_b08pk")
+text = "Schwierigkeit:"
+horizontal_alignment = 1
+
+[node name="@Panel@30429" type="Panel" parent="OuterPanel/ConfirmationPanel"]
+layout_mode = 0
+offset_top = 360.0
+offset_right = 864.0
+offset_bottom = 375.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mbf8v")
+
+[node name="@HBoxContainer@30430" type="HBoxContainer" parent="OuterPanel/ConfirmationPanel"]
+layout_mode = 0
+offset_top = 385.0
+offset_right = 864.0
+offset_bottom = 445.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BackButton" type="Button" parent="OuterPanel/ConfirmationPanel/@HBoxContainer@30430"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_b08pk")
+text = "Zurück"
+
+[node name="ConfirmButton" type="Button" parent="OuterPanel/ConfirmationPanel/@HBoxContainer@30430"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_b08pk")
+text = "Bestätigen"

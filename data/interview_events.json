@@ -1,0 +1,3702 @@
+[
+  {
+	"event_id": "MATCH_INTERVIEW_001",
+	"title": "Nach dem Sieg",
+	"description": "Ein Reporter fragt Sie: 'Wie bewerten Sie die Leistung Ihrer Mannschaft heute? Das war ein verdienter Sieg!'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Wir haben hart gearbeitet - der Sieg war verdient.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 10000
+		}
+	  },
+	  {
+		"text": "Es war nur Glück - wir müssen uns steigern.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Kein Kommentar.",
+		"consequences": {}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_002",
+	"title": "Nach der Niederlage",
+	"description": "Ein Reporter konfrontiert Sie: 'Das war eine bittere Niederlage. Was ist schiefgelaufen?'",
+	"category": "match_result", 
+	"context": "loss",
+	"options": [
+	  {
+		"text": "Wir haben gekämpft, aber der Gegner war heute besser.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Meine Spieler haben versagt - das war inakzeptabel!",
+		"consequences": {
+		  "team_morale_change": -3,
+		  "finances_change": -5000
+		}
+	  },
+	  {
+		"text": "Wir werden aus dieser Niederlage lernen.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_003",
+	"title": "Nach dem Unentschieden",
+	"description": "Ein Reporter fragt: 'Ein gerechtes Unentschieden oder haben Sie mehr erwartet?'",
+	"category": "match_result",
+	"context": "draw", 
+	"options": [
+	  {
+		"text": "Ein Punkt ist besser als keiner - wir nehmen es mit.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Wir hätten gewinnen müssen - zwei Punkte verschenkt!",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Beide Teams haben alles gegeben - fair gespielt.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 5000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_004",
+	"title": "Dominanter Heimsieg",
+	"description": "Nach einem 4:0-Heimsieg fragt der Reporter: 'Das war eine Machtdemonstration vor den eigenen Fans!'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Die Jungs haben heute alles richtig gemacht!",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 25000
+		}
+	  },
+	  {
+		"text": "Wir dürfen nicht überheblich werden.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Das ist unser Anspruch für jedes Heimspiel.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 15000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_005", 
+	"title": "Knappe Auswärtsniederlage",
+	"description": "Nach einer 1:2 Auswärtsniederlage: 'Sie haben bis zur letzten Minute gekämpft. Bitter, so zu verlieren.'",
+	"category": "match_result",
+	"context": "loss",
+	"options": [
+	  {
+		"text": "Auswärts ist es immer schwer, wir haben alles gegeben.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Diese Niederlage tut besonders weh.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Wir waren das bessere Team, uns fehlte nur das Glück.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_006",
+	"title": "Spektakuläres Comeback",
+	"description": "Nach einem 3:4-Sieg trotz 0:3-Rückstand: 'Das war eine unglaubliche Aufholjagd!'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Meine Mannschaft hat Charakter bewiesen!",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 50000
+		}
+	  },
+	  {
+		"text": "Wir hätten nie so schlecht anfangen dürfen.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Das zeigt unsere Mentalität - niemals aufgeben!",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 30000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_007",
+	"title": "Derby-Debakel",
+	"description": "Nach einer 0:3-Heimniederlage im Derby: 'Ihre Fans sind völlig enttäuscht. Wie erklären Sie diese Leistung?'",
+	"category": "match_result",
+	"context": "loss",
+	"options": [
+	  {
+		"text": "Ich übernehme die volle Verantwortung für diese Blamage.",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": -20000
+		}
+	  },
+	  {
+		"text": "Derbys sind immer speziell - heute war nicht unser Tag.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Wir werden das wiedergutmachen - versprochen!",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": -10000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_008",
+	"title": "Torreiches Unentschieden",
+	"description": "Nach einem 3:3: 'Ein wahres Spektakel für die Zuschauer! Sind Sie zufrieden mit dem Punkt?'",
+	"category": "match_result",
+	"context": "draw",
+	"options": [
+	  {
+		"text": "Die Fans haben heute Werbung für den Fußball gesehen!",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 20000
+		}
+	  },
+	  {
+		"text": "Defensiv müssen wir stabiler werden.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Beide Teams haben ihr Herz auf dem Platz gelassen.",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": 10000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_009",
+	"title": "Elfmeter-Drama verpasst",
+	"description": "Nach einem verschossenen Elfmeter in der 90. Minute, der den Sieg bedeutet hätte: 'Wie bitter war das?'",
+	"category": "match_result", 
+	"context": "draw",
+	"options": [
+	  {
+		"text": "Elfmeter gehören zum Fußball - manchmal geht's rein, manchmal nicht.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Ich bin enttäuscht - wir hätten den Sieg verdient gehabt.",
+		"consequences": {
+		  "team_morale_change": -2
+		}
+	  },
+	  {
+		"text": "Der Schütze hat Mut bewiesen - nächstes Mal klappt's.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_010",
+	"title": "Last-Minute-Sieg",
+	"description": "Das Siegtor fiel in der 94. Minute: 'Haben Sie bis zum Schluss an den Sieg geglaubt?'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Wir kämpfen bis zur letzten Sekunde - das ist unser Stil!",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 30000
+		}
+	  },
+	  {
+		"text": "Glück gehört dazu, aber wir haben es uns erarbeitet.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 15000
+		}
+	  },
+	  {
+		"text": "Ich war mir sicher, dass wir noch treffen werden.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 20000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "PLAYER_PERFORMANCE_001",
+	"title": "Spieler des Tages",
+	"description": "Ein Reporter fragt: 'Ihr Stürmer war heute überragend. Wie wichtig ist er für das Team?'",
+	"category": "general",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Er ist ein Schlüsselspieler - ohne ihn wären wir nicht so erfolgreich.",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": 15000
+		}
+	  },
+	  {
+		"text": "Jeder Spieler ist wichtig - heute hatte er einen guten Tag.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Ich erwarte von jedem Spieler solche Leistungen.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "REFEREE_CONTROVERSY_001",
+	"title": "Schiedsrichter-Kritik",
+	"description": "Ein Reporter fragt: 'Was sagen Sie zu den umstrittenen Schiedsrichter-Entscheidungen heute?'",
+	"category": "general",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Der Schiedsrichter hat sein Bestes gegeben - wir akzeptieren seine Entscheidungen.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Das war eine Katastrophe! So kann man nicht pfeifen!",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": -25000
+		}
+	  },
+	  {
+		"text": "Ich kommentiere keine Schiedsrichter-Entscheidungen.",
+		"consequences": {}
+	  }
+	]
+  },
+  {
+	"event_id": "TALENT_ANGEBOT_001",
+	"title": "Brasilianisches Nachwuchstalent",
+	"description": "Ein Scout bietet Ihnen ein 17-jähriges Talent aus São Paulo an: 'Unglaubliches Potential, kostet aber 800.000€.'",
+	"category": "player_acquisition",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Das Talent verpflichten - Investition in die Zukunft!",
+		"consequences": {
+		  "finances_change": -800000,
+		  "team_morale_change": 2,
+		  "add_player": true
+		}
+	  },
+	  {
+		"text": "Zu teuer für einen Unbekannten - ablehnen.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Erst eine Probezeit - dann entscheiden wir.",
+		"consequences": {
+		  "finances_change": -50000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "TRAINERSTUHL_WACKELT_001",
+	"title": "Vorstand zweifelt",
+	"description": "Vereinspräsident: 'Die Ergebnisse der letzten Wochen sind inakzeptabel. Wir erwarten eine schnelle Besserung.'",
+	"category": "job_security",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Ich werde die Mannschaft wieder in die Spur bringen!",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Geben Sie mir noch etwas Zeit - Erfolg braucht Geduld.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Wenn Sie meine Arbeit nicht schätzen, können wir gerne über eine Trennung reden.",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": -30000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "SOCIAL_MEDIA_DRAMA_001",
+	"title": "Twitter-Shitstorm",
+	"description": "Ihr Starspieler hat auf X (Twitter) kontroverse Aussagen gemacht. Die Fans sind empört und fordern Konsequenzen.",
+	"category": "social_media",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Social Media Pause für den Spieler anordnen.",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": -10000
+		}
+	  },
+	  {
+		"text": "Öffentliche Entschuldigung des Spielers verlangen.",
+		"consequences": {
+		  "team_morale_change": -1,
+		  "finances_change": 15000
+		}
+	  },
+	  {
+		"text": "Meinungsfreiheit verteidigen - keine Einmischung.",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": -25000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "YOUTUBE_KOOPERATION_001",
+	"title": "YouTuber-Anfrage",
+	"description": "Ein bekannter Fußball-YouTuber möchte ein Training filmen: 'Das wäre mega Content für meine 2 Millionen Abonnenten!'",
+	"category": "media",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Erlauben - gute Werbung für den Verein!",
+		"consequences": {
+		  "finances_change": 40000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Training ist heilig - keine Kameras!",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Nur gegen entsprechende Bezahlung.",
+		"consequences": {
+		  "finances_change": 75000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "CRYPTO_SPONSOR_001",
+	"title": "Kryptowährungs-Sponsor",
+	"description": "Eine Bitcoin-Börse bietet einen lukrativen Trikotsponsor-Vertrag: '2 Millionen € für 3 Jahre - aber sehr riskant.'",
+	"category": "sponsoring",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Deal annehmen - das Geld brauchen wir!",
+		"consequences": {
+		  "finances_change": 2000000,
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Zu riskant - Seriosität geht vor.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Nur mit Ausstiegsklausel bei Skandalen.",
+		"consequences": {
+		  "finances_change": 1200000,
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "STREAMING_DEAL_001",
+	"title": "Netflix-Dokumentation",
+	"description": "Netflix will eine Dokumentation über Ihren Verein drehen: 'Wie Sunderland 'Til I Die, aber mit Ihrem Team!'",
+	"category": "media",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Zusagen - das macht uns international bekannt!",
+		"consequences": {
+		  "finances_change": 500000,
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Zu viel Rummel - wir brauchen Ruhe zum Arbeiten.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Nur wenn wir die Kontrolle über den Schnitt haben.",
+		"consequences": {
+		  "finances_change": 250000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "TIKTOK_CHALLENGE_001",
+	"title": "TikTok-Hype im Training",
+	"description": "Ihre Spieler machen während der Trainingszeit TikTok-Videos. Andere Spieler fühlen sich gestört und beschweren sich bei Ihnen.",
+	"category": "social_media",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Handyverbot im Training durchsetzen.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": -5000
+		}
+	  },
+	  {
+		"text": "Feste Zeiten für Social Media einführen.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Das ist ihr Privatleben - nicht einmischen.",
+		"consequences": {
+		  "team_morale_change": -2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "NACHHALTIGKEIT_001",
+	"title": "Umwelt-Aktivisten",
+	"description": "Klimaaktivisten kritisieren Ihre Mannschaftsreisen mit dem Privatjet: 'Fußball muss klimaneutral werden!'",
+	"category": "social_responsibility",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Umstellung auf Bahn und E-Busse ankündigen.",
+		"consequences": {
+		  "finances_change": -150000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Leistung geht vor - wir brauchen den Komfort.",
+		"consequences": {
+		  "team_morale_change": -1,
+		  "finances_change": -30000
+		}
+	  },
+	  {
+		"text": "CO2-Kompensation für alle Reisen einführen.",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "PODCAST_SKANDAL_001",
+	"title": "Spieler-Podcast-Eklat",
+	"description": "Ihr Kapitän hat in einem Podcast interne Trainingsmethoden kritisiert. Die Medien stürzen sich auf die Story.",
+	"category": "media",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Kapitänsbinde entziehen - Respekt muss sein!",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": -20000
+		}
+	  },
+	  {
+		"text": "Aussprache unter vier Augen suchen.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Öffentlich gegen den Spieler stellen.",
+		"consequences": {
+		  "team_morale_change": -3,
+		  "finances_change": -40000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "TWITCH_STREAM_001",
+	"title": "Spieler streamt live",
+	"description": "Ihr Nachwuchstalent streamt täglich bis 2 Uhr nachts auf Twitch FIFA. Seine Trainingsleistung leidet sichtbar.",
+	"category": "player_discipline",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Streaming-Verbot nach 22 Uhr verhängen.",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": -15000
+		}
+	  },
+	  {
+		"text": "Den Spieler für das Reserveteam nominieren.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Professionelle Gaming-Beratung organisieren.",
+		"consequences": {
+		  "finances_change": -25000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "NFT_ANGEBOT_001",
+	"title": "NFT-Sammlung vorgeschlagen",
+	"description": "Ein Tech-Unternehmen will mit Ihrem Verein eine NFT-Sammlung mit Spielerkarten launchen: 'Das könnte Millionen bringen!'",
+	"category": "digital_business",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Mitmachen - die Zukunft gehört der Digitalisierung!",
+		"consequences": {
+		  "finances_change": 300000,
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "NFTs sind Betrug - wir machen da nicht mit.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Kleine Testsammlung mit wenigen Karten probieren.",
+		"consequences": {
+		  "finances_change": 50000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MENTAL_HEALTH_001",
+	"title": "Spieler spricht über Depressionen",
+	"description": "Ihr Verteidiger hat in einem Interview über seine Depressionen gesprochen. Wie gehen Sie damit um?",
+	"category": "player_wellbeing",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Professionelle psychologische Betreuung organisieren.",
+		"consequences": {
+		  "finances_change": -40000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Das ist Privatsache - nicht kommentieren.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Mut zeigen und mental Health zur Vereinssache machen.",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 4
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "ESPORTS_TURNIER_001",
+	"title": "FIFA-Turnier gewonnen",
+	"description": "Ihr Mittelfeldspieler hat ein großes FIFA-eFootball-Turnier gewonnen und 50.000€ Preisgeld erhalten.",
+	"category": "gaming",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Gratulieren und das Gaming-Talent fördern!",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 25000
+		}
+	  },
+	  {
+		"text": "Gaming lenkt vom echten Fußball ab.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "eSports-Abteilung im Verein gründen.",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "INFLUENCER_FREUNDIN_001",
+	"title": "Instagram-Drama",
+	"description": "Die Influencer-Freundin Ihres Stars postet ständig interne Vereinsinfos auf Instagram. Das verärgert Mitspieler und Management.",
+	"category": "personal_life",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Mit dem Spieler über Diskretion sprechen.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Social Media Guidelines für Spieler-Familien einführen.",
+		"consequences": {
+		  "team_morale_change": -1,
+		  "finances_change": -20000
+		}
+	  },
+	  {
+		"text": "Das ist Privatleben - nicht unsere Baustelle.",
+		"consequences": {
+		  "team_morale_change": -2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "STADION_NAMING_001",
+	"title": "Amazon-Stadion?",
+	"description": "Amazon bietet 50 Millionen € für die Stadion-Namensrechte: 'Das Amazon-Arena - was halten Sie davon?'",
+	"category": "sponsoring",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Deal eingehen - das Geld revolutioniert den Verein!",
+		"consequences": {
+		  "finances_change": 50000000,
+		  "team_morale_change": -2
+		}
+	  },
+	  {
+		"text": "Traditionen sind wichtiger als Geld.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Nur wenn es 'Arena powered by Amazon' heißt.",
+		"consequences": {
+		  "finances_change": 25000000,
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "GEHALTSOBERGRENZE_001",
+	"title": "Spielergewerkschaft streikt",
+	"description": "Die Spielergewerkschaft droht mit Streik wegen geplanter Gehaltsobergrenzen: 'Das ist ein Angriff auf unsere Rechte!'",
+	"category": "labor_relations",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Gewerkschaft unterstützen gegen Salary Cap.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": -100000
+		}
+	  },
+	  {
+		"text": "Neutralität bewahren - nicht einmischen.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Salary Cap befürworten für mehr Ausgeglichenheit.",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": 200000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "DIVERSITAET_001",
+	"title": "Kritik an Trainerteam",
+	"description": "Medien kritisieren, dass Ihr Trainerteam nur aus Männern besteht: 'Wo ist die weibliche Perspektive im modernen Fußball?'",
+	"category": "diversity",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Weibliche Co-Trainerin einstellen.",
+		"consequences": {
+		  "finances_change": -120000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Qualifikation ist wichtiger als Geschlecht.",
+		"consequences": {
+		  "team_morale_change": -1,
+		  "finances_change": -25000
+		}
+	  },
+	  {
+		"text": "Diversity-Programm für den gesamten Verein starten.",
+		"consequences": {
+		  "finances_change": -200000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "FANTOKEN_001",
+	"title": "Fan-Token einführen?",
+	"description": "Andere Vereine verdienen Millionen mit Fan-Token. Fans können damit über Trikotfarben etc. abstimmen. Sollen wir auch?",
+	"category": "digital_business",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Fan-Token launchen - Innovation ist wichtig!",
+		"consequences": {
+		  "finances_change": 800000,
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Fans sollen nicht für Mitbestimmung zahlen müssen.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Erstmal abwarten was bei anderen Vereinen passiert.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "JUGEND_TALENT_001",
+	"title": "Eigengewächs bereit für Profikader",
+	"description": "Ihr Jugendtrainer meldet: 'Der 18-jährige Max ist bereit für den Profikader. Ein echtes Jahrhunderttalent!'",
+	"category": "youth_development",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Sofort in den Profikader befördern!",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": -50000
+		}
+	  },
+	  {
+		"text": "Erstmal weiter in der U21 entwickeln lassen.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Leihgeschäft arrangieren für Spielpraxis.",
+		"consequences": {
+		  "finances_change": 30000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "TRANSFER_GERUECHT_001",
+	"title": "Abwerbungsversuch",
+	"description": "Ein reicher Verein aus Saudi-Arabien bietet 80 Millionen € für Ihren Starspieler. Die Medien spekulieren bereits wild.",
+	"category": "transfer_rumors",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Verkauf kategorisch ausschließen!",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": -200000
+		}
+	  },
+	  {
+		"text": "Bei dem Geld muss man zumindest nachdenken...",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": 80000000
+		}
+	  },
+	  {
+		"text": "Der Spieler soll selbst entscheiden.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_011",
+	"title": "Überraschungssieg gegen Favorit",
+	"description": "Nach einem 2:1-Sieg gegen den Tabellenführer: 'Haben Sie mit diesem Erfolg gerechnet?'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Wir haben an uns geglaubt - Sensation war möglich!",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 100000
+		}
+	  },
+	  {
+		"text": "Das war purer Zufall - normalerweise verlieren wir.",
+		"consequences": {
+		  "team_morale_change": -2
+		}
+	  },
+	  {
+		"text": "Wir haben taktisch perfekt gespielt!",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 75000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_012",
+	"title": "Packende Nachspielzeit",
+	"description": "Nach 8 Minuten Nachspielzeit und 2:2: 'Was für ein Drama! Sind Sie zufrieden?'",
+	"category": "match_result",
+	"context": "draw",
+	"options": [
+	  {
+		"text": "Dramatischer geht's nicht - Werbung für den Fußball!",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 35000
+		}
+	  },
+	  {
+		"text": "Mein Herz macht das nicht mehr lange mit.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "So ein Kampf zeigt unseren Charakter.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_013",
+	"title": "Rote Karte entscheidet",
+	"description": "Nach der Niederlage mit 9 Mann: 'Die Rote Karte in der 30. Minute war spielentscheidend.'",
+	"category": "match_result",
+	"context": "loss",
+	"options": [
+	  {
+		"text": "Meine Mannschaft hat trotzdem alles gegeben.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "So eine Dummheit darf nicht passieren!",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": -15000
+		}
+	  },
+	  {
+		"text": "Der Schiedsrichter hat das Spiel kaputt gemacht.",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": -40000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_014",
+	"title": "Torhüter-Gala",
+	"description": "Nach einem 1:0 mit 15 Paraden des Keepers: 'Ihr Torwart war heute überragend!'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Ohne ihn hätten wir verloren - Weltklasse!",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 25000
+		}
+	  },
+	  {
+		"text": "Das ist seine Aufgabe - dafür ist er da.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Heute hat uns die Nummer 1 den Sieg geschenkt.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 20000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_015",
+	"title": "Chancenwucher bestraft",
+	"description": "Nach einer 0:2-Niederlage trotz 20 Torchancen: 'Wie kann man so viele Chancen liegen lassen?'",
+	"category": "match_result",
+	"context": "loss",
+	"options": [
+	  {
+		"text": "Manchmal will der Ball einfach nicht rein.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Wir brauchen einen neuen Stürmer!",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": -30000
+		}
+	  },
+	  {
+		"text": "Das Toreschießen werden wir im Training üben.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "TRAINING_KRITIK_001",
+	"title": "Trainingskritik von Legende",
+	"description": "Eine Vereinslegende kritisiert öffentlich Ihre Trainingsmethoden: 'Früher war alles besser und härter!'",
+	"category": "general",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Ich respektiere die Meinung, aber Zeiten ändern sich.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Solche Querelen schaden dem Verein!",
+		"consequences": {
+		  "team_morale_change": -1,
+		  "finances_change": -20000
+		}
+	  },
+	  {
+		"text": "Die Legende soll gerne mal beim Training vorbeischauen.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 15000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MEDIZINISCHE_INNOVATION_001",
+	"title": "KI-gestützte Verletzungsprävention",
+	"description": "Ein Tech-Unternehmen bietet KI-Software zur Verletzungsprävention an: 'Das System kann Verletzungen 3 Wochen vorher vorhersagen!'",
+	"category": "innovation_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Innovation kaufen - Gesundheit geht vor!",
+		"consequences": {
+		  "finances_change": -200000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Unsere Physiotherapeuten machen das auch gut.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Erst testen, dann entscheiden.",
+		"consequences": {
+		  "finances_change": -25000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "STADION_SICHERHEIT_001",
+	"title": "Sicherheitskameras mit Gesichtserkennung",
+	"description": "Nach Randalen soll Gesichtserkennung installiert werden: 'Damit können wir Problemfans sofort identifizieren.'",
+	"category": "security_privacy",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Sicherheit geht vor - System installieren.",
+		"consequences": {
+		  "finances_change": -300000,
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Datenschutz ist wichtiger als Überwachung.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": -50000
+		}
+	  },
+	  {
+		"text": "Nur in Problembereichen installieren.",
+		"consequences": {
+		  "finances_change": -150000,
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "VIRTUAL_REALITY_001",
+	"title": "VR-Training für Spieler",
+	"description": "Ein Anbieter will VR-Brillen für taktisches Training installieren: 'Spieler können so perfekte Szenarien trainieren!'",
+	"category": "innovation_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "VR-System anschaffen - Zukunft des Trainings!",
+		"consequences": {
+		  "finances_change": -150000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Echtes Training ist besser als Simulation.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Probetraining mit wenigen Spielern.",
+		"consequences": {
+		  "finances_change": -20000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "BLOCKCHAIN_TICKETS_001",
+	"title": "Blockchain-Tickets gegen Schwarzmarkt",
+	"description": "Blockchain-Tickets sollen Schwarzhandel verhindern: 'Jedes Ticket wäre fälschungssicher und nachverfolgbar!'",
+	"category": "digital_business",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Innovative Lösung - sofort umstellen!",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Zu kompliziert für unsere Fans.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Erstmal bei wenigen Spielen testen.",
+		"consequences": {
+		  "finances_change": -30000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "ROBOTER_RASEN_001",
+	"title": "Roboter-Rasenpflege",
+	"description": "Autonome Roboter sollen den Rasen pflegen: 'Perfekte Spielfläche 24/7 - und umweltfreundlich mit Solarantrieb!'",
+	"category": "innovation_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Roboter kaufen - Technik der Zukunft!",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Unser Platzwart macht das seit 20 Jahren gut.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Kombination: Roboter unterstützt Platzwart.",
+		"consequences": {
+		  "finances_change": -50000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "DROHNEN_TRAINING_001",
+	"title": "Drohnen-Taktikanalyse",
+	"description": "Drohnen sollen das Training aus der Luft filmen: 'Perspektive wie ein Hubschrauber, aber viel günstiger!'",
+	"category": "innovation_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Drohnen anschaffen - bessere Taktikanalyse!",
+		"consequences": {
+		  "finances_change": -40000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Training soll privat bleiben.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Nur für Spielanalyse, nicht für Training.",
+		"consequences": {
+		  "finances_change": -20000,
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "HOLOGRAMM_PRESSEKONFERENZ_001",
+	"title": "Hologramm-Pressekonferenz",
+	"description": "Hologramm-Technik für Pressekonferenzen angeboten: 'Sie können gleichzeitig in 5 Städten sein!'",
+	"category": "innovation_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Futuristische Lösung - das probieren wir!",
+		"consequences": {
+		  "finances_change": -60000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Persönlicher Kontakt ist wichtiger.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Nur für internationale Medien nutzen.",
+		"consequences": {
+		  "finances_change": -30000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "TRADITIONSFAN_PROTEST_001",
+	"title": "Traditionsverein vs. Moderne",
+	"description": "Traditionsfans protestieren gegen zu viel Technik: 'Fußball wird zu einer seelenlose Show!'",
+	"category": "tradition_modern",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Traditionen respektieren - weniger Technik.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": -10000
+		}
+	  },
+	  {
+		"text": "Fortschritt lässt sich nicht aufhalten.",
+		"consequences": {
+		  "team_morale_change": -1,
+		  "finances_change": 50000
+		}
+	  },
+	  {
+		"text": "Balance zwischen Tradition und Innovation.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 20000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "KUENSTLICHE_INTELLIGENZ_001",
+	"title": "KI-Trainer als Assistent",
+	"description": "KI soll Spielerdaten analysieren und Taktikvorschläge machen: 'Bessere Analyse als jeder menschliche Scout!'",
+	"category": "innovation_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "KI-System kaufen - Datenanalyse verbessern!",
+		"consequences": {
+		  "finances_change": -250000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Fußball ist Emotion, keine Mathematik.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "KI als Unterstützung, nicht als Ersatz.",
+		"consequences": {
+		  "finances_change": -120000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "SPIELER_BURNOUT_001",
+	"title": "Spieler mit Burnout-Symptomen",
+	"description": "Ihr Leistungsträger zeigt Burnout-Symptome durch Social Media Stress: 'Ich kann nicht mehr - ständig diese Hasskommentare!'",
+	"category": "player_wellbeing",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Sofort Therapie und Social Media Pause.",
+		"consequences": {
+		  "finances_change": -60000,
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Das gehört zum Profi-Geschäft dazu.",
+		"consequences": {
+		  "team_morale_change": -3
+		}
+	  },
+	  {
+		"text": "Mental Coach für das ganze Team holen.",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": 5
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "DEEPFAKE_SKANDAL_001",
+	"title": "Deepfake-Video aufgetaucht",
+	"description": "Ein gefälschtes Video zeigt Sie bei kontroversen Aussagen: 'Das sieht täuschend echt aus - die Medien sind verwirrt!'",
+	"category": "digital_crisis",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Sofort Gegendarstellung und Experten hinzuziehen.",
+		"consequences": {
+		  "finances_change": -50000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Ignorieren - gibt sich von selbst.",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": -30000
+		}
+	  },
+	  {
+		"text": "Rechtliche Schritte gegen Verbreiter.",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_016",
+	"title": "Eigentor entscheidet",
+	"description": "Nach einer 1:2-Niederlage durch ein Eigentor: 'Das Eigentor in der 89. Minute war brutal.'",
+	"category": "match_result",
+	"context": "loss",
+	"options": [
+	  {
+		"text": "So etwas passiert - der Spieler darf sich nicht die Schuld geben.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Unkonzentriertheit in wichtigen Momenten!",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": -20000
+		}
+	  },
+	  {
+		"text": "Das Team steht hinter ihm - morgen ist ein neuer Tag.",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_017",
+	"title": "Perfekte erste Halbzeit",
+	"description": "Nach einem 3:0 zur Pause und 3:2-Sieg: 'Die erste Halbzeit war Weltklasse - warum wurde es dann noch eng?'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Wir haben etwas zu früh abgeschaltet.",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": 15000
+		}
+	  },
+	  {
+		"text": "Der Gegner hat nie aufgegeben - Respekt!",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 25000
+		}
+	  },
+	  {
+		"text": "90 Minuten Konzentration - das müssen wir lernen.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 20000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_018",
+	"title": "Eiskalter Winter-Fußball",
+	"description": "Bei -15 Grad und Schnee ein 1:1: 'Das waren eher Eishockey-Bedingungen als Fußball!'",
+	"category": "match_result",
+	"context": "draw",
+	"options": [
+	  {
+		"text": "Bei dem Wetter war jeder Ballkontakt ein Wunder.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Schlechte Bedingungen sind keine Entschuldigung.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Das Publikum hat trotzdem ein tolles Spiel gesehen.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 12000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_019",
+	"title": "Joker sticht",
+	"description": "Ihr Einwechselspieler erzielt das 2:1 in der 85. Minute: 'Der Joker hat wieder zugestochen!'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Genau dafür ist er da - perfektes Timing!",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 30000
+		}
+	  },
+	  {
+		"text": "Vielleicht sollte er nächstes Mal von Anfang an spielen.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Die Bank ist unser zwölfter Mann.",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 20000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_020",
+	"title": "Pechsträhne hält an",
+	"description": "Die fünfte Niederlage in Folge, 0:1: 'Wann reißt diese Pechsträhne endlich?'",
+	"category": "match_result",
+	"context": "loss",
+	"options": [
+	  {
+		"text": "Irgendwann muss das Glück zurückkommen.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Wir müssen das Glück selbst erzwingen!",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Die Mannschaft lässt mich nicht im Stich.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "STADION_ATMOSPHAERE_001",
+	"title": "Neue Stadion-App mit AR",
+	"description": "Eine App zeigt Augmented Reality Statistiken im Stadion: 'Fans können Spielerdaten live über ihr Handy sehen!'",
+	"category": "fan_experience",
+	"context": "any",
+	"options": [
+	  {
+		"text": "App entwickeln - moderne Fans wollen das!",
+		"consequences": {
+		  "finances_change": -120000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Fußball live erleben ist besser als auf's Handy starren.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Erstmal eine Beta-Version testen.",
+		"consequences": {
+		  "finances_change": -30000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "NACHWUCHS_REVOLUTION_001",
+	"title": "Jugendakademie 4.0",
+	"description": "Komplette Digitalisierung der Jugendarbeit vorgeschlagen: 'Jeder Jugendliche bekommt einen digitalen Zwilling zur Entwicklungsanalyse!'",
+	"category": "youth_development",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Digitale Revolution in der Jugend starten!",
+		"consequences": {
+		  "finances_change": -400000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Jugendarbeit funktioniert seit Jahrzehnten gut.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Schrittweise Modernisierung - nicht alles auf einmal.",
+		"consequences": {
+		  "finances_change": -150000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "KLIMAWANDEL_SPIEL_001",
+	"title": "Hitze-Pause bei 40 Grad",
+	"description": "Bei extremer Hitze musste das Spiel unterbrochen werden: 'Klimawandel macht auch vor dem Fußball nicht halt.'",
+	"category": "climate_environment",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Klimaanlagen für Spielerbänke installieren.",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Spielzeiten in heißen Sommern anpassen.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Klimaschutz-Initiative des Vereins starten.",
+		"consequences": {
+		  "finances_change": -200000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "PODCAST_REVOLUTION_001",
+	"title": "Vereins-Podcast wird Kult",
+	"description": "Der neue Vereins-Podcast hat bereits 500.000 Hörer: 'Das wird zu unserem neuen Medien-Flaggschiff!'",
+	"category": "media",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Podcast-Studio professionell ausbauen!",
+		"consequences": {
+		  "finances_change": -70000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Nicht übertreiben - bleibt beim Amateur-Charme.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Sponsoren für Podcast-Monetarisierung suchen.",
+		"consequences": {
+		  "finances_change": 50000,
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "GENERATION_Z_001",
+	"title": "Gen-Z Spieler schwer zu motivieren",
+	"description": "Ihre jüngsten Spieler reagieren nicht auf klassische Motivation: 'Die brauchen ständig Bestätigung und individuelle Ansprache!'",
+	"category": "generational_gap",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Personal-Coach für Gen-Z Spieler einstellen.",
+		"consequences": {
+		  "finances_change": -90000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Disziplin und harte Arbeit funktionieren immer.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Individuelle Gespräche mit jedem jungen Spieler.",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "METAVERSE_TRAINING_001",
+	"title": "Training im Metaverse",
+	"description": "Ein Anbieter schlägt Taktiktraining in Virtual Reality vor: 'Spieler können gefahrlos alle Situationen durchspielen!'",
+	"category": "innovation_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Metaverse-Training als Pilotprojekt starten!",
+		"consequences": {
+		  "finances_change": -180000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Echter Rasen ist besser als virtuelle Welten.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Nur für Reha-Training nach Verletzungen nutzen.",
+		"consequences": {
+		  "finances_change": -60000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "BIOMETRISCHE_UEBERWACHUNG_001",
+	"title": "Biometrische Spielerüberwachung",
+	"description": "Wearables sollen alle Körperfunktionen 24/7 überwachen: 'Wir wissen dann alles über Schlaf, Stress und Regeneration!'",
+	"category": "health_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Komplettüberwachung für optimale Leistung!",
+		"consequences": {
+		  "finances_change": -200000,
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Zu viel Überwachung - Privatsphäre respektieren.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Nur freiwillig und nur Trainingsdaten.",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "ZERO_WASTE_STADION_001",
+	"title": "Plastikfreies Stadion",
+	"description": "Umweltschützer fordern kompletten Verzicht auf Plastik: 'Ihr könnt Vorreiter für nachhaltigen Sport werden!'",
+	"category": "sustainability",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Komplette Umstellung auf öko-freundliche Materialien!",
+		"consequences": {
+		  "finances_change": -300000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Zu teuer und unpraktisch für Sportbetrieb.",
+		"consequences": {
+		  "team_morale_change": -1,
+		  "finances_change": -20000
+		}
+	  },
+	  {
+		"text": "Schrittweise Umstellung bei Renovierungen.",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "SOCIAL_MEDIA_ALGORITHMUS_001",
+	"title": "Algorithmus bestimmt Aufstellung?",
+	"description": "Ein KI-System verspricht die perfekte Aufstellung basierend auf Social Media Daten: 'Fan-Stimmung beeinflusst Spielerleistung messbar!'",
+	"category": "data_analytics",
+	"context": "any",
+	"options": [
+	  {
+		"text": "KI-System kaufen - Daten sind die Zukunft!",
+		"consequences": {
+		  "finances_change": -150000,
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Mein Bauchgefühl ist besser als jeder Algorithmus.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Zusatzinformation ja, aber ich entscheide.",
+		"consequences": {
+		  "finances_change": -50000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_021",
+	"title": "Doppelpack des Ersatzmanns",
+	"description": "Ihr verletzungsbedingt eingesprungener Ersatzkeeper hält zwei Elfmeter: 'Ihr Ersatzmann war der Held!'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Das zeigt unsere Kadertiefe - jeder ist bereit!",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 40000
+		}
+	  },
+	  {
+		"text": "Hoffentlich ist unser Stammkeeper bald wieder fit.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Jetzt haben wir ein Luxusproblem im Tor.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 25000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_022",
+	"title": "Schwalbe bringt Elfmeter",
+	"description": "Nach einer umstrittenen Schwalbe und dem entscheidenden Elfmeter zum 1:0: 'War das eine Schwalbe oder ein Foul?'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Mein Spieler ist gefallen - der Schiri hat entschieden.",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": 15000
+		}
+	  },
+	  {
+		"text": "So wollten wir nicht gewinnen - das war unfair.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": -10000
+		}
+	  },
+	  {
+		"text": "Das gleicht sich über die Saison aus.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 20000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_023",
+	"title": "VAR sorgt für Chaos",
+	"description": "Nach 5 VAR-Entscheidungen und einem 2:2: 'Der Videoschiedsrichter hat das Spiel komplett zerstört!'",
+	"category": "match_result",
+	"context": "draw",
+	"options": [
+	  {
+		"text": "VAR ist gut für die Gerechtigkeit im Fußball.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "So wird der Fußball kaputt gemacht!",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": -30000
+		}
+	  },
+	  {
+		"text": "VAR muss schneller werden, aber Prinzip ist richtig.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_024",
+	"title": "Comeback nach Rückstand",
+	"description": "0:2 zur Halbzeit, 3:2-Sieg am Ende: 'Diese Moral ist unbezahlbar - wie haben Sie das geschafft?'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Niemals aufgeben - das ist unsere DNA!",
+		"consequences": {
+		  "team_morale_change": 5,
+		  "finances_change": 60000
+		}
+	  },
+	  {
+		"text": "Die richtige Halbzeitansprache zur richtigen Zeit.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 40000
+		}
+	  },
+	  {
+		"text": "Meine Spieler haben gezeigt, was in ihnen steckt.",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 50000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_025",
+	"title": "Torloser Abend",
+	"description": "Nach einem 0:0 mit wenigen Torchancen: 'Das war kein Leckerbissen für die Zuschauer.'",
+	"category": "match_result",
+	"context": "draw",
+	"options": [
+	  {
+		"text": "Manchmal sind taktische Duelle eben zäh.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Wir müssen mutiger nach vorne spielen.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Ein Punkt gegen diesen Gegner ist okay.",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": 8000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "INTERNATIONAL_TALENT_001",
+	"title": "Japanisches Wunderkind",
+	"description": "Ein Scout bietet ein 16-jähriges Talent aus Tokio an: 'Technisch brillant, aber kulturell schwierige Anpassung.'",
+	"category": "international_business",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Talent holen und Integrationshilfe anbieten!",
+		"consequences": {
+		  "finances_change": -500000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Zu riskant für so einen jungen Spieler.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Erst ein Jahr auf Leihbasis probieren.",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "STADION_ERLEBNIS_001",
+	"title": "Stadion wird zur Event-Arena",
+	"description": "Pläne für Konzerte und Events während der Sommerpause: 'Das Stadion soll ganzjährig Geld verdienen!'",
+	"category": "business_diversification",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Stadion-Events genehmigen - zusätzliche Einnahmen!",
+		"consequences": {
+		  "finances_change": 200000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Stadion ist heilig - nur für Fußball!",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Nur Events, die den Rasen nicht beschädigen.",
+		"consequences": {
+		  "finances_change": 80000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "LEGACY_MODERNISIERUNG_001",
+	"title": "Altgediente Fans fühlen sich vergessen",
+	"description": "Langjährige Dauerkartenbesitzer beschweren sich: 'Alles wird nur noch für junge Fans gemacht!'",
+	"category": "tradition_modern",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Spezielle Events für langjährige Fans organisieren.",
+		"consequences": {
+		  "finances_change": -50000,
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Wir müssen mit der Zeit gehen.",
+		"consequences": {
+		  "team_morale_change": -1,
+		  "finances_change": 30000
+		}
+	  },
+	  {
+		"text": "Balance zwischen Alt und Jung finden.",
+		"consequences": {
+		  "finances_change": -20000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "DOPING_VERDACHT_001",
+	"title": "Anonymer Doping-Vorwurf",
+	"description": "Anonyme Quelle behauptet, ein Spieler nehme Aufputschmittel: 'Haben Sie Kenntnis von illegalen Substanzen?'",
+	"category": "crisis_management",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Sofort freiwillige Tests für alle Spieler!",
+		"consequences": {
+		  "finances_change": -30000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Anonyme Vorwürfe ignoriere ich.",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": -50000
+		}
+	  },
+	  {
+		"text": "Rechtliche Schritte gegen Verleumder.",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "VIRTUAL_FANS_001",
+	"title": "KI-generierte virtuelle Fans",
+	"description": "Wegen Corona leeres Stadion mit virtuellen Fans füllen: 'KI-Fans jubeln und pfeifen wie echte Zuschauer!'",
+	"category": "pandemic_innovation",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Virtuelle Fans - besser als gar keine Atmosphäre!",
+		"consequences": {
+		  "finances_change": -40000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Lieber ehrliche Stille als künstliche Atmosphäre.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Nur als Übergangslösung akzeptabel.",
+		"consequences": {
+		  "finances_change": -20000,
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "SPIELERSTREIK_001",
+	"title": "Spieler streiken wegen Überlastung",
+	"description": "Ihre Spieler weigern sich zu trainieren: 'Zu viele Spiele, zu wenig Pause - wir sind keine Maschinen!'",
+	"category": "labor_relations",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Sofort Trainingsintensität reduzieren.",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Profis müssen bei jedem Training alles geben!",
+		"consequences": {
+		  "team_morale_change": -3
+		}
+	  },
+	  {
+		"text": "Gemeinsam Trainingsplan überarbeiten.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "QUANTUM_COMPUTING_001",
+	"title": "Quantencomputer für Taktikanalyse",
+	"description": "Ein Tech-Gigant bietet Quantencomputer für komplexeste Spielanalysen: 'Berechnet Millionen von Taktikszenarien in Sekunden!'",
+	"category": "future_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Quantentechnologie - absolute Zukunft!",
+		"consequences": {
+		  "finances_change": -1000000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Fußball ist zu menschlich für Quantenphysik.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Warten bis die Technologie preiswerter wird.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "BIOHACKING_SPIELER_001",
+	"title": "Spieler experimentiert mit Biohacking",
+	"description": "Ihr Starspieler nutzt illegale Biohacking-Methoden zur Leistungssteigerung: 'Eisbad, Sauerstofftherapie, Genmodifikation...'",
+	"category": "health_ethics",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Sofortiges Verbot aller fragwürdigen Methoden!",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": -20000
+		}
+	  },
+	  {
+		"text": "Jeder ist für seinen Körper selbst verantwortlich.",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": -100000
+		}
+	  },
+	  {
+		"text": "Medizinische Aufklärung über Risiken.",
+		"consequences": {
+		  "finances_change": -40000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MIKROPLASTIK_RASEN_001",
+	"title": "Mikroplastik im Kunstrasen",
+	"description": "Umweltschützer warnen vor Mikroplastik im Trainingsplatz: 'Ihre Spieler atmen Gift ein!'",
+	"category": "environmental_health",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Sofort auf ökologischen Rasen umstellen!",
+		"consequences": {
+		  "finances_change": -400000,
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Erst wissenschaftliche Beweise abwarten.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Schrittweise Sanierung über mehrere Jahre.",
+		"consequences": {
+		  "finances_change": -150000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "SPACE_MARKETING_001",
+	"title": "Vereinslogo ins Weltall",
+	"description": "SpaceX-Konkurrent bietet Vereinslogo auf Rakete: 'Globale Aufmerksamkeit garantiert - für nur 2 Millionen!'",
+	"category": "extreme_marketing",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Weltall-Marketing - absolut einzigartig!",
+		"consequences": {
+		  "finances_change": -2000000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Völlig übertrieben und sinnlos.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Lieber in Jugendarbeit investieren.",
+		"consequences": {
+		  "finances_change": -200000,
+		  "team_morale_change": 4
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_026",
+	"title": "Erstes Tor nach Comeback",
+	"description": "Nach langer Verletzung erzielt Ihr Comeback-Spieler das Siegtor: 'Emotionaler kann ein Rückfall kaum sein!'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Tränen in den Augen - so stolz bin ich auf ihn!",
+		"consequences": {
+		  "team_morale_change": 5,
+		  "finances_change": 30000
+		}
+	  },
+	  {
+		"text": "Das ist der Lohn für harte Reha-Arbeit.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 20000
+		}
+	  },
+	  {
+		"text": "Jetzt muss er diese Form halten.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_027",
+	"title": "Videobeweis verweigert Traumtor",
+	"description": "Ein Traumtor wurde wegen Abseits aberkannt, Endstand 0:1: 'VAR hat uns um ein Kunstwerk betrogen!'",
+	"category": "match_result",
+	"context": "loss",
+	"options": [
+	  {
+		"text": "Schöne Tore zählen nur, wenn sie regelkonform sind.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Millimeter-Abseits zerstört die Freude am Fußball!",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": -20000
+		}
+	  },
+	  {
+		"text": "Der Schiedsrichter-Assistent war einfach besser.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_028",
+	"title": "Fußballkrimi bis zum Ende",
+	"description": "3:3 nach 0:3 Rückstand: 'Das war reiner Wahnsinn - haben Sie so etwas schon mal erlebt?'",
+	"category": "match_result",
+	"context": "draw",
+	"options": [
+	  {
+		"text": "Fußball kann nicht verrückter sein!",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 50000
+		}
+	  },
+	  {
+		"text": "Mein Herz macht das nicht mehr lange mit.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Die Zuschauer haben Werbung für den Fußball bekommen.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 40000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_029",
+	"title": "Torhüter verursacht Eigentor",
+	"description": "Ihr Keeper verschuldet mit einem Patzer das 0:1: 'Wie gehen Sie mit diesem Fehler um?'",
+	"category": "match_result",
+	"context": "loss",
+	"options": [
+	  {
+		"text": "Auch Torhüter sind nur Menschen.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "So einen Fehler darf ein Profi nicht machen!",
+		"consequences": {
+		  "team_morale_change": -2
+		}
+	  },
+	  {
+		"text": "Er hat uns schon oft Punkte gerettet.",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_030",
+	"title": "Traumpass führt zum Sieg",
+	"description": "Ein 40-Meter-Pass führt zum entscheidenden 2:1: 'Dieser Pass war Weltklasse!'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Solche Pässe macht nur ein Genie!",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 35000
+		}
+	  },
+	  {
+		"text": "Das trainieren wir jeden Tag.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 20000
+		}
+	  },
+	  {
+		"text": "Der Lauf des Empängers war genauso wichtig.",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 25000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "PSYCHOLOGE_TEAM_001",
+	"title": "Sportpsychologe für Mannschaft",
+	"description": "Nach mehreren Niederlagen wird ein Sportpsychologe vorgeschlagen: 'Mental Coaching ist heute unverzichtbar!'",
+	"category": "team_development",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Psychologe engagieren - Kopf entscheidet Spiele!",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Meine Spieler sind stark genug ohne Therapie.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Erst mal einzelne Spieler testen lassen.",
+		"consequences": {
+		  "finances_change": -20000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "FANCLUB_INTERNATIONALE_001",
+	"title": "Internationaler Fanclub gegründet",
+	"description": "Fans aus 15 Ländern gründen offiziellen Fanclub: 'Ihr habt internationale Strahlkraft erreicht!'",
+	"category": "international_recognition",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Internationale Fan-Events organisieren!",
+		"consequences": {
+		  "finances_change": -60000,
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Erstmal auf lokale Fans konzentrieren.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Digitale Fanbetreuung ausbauen.",
+		"consequences": {
+		  "finances_change": -30000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "REGENERATION_HIGH_TECH_001",
+	"title": "Kryotherapie-Kammer",
+	"description": "Eine Kryotherapie-Kammer soll Regeneration beschleunigen: 'Bei -120°C regenerieren Muskeln doppelt so schnell!'",
+	"category": "recovery_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Kryokammer kaufen - modernste Regeneration!",
+		"consequences": {
+		  "finances_change": -200000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Eisbad und Massage reichen auch.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Erstmal bei anderen Vereinen testen lassen.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "DATENSCHUTZ_SKANDAL_001",
+	"title": "Spielerdaten gehackt",
+	"description": "Hacker veröffentlichen private Spielerdaten: 'Gehälter, Adressen, medizinische Daten - alles ist öffentlich!'",
+	"category": "digital_security",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Sofort IT-Sicherheit massiv ausbauen!",
+		"consequences": {
+		  "finances_change": -150000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Rechtliche Schritte gegen Hacker einleiten.",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Spieler über besseren Datenschutz aufklären.",
+		"consequences": {
+		  "finances_change": -20000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "STADION_SOLARDACH_001",
+	"title": "Solarpanels auf Stadion",
+	"description": "Komplettes Stadion-Solardach vorgeschlagen: 'Energie für ganze Stadt und Überschuss verkaufen!'",
+	"category": "green_energy",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Solardach installieren - Energiewende im Fußball!",
+		"consequences": {
+		  "finances_change": -800000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Zu teuer und noch nicht ausgereift.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Schrittweise mit Trainingsanlagen beginnen.",
+		"consequences": {
+		  "finances_change": -200000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "FLEISCHLOS_STADION_001",
+	"title": "Veganes Stadion gefordert",
+	"description": "Tierschutzorganisation fordert vegane Stadion-Verpflegung: 'Fußball muss Vorbild für Nachhaltigkeit werden!'",
+	"category": "ethical_consumption",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Komplette Umstellung auf pflanzliche Küche!",
+		"consequences": {
+		  "finances_change": -120000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Fans wollen ihre Bratwurst - das bleibt so.",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": -30000
+		}
+	  },
+	  {
+		"text": "50% vegane Optionen als Kompromiss.",
+		"consequences": {
+		  "finances_change": -60000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "HOLOGRAMM_FANS_001",
+	"title": "Verstorbene Fans als Hologramme",
+	"description": "Tech-Firma bietet Hologramme verstorbener Fans: 'Sie können ewig bei ihrem Verein sein!'",
+	"category": "memorial_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Bewegende Idee für treue Fans umsetzen!",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Das ist makaber und respektlos.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Lieber traditionelle Gedenkstätte errichten.",
+		"consequences": {
+		  "finances_change": -40000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "GEHIRNTRAINING_001",
+	"title": "Neurofeedback für Spieler",
+	"description": "Gehirntraining soll Reaktionszeiten verbessern: 'Elektroden messen Hirnwellen und trainieren Konzentration!'",
+	"category": "cognitive_enhancement",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Neurofeedback-Training für alle Spieler!",
+		"consequences": {
+		  "finances_change": -120000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Das Gehirn ist keine Maschine zum Optimieren.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Erstmal mit Torhütern testen.",
+		"consequences": {
+		  "finances_change": -30000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "KUENSTLICHER_GEGNER_001",
+	"title": "KI-Roboter als Trainingsgegner",
+	"description": "Roboter sollen als perfekte Gegenspieler fungieren: 'Unermüdlich, berechenbar, immer auf höchstem Niveau!'",
+	"category": "robot_training",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Roboter-Gegner kaufen - Training der Zukunft!",
+		"consequences": {
+		  "finances_change": -300000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Menschen spielen gegen Menschen - das bleibt so.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Nur für spezielle Übungen einsetzen.",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "ESPORTS_LIGA_001",
+	"title": "Eigene eSports-Abteilung gründen",
+	"description": "Andere Vereine verdienen Millionen mit FIFA-Teams: 'eSports ist die Zukunft - seid ihr dabei?'",
+	"category": "digital_sports",
+	"context": "any",
+	"options": [
+	  {
+		"text": "eSports-Team gründen - neue Generation ansprechen!",
+		"consequences": {
+		  "finances_change": -150000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Echter Fußball ist wichtiger als Computerspiele.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Kooperation mit bestehenden eSports-Teams.",
+		"consequences": {
+		  "finances_change": -50000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "VEREINSHYMNE_KI_001",
+	"title": "KI komponiert neue Vereinshymne",
+	"description": "Künstliche Intelligenz hat eine Hymne komponiert: 'Analysiert 10.000 Fußballsongs und schafft den perfekten Sound!'",
+	"category": "ai_creativity",
+	"context": "any",
+	"options": [
+	  {
+		"text": "KI-Hymne verwenden - Innovation pur!",
+		"consequences": {
+		  "finances_change": -40000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Musik braucht menschliche Seele.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "KI als Inspiration für echte Komponisten.",
+		"consequences": {
+		  "finances_change": -20000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "AUTOMATISCHE_AUFSTELLUNG_001",
+	"title": "Algorithmus wählt Aufstellung",
+	"description": "Software soll optimale Aufstellung berechnen: 'Millionen Daten ergeben die mathematisch beste Elf!'",
+	"category": "automation_coaching",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Algorithmus vertrauen - Mathematik lügt nicht!",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Trainer-Instinkt ist wichtiger als Formeln.",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Software als Beratung, nicht als Entscheidung.",
+		"consequences": {
+		  "finances_change": -50000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "DROHNEN_SICHERHEIT_001",
+	"title": "Drohne stört Training",
+	"description": "Paparazzi-Drohne spioniert Training aus: 'Gegner könnten unsere Taktik ausgespielt haben!'",
+	"category": "privacy_security",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Anti-Drohnen-System installieren!",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Training in geschlossene Halle verlegen.",
+		"consequences": {
+		  "finances_change": -30000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Sicherheitsdienst beauftragen.",
+		"consequences": {
+		  "finances_change": -50000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "IMPLANTATE_SPIELER_001",
+	"title": "Spieler will Leistungs-Chips",
+	"description": "Ihr Starspieler erwägt Gehirn-Implantate: 'Reaktionszeit um 50% verbessern - andere machen das auch!'",
+	"category": "human_enhancement",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Absolutes Verbot von körperlichen Modifikationen!",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": -10000
+		}
+	  },
+	  {
+		"text": "Das ist seine persönliche Entscheidung.",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": -200000
+		}
+	  },
+	  {
+		"text": "Medizinische Aufklärung über Risiken.",
+		"consequences": {
+		  "finances_change": -40000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "ZEITREISE_MARKETING_001",
+	"title": "Nostalgische Retro-Kampagne",
+	"description": "Marketing will Retro-Trikots der 80er Jahre neu auflegen: 'Nostalgie verkauft sich besser als Innovation!'",
+	"category": "retro_marketing",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Retro-Trikots produzieren - Nostalgie ist Kult!",
+		"consequences": {
+		  "finances_change": 150000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Wir schauen nach vorn, nicht zurück.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Retro-Design mit moderner Technik kombinieren.",
+		"consequences": {
+		  "finances_change": 80000,
+		  "team_morale_change": 4
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "WASSERSTOFF_BUS_001",
+	"title": "Wasserstoff-Mannschaftsbus",
+	"description": "Umweltfreundlicher Wasserstoff-Bus für Auswärtsfahrten: 'Klimaneutral und leise - Zukunft der Mobilität!'",
+	"category": "sustainable_transport",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Wasserstoff-Bus kaufen - Umweltschutz ist wichtig!",
+		"consequences": {
+		  "finances_change": -400000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Zu teuer und noch nicht zuverlässig.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Erstmal Elektro-Bus als Übergangslösung.",
+		"consequences": {
+		  "finances_change": -200000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "GEDANKENLESEN_001",
+	"title": "Gedankenlese-Technologie für Taktik",
+	"description": "Neurotechnik soll Spielergedanken lesen: 'Wir wissen dann, was jeder Spieler wirklich denkt!'",
+	"category": "mind_reading_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Science Fiction ist noch nicht so weit.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Das wäre ein extremer Eingriff in die Privatsphäre!",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Interessante Technologie für die ferne Zukunft.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "STAMMZELLEN_THERAPIE_001",
+	"title": "Stammzellen-Behandlung angeboten",
+	"description": "Stammzellen sollen Verletzungen heilen: 'Muskelfaserriss in 3 Tagen statt 3 Wochen geheilt!'",
+	"category": "advanced_medicine",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Stammzellen-Therapie für verletzte Spieler!",
+		"consequences": {
+		  "finances_change": -200000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Zu experimentell und ethisch bedenklich.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Nur bei schweren Verletzungen und mit Zustimmung.",
+		"consequences": {
+		  "finances_change": -80000,
+		  "team_morale_change": 4
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "TELEPORTATION_TRAINING_001",
+	"title": "Virtuelle Teleportation im Training",
+	"description": "VR-System simuliert Teleportation für Positionstraining: 'Spieler lernen jeden Platz auf dem Feld perfekt!'",
+	"category": "extreme_vr",
+	"context": "any",
+	"options": [
+	  {
+		"text": "VR-Teleportation testen - revolutionsär!",
+		"consequences": {
+		  "finances_change": -250000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Echte Laufwege sind wichtiger als virtuelle.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Interessant für Taktikanalyse, nicht fürs Training.",
+		"consequences": {
+		  "finances_change": -50000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "ANTI_AGING_001",
+	"title": "Anti-Aging für Veteran",
+	"description": "36-jähriger Spieler will experimentelle Anti-Aging-Behandlung: 'Noch 10 Jahre auf Top-Niveau spielen!'",
+	"category": "longevity_enhancement",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Medizinisch zu riskant - Karriere beenden.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Seine Entscheidung - wir unterstützen ihn.",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Nur etablierte, sichere Methoden erlauben.",
+		"consequences": {
+		  "finances_change": -30000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "BEWUSSTSEIN_UPLOAD_001",
+	"title": "Digitaler Klon für Taktiktraining",
+	"description": "Spielerbewusstsein in Computer kopieren: 'Digitaler Zwilling kann unendlich trainieren ohne Müdigkeit!'",
+	"category": "consciousness_tech",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Das ist Science Fiction - nicht möglich.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Ethisch völlig inakzeptabel!",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Theoretisch interessant, praktisch unmöglich.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "ASTEROID_MINING_001",
+	"title": "Asteroiden-Bergbau als Sponsoring",
+	"description": "Weltraum-Unternehmen bietet Asteroid-Mining-Sponsoring: '100 Millionen für 50 Jahre Trikotwerbung!'",
+	"category": "space_commerce",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Weltraum-Deal - absolut einzigartig!",
+		"consequences": {
+		  "finances_change": 100000000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Zu riskant - das Unternehmen könnte scheitern.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Interessant, aber erstmal abwarten.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "PARALLELUNIVERSEN_001",
+	"title": "Paralleluniversum-Theorie für Taktik",
+	"description": "Quantenphysiker behauptet: 'In anderen Universen habt ihr bereits alle möglichen Taktiken ausprobiert!'",
+	"category": "quantum_philosophy",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Wissenschaft ist faszinierend, aber nicht praktisch.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Konzentrieren wir uns auf unser Universum.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Interessante Theorie für Philosophen.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_031",
+	"title": "Stürmer verschiesst Hattrick-Elfmeter",
+	"description": "Bei 2 Toren verschießt Ihr Stürmer den Elfmeter zum Hattrick: 'Der perfekte Hattrick war zum Greifen nah!'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "2 Tore sind auch schon fantastisch!",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 25000
+		}
+	  },
+	  {
+		"text": "So eine Chance darf man nicht liegen lassen.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Der nächste Hattrick kommt bestimmt.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 15000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_032",
+	"title": "Schlusslicht punktet gegen Spitzenreiter",
+	"description": "Als Tabellenletzter ein 1:1 gegen den Führer: 'Niemand hat mit diesem Punktgewinn gerechnet!'",
+	"category": "match_result",
+	"context": "draw",
+	"options": [
+	  {
+		"text": "Jeder kann jeden schlagen - das ist Fußball!",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 40000
+		}
+	  },
+	  {
+		"text": "Wir haben bewiesen, dass wir mithalten können.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 30000
+		}
+	  },
+	  {
+		"text": "Ein Punkt ist ein Anfang - mehr geht.",
+		"consequences": {
+		  "team_morale_change": 5
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_033",
+	"title": "Aufholjagd scheitert knapp",
+	"description": "Trotz 0:3-Rückstand nur 2:3 verloren: 'Fast hätten Sie das Wunder geschafft!'",
+	"category": "match_result",
+	"context": "loss",
+	"options": [
+	  {
+		"text": "Diese Moral macht mich stolz!",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Wir dürfen nie so schlecht starten.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Das gibt uns Mut für die nächsten Spiele.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_034",
+	"title": "Freistoß-Zauber entscheidet",
+	"description": "Ein direkter Freistoß aus 35 Metern führt zum 1:0-Sieg: 'Haben Sie so einen Traumfreistoß schon mal gesehen?'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "Das war Pure Magie - Weltklasse!",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 50000
+		}
+	  },
+	  {
+		"text": "So etwas üben wir jeden Tag.",
+		"consequences": {
+		  "team_morale_change": 2,
+		  "finances_change": 30000
+		}
+	  },
+	  {
+		"text": "Glück gehört auch dazu.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 35000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_035",
+	"title": "Torwart-Fehler kostet Sieg",
+	"description": "In der 90. Minute rutscht dem Keeper der Ball durch: 'Ein vermeidbarer Fehler zum schlechtesten Zeitpunkt!'",
+	"category": "match_result",
+	"context": "draw",
+	"options": [
+	  {
+		"text": "Ohne ihn wären schon viele Spiele verloren gewesen.",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "In entscheidenden Momenten brauchen wir Sicherheit.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Das passiert auch den Besten.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "GENERATIONEN_KONFLIKT_001",
+	"title": "Alte vs. junge Spieler",
+	"description": "Streit zwischen Veteranen und Nachwuchs: 'Die Alten blockieren uns!' vs. 'Respekt vor Erfahrung!'",
+	"category": "team_dynamics",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Mannschaftssitzung - alle an einen Tisch!",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Leistung entscheidet, nicht das Alter.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Mentoren-System: Jeder Veteran übernimmt einen Jungen.",
+		"consequences": {
+		  "team_morale_change": 5
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "DOPING_KONTROLLE_001",
+	"title": "Positive Doping-Probe bei Gegner",
+	"description": "Nach Ihrem 1:3 gegen den Gegner wird dort gedopt: 'War das Spiel fair? Fordern Sie eine Wiederholung?'",
+	"category": "fair_play",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Wiederholung fordern - Fair Play muss sein!",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": -30000
+		}
+	  },
+	  {
+		"text": "Wir haben verloren, weil wir schlechter waren.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Das entscheiden höhere Instanzen.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "STADION_KAPAZITAET_001",
+	"title": "Stadion-Erweiterung geplant",
+	"description": "Pläne für Stadion-Erweiterung von 20.000 auf 40.000 Plätze: 'Verdopplung der Kapazität für 50 Millionen!'",
+	"category": "infrastructure",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Erweiterung starten - größere Träume!",
+		"consequences": {
+		  "finances_change": -50000000,
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Zu riskant - was wenn die Plätze leer bleiben?",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Schrittweise Erweiterung über mehrere Jahre.",
+		"consequences": {
+		  "finances_change": -15000000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MANNSCHAFTSRAT_001",
+	"title": "Spielerrat fordert Mitsprache",
+	"description": "Die Kapitäne wollen bei Transfers mitentscheiden: 'Wir kennen die Mannschaft am besten!'",
+	"category": "team_democracy",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Spielerrat in Transferentscheidungen einbeziehen.",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Transfers sind Chefsache - keine Demokratie!",
+		"consequences": {
+		  "team_morale_change": -2
+		}
+	  },
+	  {
+		"text": "Beratende Funktion ja, Entscheidung bleibt bei mir.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "LUXUS_TRAINING_001",
+	"title": "5-Sterne-Trainingslager",
+	"description": "Vorschlag für Luxus-Trainingslager in Dubai: 'Perfekte Bedingungen, aber 500.000 Euro Kosten!'",
+	"category": "luxury_preparation",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Luxus-Trainingslager - nur das Beste für die Mannschaft!",
+		"consequences": {
+		  "finances_change": -500000,
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Übertrieben - heimisches Trainingslager reicht.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Nur bei wichtigen Turnieren oder Krisen.",
+		"consequences": {
+		  "finances_change": -150000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "WASSERMANN_ABERGLAUBE_001",
+	"title": "Spieler ist abergläubisch",
+	"description": "Ihr Starspieler will nur noch mit seinem Glückstrikot spielen: 'Ohne dieses Trikot kann ich nicht gewinnen!'",
+	"category": "superstition",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Aberglaube respektieren - Psychologie ist wichtig.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Professionalität geht vor Aberglaube.",
+		"consequences": {
+		  "team_morale_change": -1
+		}
+	  },
+	  {
+		"text": "Sportpsychologe soll helfen.",
+		"consequences": {
+		  "finances_change": -25000,
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "SPIELERFRAUEN_DRAMA_001",
+	"title": "Zoff zwischen Spielerfrauen",
+	"description": "Streit der Ehefrauen vergiftet Mannschaftsklima: 'Private Konflikte belasten das Team!'",
+	"category": "personal_relationships",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Das ist Privatsache - nicht mein Problem.",
+		"consequences": {
+		  "team_morale_change": -2
+		}
+	  },
+	  {
+		"text": "Mannschaftsabend mit Familien organisieren.",
+		"consequences": {
+		  "finances_change": -30000,
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Klare Trennung: Beruf und Privatleben.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "CHARITY_MATCH_001",
+	"title": "Benefizspiel für guten Zweck",
+	"description": "Prominente wollen Charity-Match gegen Ihr team: 'Für krebskranke Kinder - aber Ihr bekommt kein Geld!'",
+	"category": "social_responsibility",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Sofort zusagen - guter Zweck geht vor!",
+		"consequences": {
+		  "team_morale_change": 5,
+		  "finances_change": -50000
+		}
+	  },
+	  {
+		"text": "Nur wenn unsere Kosten gedeckt werden.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Zusagen und selbst noch spenden.",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": 6
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MASKOTTCHEN_SKANDAL_001",
+	"title": "Maskottchen benimmt sich daneben",
+	"description": "Ihr Vereinsmaskottchen provoziert Gegner-Fans: 'Das Maskottchen hat eine Schlägerei ausgelöst!'",
+	"category": "pr_disaster",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Maskottchen sofort entlassen!",
+		"consequences": {
+		  "team_morale_change": 1,
+		  "finances_change": -20000
+		}
+	  },
+	  {
+		"text": "Verwarnung und Anti-Aggressions-Training.",
+		"consequences": {
+		  "finances_change": -10000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Fans lieben Emotionen - war okay.",
+		"consequences": {
+		  "team_morale_change": -1,
+		  "finances_change": -50000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "WETTER_EXTREMSITUATION_001",
+	"title": "Spiel im Schneesturm",
+	"description": "Extremwetter macht Spiel fast unmöglich: 'Bei diesem Schneesturm sieht man den Ball nicht!'",
+	"category": "weather_conditions",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Spielabbruch beantragen - zu gefährlich.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Durchziehen - echte Kerle spielen bei jedem Wetter.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  },
+	  {
+		"text": "Schiedsrichter soll entscheiden.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_036",
+	"title": "Traumkombination führt zum Tor",
+	"description": "25 Pässe ohne Ballverlust enden im Traumtor: 'Das war Fußball wie aus dem Lehrbuch!'",
+	"category": "match_result",
+	"context": "win",
+	"options": [
+	  {
+		"text": "So stellen wir uns Fußball vor - pure Kunst!",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 45000
+		}
+	  },
+	  {
+		"text": "Das war Zufall - normalerweise sind wir direkter.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Geduld und Passing - das ist unser Stil.",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 35000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_037",
+	"title": "Kapitän sieht Gelb-Rot",
+	"description": "Ihr Kapitän fliegt mit Gelb-Rot vom Platz, 1:2-Niederlage: 'Der Platzverweis war spielentscheidend!'",
+	"category": "match_result",
+	"context": "loss",
+	"options": [
+	  {
+		"text": "Er muss als Kapitän Vorbild sein!",
+		"consequences": {
+		  "team_morale_change": -1,
+		  "finances_change": -15000
+		}
+	  },
+	  {
+		"text": "Emotionen gehören dazu - er wollte gewinnen.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Trotz Unterzahl haben wir gut gespielt.",
+		"consequences": {
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "MATCH_INTERVIEW_038",
+	"title": "Torwart wird zum Feldspieler",
+	"description": "In der Schlussminute stürmt Ihr Keeper mit nach vorn zum 2:2: 'Haben Sie das so geplant?'",
+	"category": "match_result",
+	"context": "draw",
+	"options": [
+	  {
+		"text": "Verzweiflung macht erfinderisch!",
+		"consequences": {
+		  "team_morale_change": 3,
+		  "finances_change": 25000
+		}
+	  },
+	  {
+		"text": "Das war seine eigene Entscheidung.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Alles oder nichts - Mut wurde belohnt!",
+		"consequences": {
+		  "team_morale_change": 4,
+		  "finances_change": 30000
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "RUHESTAND_LEGENDE_001",
+	"title": "Vereinslegende beendet Karriere",
+	"description": "Nach 15 Jahren beendet Ihre Vereinslegende die Karriere: 'Ein Abschied, der alle berührt!'",
+	"category": "career_endings",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Abschiedsspiel und Stadiumbenennung!",
+		"consequences": {
+		  "finances_change": -200000,
+		  "team_morale_change": 5
+		}
+	  },
+	  {
+		"text": "Trainerkarriere im Verein anbieten.",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "Würdiger Abschied in kleinem Kreis.",
+		"consequences": {
+		  "finances_change": -50000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "TRANSFER_WAHNSINN_001",
+	"title": "Transferrekord für 100 Millionen",
+	"description": "Ein Superstar ist für 100 Millionen verfügbar: 'Das wäre der Rekordtransfer in der Vereinsgeschichte!'",
+	"category": "mega_transfers",
+	"context": "any",
+	"options": [
+	  {
+		"text": "All-In gehen - solche Chancen gibt es nie wieder!",
+		"consequences": {
+		  "finances_change": -100000000,
+		  "team_morale_change": 5
+		}
+	  },
+	  {
+		"text": "Viel zu riskant für einen Spieler.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Lieber 5 gute Spieler für das Geld.",
+		"consequences": {
+		  "finances_change": -50000000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "FANPROTEST_TICKET_001",
+	"title": "Fans protestieren gegen Ticketpreise",
+	"description": "Dauerkartenbesitzer boykottieren Spiel wegen Preiserhöhung: '50% teurer ist zu viel!'",
+	"category": "fan_economics",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Preise sofort senken - Fans sind wichtiger!",
+		"consequences": {
+		  "finances_change": -500000,
+		  "team_morale_change": 5
+		}
+	  },
+	  {
+		"text": "Marktpreise sind nunmal gestiegen.",
+		"consequences": {
+		  "team_morale_change": -2,
+		  "finances_change": 200000
+		}
+	  },
+	  {
+		"text": "Kompromiss: Sozialtickets für einkommensschwache Fans.",
+		"consequences": {
+		  "finances_change": -100000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "STADION_GEIST_001",
+	"title": "Stadiongeist sorgt für Wirbel",
+	"description": "Gerüchte über paranormale Aktivitäten im Stadion: 'Spieler berichten von seltsamen Geräuschen!'",
+	"category": "supernatural",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Geisterjäger beauftragen - Mystery lösen!",
+		"consequences": {
+		  "finances_change": -30000,
+		  "team_morale_change": 2
+		}
+	  },
+	  {
+		"text": "Unsinn - technische Geräusche prüfen lassen.",
+		"consequences": {
+		  "finances_change": -10000,
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Marketing-Chance: Geisterstadion vermarkten!",
+		"consequences": {
+		  "finances_change": 100000,
+		  "team_morale_change": 3
+		}
+	  }
+	]
+  },
+  {
+	"event_id": "ALIEN_SICHTUNG_001",
+	"title": "UFO über Stadion gesichtet",
+	"description": "Fans melden UFO-Sichtung während Training: 'Außerirdische Scouts?'",
+	"category": "sci_fi_absurd",
+	"context": "any",
+	"options": [
+	  {
+		"text": "Wahrscheinlich nur ein Wetterballon.",
+		"consequences": {
+		  "team_morale_change": 1
+		}
+	  },
+	  {
+		"text": "Vielleicht wollen Aliens auch Fußball lernen!",
+		"consequences": {
+		  "team_morale_change": 4
+		}
+	  },
+	  {
+		"text": "UFOs interessieren mich nicht - nur Tore.",
+		"consequences": {
+		  "team_morale_change": 2
+		}
+	  }
+	]
+  }
+]

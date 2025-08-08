@@ -1,0 +1,1902 @@
+[gd_scene load_steps=6 format=3 uid="uid://chcvivxqgcs3h"]
+
+[ext_resource type="FontFile" uid="uid://c3tlb7sw4njgv" path="res://assets/fonts/pressstart2p-regular-webfont.ttf" id="1_b1ybk"]
+[ext_resource type="Script" uid="uid://7v23rjkudb6o" path="res://scenes/results_and_table.gd" id="1_vs1bv"]
+
+[sub_resource type="Theme" id="Theme_b1ybk"]
+default_font = ExtResource("1_b1ybk")
+default_font_size = 20
+Label/colors/font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m55wt"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6kwp"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="results_and_table" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_b1ybk")
+script = ExtResource("1_vs1bv")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.184314, 0.309804, 0.309804, 1)
+
+[node name="ErgebnisPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 1880.0
+offset_bottom = 368.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m55wt")
+
+[node name="ErgebnisMarginContainer" type="MarginContainer" parent="ErgebnisPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -220.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.13563, 1.24282)
+
+[node name="ErgebnisVBoxContainer" type="VBoxContainer" parent="ErgebnisPanel/ErgebnisMarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="ErgebnisGridContainer" type="GridContainer" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+columns = 3
+
+[node name="@Label@30577" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "FSV Mainz 05"
+horizontal_alignment = 1
+
+[node name="@Label@30578" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "3 : 0"
+horizontal_alignment = 1
+
+[node name="@Label@30579" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "SC Freiburg"
+horizontal_alignment = 1
+
+[node name="@Label@30580" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "VfL Bochum"
+horizontal_alignment = 1
+
+[node name="@Label@30581" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "2 : 2"
+horizontal_alignment = 1
+
+[node name="@Label@30582" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "1. FC Nürnberg"
+horizontal_alignment = 1
+
+[node name="@Label@30583" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Hamburger SV"
+horizontal_alignment = 1
+
+[node name="@Label@30584" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "3 : 4"
+horizontal_alignment = 1
+
+[node name="@Label@30585" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "1. FC Köln"
+horizontal_alignment = 1
+
+[node name="@Label@30586" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Hertha BSC Berlin"
+horizontal_alignment = 1
+
+[node name="@Label@30587" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "2 : 3"
+horizontal_alignment = 1
+
+[node name="@Label@30588" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Eintracht Frankf."
+horizontal_alignment = 1
+
+[node name="@Label@30589" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Bayer 04 Leverkusen"
+horizontal_alignment = 1
+
+[node name="@Label@30590" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "3 : 1"
+horizontal_alignment = 1
+
+[node name="@Label@30591" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "VfL Wolfsburg"
+horizontal_alignment = 1
+
+[node name="@Label@30592" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "SV Werder Bremen"
+horizontal_alignment = 1
+
+[node name="@Label@30593" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "0 : 1"
+horizontal_alignment = 1
+
+[node name="@Label@30594" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "FC Schalke 04"
+horizontal_alignment = 1
+
+[node name="@Label@30595" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Borussia M'gladbach"
+horizontal_alignment = 1
+
+[node name="@Label@30596" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "2 : 5"
+horizontal_alignment = 1
+
+[node name="@Label@30597" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "VfB Stuttgart"
+horizontal_alignment = 1
+
+[node name="@Label@30598" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Borussia Dortmund"
+horizontal_alignment = 1
+
+[node name="@Label@30599" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "2 : 3"
+horizontal_alignment = 1
+
+[node name="@Label@30600" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "FC Bayern München"
+horizontal_alignment = 1
+
+[node name="@Label@30601" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "1899 Hoffenheim"
+horizontal_alignment = 1
+
+[node name="@Label@30602" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "2 : 2"
+horizontal_alignment = 1
+
+[node name="@Label@30603" type="Label" parent="ErgebnisPanel/ErgebnisMarginContainer/ErgebnisVBoxContainer/ErgebnisGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Hannover 96"
+horizontal_alignment = 1
+
+[node name="SpieltagLabel" type="Label" parent="ErgebnisPanel"]
+layout_mode = 2
+offset_left = -8.0
+offset_top = 8.0
+offset_right = 1832.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Der 1. Spieltag im Überblick:"
+horizontal_alignment = 1
+
+[node name="TabellePanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 380.0
+offset_right = 1880.0
+offset_bottom = 980.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v6kwp")
+
+[node name="TabelleMarginContainer" type="MarginContainer" parent="TabellePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 12.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.25727)
+
+[node name="TabelleVBoxContainer" type="VBoxContainer" parent="TabellePanel/TabelleMarginContainer"]
+layout_mode = 2
+
+[node name="TabelleGridContainer" type="GridContainer" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 10
+
+[node name="@Label@30607" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_font_sizes/font_size = 20
+text = "Pl."
+horizontal_alignment = 1
+
+[node name="@Label@30608" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="@Label@30609" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_font_sizes/font_size = 20
+text = "Verein"
+horizontal_alignment = 1
+
+[node name="@Label@30610" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_font_sizes/font_size = 20
+text = "Sp"
+horizontal_alignment = 1
+
+[node name="@Label@30611" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_font_sizes/font_size = 20
+text = "S"
+horizontal_alignment = 1
+
+[node name="@Label@30612" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_font_sizes/font_size = 20
+text = "U"
+horizontal_alignment = 1
+
+[node name="@Label@30613" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_font_sizes/font_size = 20
+text = "N"
+horizontal_alignment = 1
+
+[node name="@Label@30614" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tore"
+horizontal_alignment = 1
+
+[node name="@Label@30615" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_font_sizes/font_size = 20
+text = "Diff."
+horizontal_alignment = 1
+
+[node name="@Label@30616" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_font_sizes/font_size = 20
+text = "Pkt."
+horizontal_alignment = 1
+
+[node name="@Label@30617" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 1
+
+[node name="@Label@30618" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "(0)"
+horizontal_alignment = 1
+
+[node name="@Label@30619" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Hertha BSC Berlin"
+
+[node name="@Label@30620" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30621" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "18"
+horizontal_alignment = 1
+
+[node name="@Label@30622" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "9"
+horizontal_alignment = 1
+
+[node name="@Label@30623" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30624" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "43:44"
+horizontal_alignment = 1
+
+[node name="@Label@30625" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "-1"
+horizontal_alignment = 1
+
+[node name="@Label@30626" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "65"
+horizontal_alignment = 1
+
+[node name="@Label@30627" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "2"
+horizontal_alignment = 1
+
+[node name="@Label@30628" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "(1)"
+horizontal_alignment = 1
+
+[node name="@Label@30629" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "Eintracht Frankf."
+
+[node name="@Label@30630" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30631" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "19"
+horizontal_alignment = 1
+
+[node name="@Label@30632" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "7"
+horizontal_alignment = 1
+
+[node name="@Label@30633" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30634" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "31:47"
+horizontal_alignment = 1
+
+[node name="@Label@30635" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "-16"
+horizontal_alignment = 1
+
+[node name="@Label@30636" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "65"
+horizontal_alignment = 1
+
+[node name="@Label@30637" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "3"
+horizontal_alignment = 1
+
+[node name="@Label@30638" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "(2)"
+horizontal_alignment = 1
+
+[node name="@Label@30639" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "Hannover 96"
+
+[node name="@Label@30640" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30641" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "20"
+horizontal_alignment = 1
+
+[node name="@Label@30642" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "9"
+horizontal_alignment = 1
+
+[node name="@Label@30643" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30644" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "54:56"
+horizontal_alignment = 1
+
+[node name="@Label@30645" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "-2"
+horizontal_alignment = 1
+
+[node name="@Label@30646" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "63"
+horizontal_alignment = 1
+
+[node name="@Label@30647" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "4"
+horizontal_alignment = 1
+
+[node name="@Label@30648" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "(3)"
+horizontal_alignment = 1
+
+[node name="@Label@30649" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "VfL Wolfsburg"
+
+[node name="@Label@30650" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30651" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "15"
+horizontal_alignment = 1
+
+[node name="@Label@30652" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "5"
+horizontal_alignment = 1
+
+[node name="@Label@30653" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30654" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "60:34"
+horizontal_alignment = 1
+
+[node name="@Label@30655" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "26"
+horizontal_alignment = 1
+
+[node name="@Label@30656" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.596078, 0.984314, 0.596078, 1)
+theme_override_font_sizes/font_size = 20
+text = "61"
+horizontal_alignment = 1
+
+[node name="@Label@30657" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.564706, 0.933333, 0.564706, 1)
+theme_override_font_sizes/font_size = 20
+text = "5"
+horizontal_alignment = 1
+
+[node name="@Label@30658" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.564706, 0.933333, 0.564706, 1)
+theme_override_font_sizes/font_size = 20
+text = "(4)"
+horizontal_alignment = 1
+
+[node name="@Label@30659" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(0.564706, 0.933333, 0.564706, 1)
+theme_override_font_sizes/font_size = 20
+text = "SV Werder Bremen"
+
+[node name="@Label@30660" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.564706, 0.933333, 0.564706, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30661" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.564706, 0.933333, 0.564706, 1)
+theme_override_font_sizes/font_size = 20
+text = "15"
+horizontal_alignment = 1
+
+[node name="@Label@30662" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.564706, 0.933333, 0.564706, 1)
+theme_override_font_sizes/font_size = 20
+text = "5"
+horizontal_alignment = 1
+
+[node name="@Label@30663" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.564706, 0.933333, 0.564706, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30664" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.564706, 0.933333, 0.564706, 1)
+theme_override_font_sizes/font_size = 20
+text = "39:36"
+horizontal_alignment = 1
+
+[node name="@Label@30665" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.564706, 0.933333, 0.564706, 1)
+theme_override_font_sizes/font_size = 20
+text = "3"
+horizontal_alignment = 1
+
+[node name="@Label@30666" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.564706, 0.933333, 0.564706, 1)
+theme_override_font_sizes/font_size = 20
+text = "61"
+horizontal_alignment = 1
+
+[node name="@Label@30667" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_font_sizes/font_size = 20
+text = "6"
+horizontal_alignment = 1
+
+[node name="@Label@30668" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_font_sizes/font_size = 20
+text = "(5)"
+horizontal_alignment = 1
+
+[node name="@Label@30669" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_font_sizes/font_size = 20
+text = "Bayer 04 Leverkusen"
+
+[node name="@Label@30670" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30671" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_font_sizes/font_size = 20
+text = "13"
+horizontal_alignment = 1
+
+[node name="@Label@30672" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_font_sizes/font_size = 20
+text = "9"
+horizontal_alignment = 1
+
+[node name="@Label@30673" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30674" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_font_sizes/font_size = 20
+text = "57:45"
+horizontal_alignment = 1
+
+[node name="@Label@30675" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_font_sizes/font_size = 20
+text = "12"
+horizontal_alignment = 1
+
+[node name="@Label@30676" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_font_sizes/font_size = 20
+text = "58"
+horizontal_alignment = 1
+
+[node name="@Label@30677" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "7"
+horizontal_alignment = 1
+
+[node name="@Label@30678" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "(6)"
+horizontal_alignment = 1
+
+[node name="@Label@30679" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Hamburger SV"
+
+[node name="@Label@30680" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30681" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "20"
+horizontal_alignment = 1
+
+[node name="@Label@30682" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "5"
+horizontal_alignment = 1
+
+[node name="@Label@30683" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30684" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "30:20"
+horizontal_alignment = 1
+
+[node name="@Label@30685" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "10"
+horizontal_alignment = 1
+
+[node name="@Label@30686" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "58"
+horizontal_alignment = 1
+
+[node name="@Label@30687" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "8"
+horizontal_alignment = 1
+
+[node name="@Label@30688" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "(7)"
+horizontal_alignment = 1
+
+[node name="@Label@30689" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "1899 Hoffenheim"
+
+[node name="@Label@30690" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30691" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "14"
+horizontal_alignment = 1
+
+[node name="@Label@30692" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "9"
+horizontal_alignment = 1
+
+[node name="@Label@30693" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30694" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "32:44"
+horizontal_alignment = 1
+
+[node name="@Label@30695" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "-12"
+horizontal_alignment = 1
+
+[node name="@Label@30696" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "56"
+horizontal_alignment = 1
+
+[node name="@Label@30697" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "9"
+horizontal_alignment = 1
+
+[node name="@Label@30698" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "(8)"
+horizontal_alignment = 1
+
+[node name="@Label@30699" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Borussia M'gladbach"
+
+[node name="@Label@30700" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30701" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "10"
+horizontal_alignment = 1
+
+[node name="@Label@30702" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "7"
+horizontal_alignment = 1
+
+[node name="@Label@30703" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30704" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38:34"
+horizontal_alignment = 1
+
+[node name="@Label@30705" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "4"
+horizontal_alignment = 1
+
+[node name="@Label@30706" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "54"
+horizontal_alignment = 1
+
+[node name="@Label@30707" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "10"
+horizontal_alignment = 1
+
+[node name="@Label@30708" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "(9)"
+horizontal_alignment = 1
+
+[node name="@Label@30709" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "SC Freiburg"
+
+[node name="@Label@30710" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30711" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "18"
+horizontal_alignment = 1
+
+[node name="@Label@30712" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "7"
+horizontal_alignment = 1
+
+[node name="@Label@30713" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30714" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "37:34"
+horizontal_alignment = 1
+
+[node name="@Label@30715" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "3"
+horizontal_alignment = 1
+
+[node name="@Label@30716" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "54"
+horizontal_alignment = 1
+
+[node name="@Label@30717" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "11"
+horizontal_alignment = 1
+
+[node name="@Label@30718" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "(10)"
+horizontal_alignment = 1
+
+[node name="@Label@30719" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Borussia Dortmund"
+
+[node name="@Label@30720" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30721" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "15"
+horizontal_alignment = 1
+
+[node name="@Label@30722" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "7"
+horizontal_alignment = 1
+
+[node name="@Label@30723" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30724" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "44:28"
+horizontal_alignment = 1
+
+[node name="@Label@30725" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "16"
+horizontal_alignment = 1
+
+[node name="@Label@30726" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "50"
+horizontal_alignment = 1
+
+[node name="@Label@30727" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "12"
+horizontal_alignment = 1
+
+[node name="@Label@30728" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "(11)"
+horizontal_alignment = 1
+
+[node name="@Label@30729" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "1. FC Köln"
+
+[node name="@Label@30730" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30731" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "15"
+horizontal_alignment = 1
+
+[node name="@Label@30732" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "6"
+horizontal_alignment = 1
+
+[node name="@Label@30733" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30734" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "58:22"
+horizontal_alignment = 1
+
+[node name="@Label@30735" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "36"
+horizontal_alignment = 1
+
+[node name="@Label@30736" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "46"
+horizontal_alignment = 1
+
+[node name="@Label@30737" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "13"
+horizontal_alignment = 1
+
+[node name="@Label@30738" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "(12)"
+horizontal_alignment = 1
+
+[node name="@Label@30739" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "VfB Stuttgart"
+
+[node name="@Label@30740" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30741" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "20"
+horizontal_alignment = 1
+
+[node name="@Label@30742" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "5"
+horizontal_alignment = 1
+
+[node name="@Label@30743" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30744" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "54:50"
+horizontal_alignment = 1
+
+[node name="@Label@30745" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "4"
+horizontal_alignment = 1
+
+[node name="@Label@30746" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "45"
+horizontal_alignment = 1
+
+[node name="@Label@30747" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "14"
+horizontal_alignment = 1
+
+[node name="@Label@30748" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "(13)"
+horizontal_alignment = 1
+
+[node name="@Label@30749" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "FSV Mainz 05"
+
+[node name="@Label@30750" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30751" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "15"
+horizontal_alignment = 1
+
+[node name="@Label@30752" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "5"
+horizontal_alignment = 1
+
+[node name="@Label@30753" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30754" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "41:51"
+horizontal_alignment = 1
+
+[node name="@Label@30755" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "-10"
+horizontal_alignment = 1
+
+[node name="@Label@30756" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "45"
+horizontal_alignment = 1
+
+[node name="@Label@30757" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "15"
+horizontal_alignment = 1
+
+[node name="@Label@30758" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "(14)"
+horizontal_alignment = 1
+
+[node name="@Label@30759" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "FC Bayern München"
+
+[node name="@Label@30760" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30761" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "20"
+horizontal_alignment = 1
+
+[node name="@Label@30762" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "8"
+horizontal_alignment = 1
+
+[node name="@Label@30763" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30764" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "57:49"
+horizontal_alignment = 1
+
+[node name="@Label@30765" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "8"
+horizontal_alignment = 1
+
+[node name="@Label@30766" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "37"
+horizontal_alignment = 1
+
+[node name="@Label@30767" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "16"
+horizontal_alignment = 1
+
+[node name="@Label@30768" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "(15)"
+horizontal_alignment = 1
+
+[node name="@Label@30769" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "FC Schalke 04"
+
+[node name="@Label@30770" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30771" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "14"
+horizontal_alignment = 1
+
+[node name="@Label@30772" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "10"
+horizontal_alignment = 1
+
+[node name="@Label@30773" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30774" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "70:21"
+horizontal_alignment = 1
+
+[node name="@Label@30775" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "49"
+horizontal_alignment = 1
+
+[node name="@Label@30776" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "33"
+horizontal_alignment = 1
+
+[node name="@Label@30777" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "17"
+horizontal_alignment = 1
+
+[node name="@Label@30778" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "(16)"
+horizontal_alignment = 1
+
+[node name="@Label@30779" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "VfL Bochum"
+
+[node name="@Label@30780" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30781" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "14"
+horizontal_alignment = 1
+
+[node name="@Label@30782" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "9"
+horizontal_alignment = 1
+
+[node name="@Label@30783" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30784" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "30:47"
+horizontal_alignment = 1
+
+[node name="@Label@30785" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "-17"
+horizontal_alignment = 1
+
+[node name="@Label@30786" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "32"
+horizontal_alignment = 1
+
+[node name="@Label@30787" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "18"
+horizontal_alignment = 1
+
+[node name="@Label@30788" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "(17)"
+horizontal_alignment = 1
+
+[node name="@Label@30789" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "1. FC Nürnberg"
+
+[node name="@Label@30790" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "38"
+horizontal_alignment = 1
+
+[node name="@Label@30791" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "19"
+horizontal_alignment = 1
+
+[node name="@Label@30792" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "7"
+horizontal_alignment = 1
+
+[node name="@Label@30793" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+
+[node name="@Label@30794" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "35:59"
+horizontal_alignment = 1
+
+[node name="@Label@30795" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "-24"
+horizontal_alignment = 1
+
+[node name="@Label@30796" type="Label" parent="TabellePanel/TabelleMarginContainer/TabelleVBoxContainer/TabelleGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.858824, 0.439216, 0.576471, 1)
+theme_override_font_sizes/font_size = 20
+text = "32"
+horizontal_alignment = 1
+
+[node name="WeiterButton" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 0
+offset_left = 810.0
+offset_top = 1000.0
+offset_right = 810.0
+offset_bottom = 1000.0
+text = "Weiter"
+
+[connection signal="pressed" from="WeiterButton" to="." method="_on_continue_button_pressed"]

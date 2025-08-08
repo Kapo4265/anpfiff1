@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(find:*)",
+      "Bash(dir:*)",
+      "Bash(mkdir:*)",
+      "Bash(rm:*)",
+      "Bash(ls:*)",
+      "Bash(godot:*)",
+      "Bash(del \"C:\\Users\\Shadow\\Documents\\Anpfiff1\\test_spielzug.gd\")",
+      "Bash(python:*)",
+      "Bash(grep:*)",
+      "Bash(cp:*)",
+      "Bash(\"C:\\Program Files\\Godot_4.4.1-stable\\Godot_v4.4.1-stable_win64.exe\" --headless --script generatoren/generate_teams.gd)",
+      "Bash(\"C:\\Program Files\\Godot_4.4.1-stable\\Godot_v4.4.1-stable_win64.exe\" --headless --script scripts/test_kern1.gd)",
+      "Bash(powershell:*)",
+      "Bash(del \"C:\\Users\\Shadow\\Documents\\Anpfiff1\\Anstoss_1_Remake_Gesamtplan_V2.txt\")",
+      "Bash(del \"C:\\Users\\Shadow\\Documents\\Anpfiff1\\scripts\\test_pokal_taktik.gd\")",
+      "Bash(del \"scripts\\core\\EuropeanCupManager.gd\")",
+      "Bash(del \"C:\\Users\\Shadow\\Documents\\Anpfiff1\\scenes\\test_match_screen.tscn\")",
+      "Bash(del \"C:\\Users\\Shadow\\Documents\\Anpfiff1\\scripts\\core\\EuropeanCupManager.gd\")",
+      "Bash(rg:*)",
+      "Bash(del \"C:\\Users\\Shadow\\Documents\\Anpfiff1\\scripts\\test_pokal_fix.gd\")",
+      "Bash(del \"C:\\Users\\Shadow\\Documents\\Anpfiff1\\test_elimination_fix.gd\")",
+      "Bash(\"C:\\Program Files\\Godot_4.4.1-stable\\Godot_v4.4.1-stable_win64.exe\" --headless --script scripts/tools/add_formations.gd)",
+      "Bash(\"C:\\Program Files\\Godot_4.4.1-stable\\Godot_v4.4.1-stable_win64.exe\" --headless --script scripts/test_schedule_debug.gd)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}

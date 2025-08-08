@@ -1,0 +1,43 @@
+{
+  "yellow": [
+	"Foulspiel im Mittelfeld",
+	"Meckern beim Schiedsrichter",
+	"Handspiel",
+	"Unsportliches Verhalten",
+	"Zeitvergeudung",
+	"Behinderung der Ausführung eines Freistoßes",
+	"Verzögerung der Spielaufnahme",
+	"Betreten des Spielfelds ohne Erlaubnis",
+	"Übertriebene Reklamation",
+	"Verstoß gegen die Abstandregel",
+	"Simulation",
+	"Übermäßige Aggressivität",
+	"Beleidigung des Gegners",
+	"Verstoß gegen die 3-Sekunden-Regel",
+	"Unsportliche Taktik"
+  ],
+  "red": [
+	"Notbremse",
+	"Grobes Foulspiel",
+	"Tätlichkeit",
+	"Beleidigung des Schiedsrichters",
+	"Spucken",
+	"Zweite gelbe Karte",
+	"Verstoß gegen die Fairplay-Regeln",
+	"Gewalttätiges Verhalten",
+	"Rassistische Äußerungen",
+	"Verstoß gegen die Integrität des Spiels",
+	"Beleidigung von Zuschauern",
+	"Verstoß gegen die Anti-Doping-Regeln"
+  ],
+  "yellow_red": [
+	"Wiederholtes Foulspiel",
+	"Behinderung der Ausführung eines Freistoßes",
+	"Zeitvergeudung nach Verwarnung",
+	"Unsportliches Verhalten nach Verwarnung",
+	"Meckern beim Schiedsrichter nach Verwarnung",
+	"Verstoß gegen die Abstandregel nach Verwarnung",
+	"Simulation nach Verwarnung",
+	"Übertriebene Reklamation nach Verwarnung"
+  ]
+} 

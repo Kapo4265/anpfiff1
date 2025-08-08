@@ -1,0 +1,575 @@
+[gd_scene load_steps=13 format=3 uid="uid://sb43po2hj6lv"]
+
+[ext_resource type="Script" path="res://scenes/match_screen.gd" id="1_dt3qs"]
+[ext_resource type="FontFile" uid="uid://c3tlb7sw4njgv" path="res://assets/fonts/pressstart2p-regular-webfont.ttf" id="1_gnu74"]
+
+[sub_resource type="Theme" id="Theme_gnu74"]
+default_font = ExtResource("1_gnu74")
+default_font_size = 24
+Label/colors/font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipeb3"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.878431, 0.878431, 0.878431, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdnwm"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xaime"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enond"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jb5ra"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k4kw"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.878431, 0.878431, 0.878431, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1l8f"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.878431, 0.878431, 0.878431, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q08m8"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0dt5"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="match_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_gnu74")
+script = ExtResource("1_dt3qs")
+
+[node name="BackgroundPanel" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScoreboardPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1048.0
+offset_right = 1920.0
+offset_bottom = 432.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ipeb3")
+
+[node name="MinuteLabel" type="Label" parent="ScoreboardPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 60.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "0."
+horizontal_alignment = 1
+
+[node name="HomeTeamLabel" type="Label" parent="ScoreboardPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 128.0
+offset_bottom = 156.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "VFL Bochum 1848"
+horizontal_alignment = 1
+
+[node name="AwayTeamLabel" type="Label" parent="ScoreboardPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 232.0
+offset_bottom = 260.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "SV Werder Bremen"
+horizontal_alignment = 1
+
+[node name="PlaystyleTitleLabel" type="Label" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 296.0
+offset_right = 244.0
+offset_bottom = 318.0
+theme_override_font_sizes/font_size = 22
+text = "Spielweise"
+
+[node name="PlaystyleMinus" type="Button" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 288.0
+offset_right = 330.0
+offset_bottom = 328.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fdnwm")
+text = "-"
+
+[node name="PlaystyleState" type="Label" parent="ScoreboardPanel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 344.0
+offset_top = 296.0
+offset_right = 712.0
+offset_bottom = 318.0
+theme_override_font_sizes/font_size = 22
+text = "Normal"
+horizontal_alignment = 1
+
+[node name="PlaystylePlus" type="Button" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 288.0
+offset_right = 778.0
+offset_bottom = 328.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xaime")
+text = "+"
+
+[node name="EffortTitleLabel" type="Label" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 352.0
+offset_right = 178.0
+offset_bottom = 374.0
+theme_override_font_sizes/font_size = 22
+text = "Einsatz"
+
+[node name="EffortMinus" type="Button" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 344.0
+offset_right = 330.0
+offset_bottom = 384.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_enond")
+text = "-"
+
+[node name="EffortPlus" type="Button" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 344.0
+offset_right = 778.0
+offset_bottom = 384.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jb5ra")
+text = "+"
+
+[node name="EffortState" type="Label" parent="ScoreboardPanel"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 344.0
+offset_top = 352.0
+offset_right = 712.0
+offset_bottom = 374.0
+theme_override_font_sizes/font_size = 22
+text = "Normal"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 168.0
+offset_right = 560.0
+offset_bottom = 216.0
+scale = Vector2(0.944301, 1.10515)
+theme_override_font_sizes/font_size = 48
+text = "0 : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StadionInfoLabel" type="Label" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 800.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 20
+text = "Stadion
+Sonnenschein"
+horizontal_alignment = 1
+
+[node name="HomeMoraleLabel" type="Label" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 24.0
+
+[node name="AwayMoraleLabel" type="Label" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 24.0
+
+[node name="AttendanceLabel" type="Label" parent="ScoreboardPanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 20
+text = "Zuschauer: 0"
+horizontal_alignment = 1
+
+[node name="CommentaryPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1048.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8k4kw")
+
+[node name="CommentaryMargin" type="MarginContainer" parent="CommentaryPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -8.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CommentaryBox" type="RichTextLabel" parent="CommentaryPanel/CommentaryMargin"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Die Fans nehmen Ihre Plätze ein und warten gespannt auf den ANPFIFF!"
+scroll_following = true
+tab_size = 8
+
+[node name="ConferencePanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1048.0
+offset_top = 592.0
+offset_right = 2389.0
+offset_bottom = 1337.0
+scale = Vector2(0.650173, 0.652229)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1l8f")
+
+[node name="ConferenceLayout" type="VBoxContainer" parent="ConferencePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+offset_right = 93.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.935346, 0.882182)
+theme_override_constants/separation = 15
+
+[node name="MatchRow" type="HBoxContainer" parent="ConferencePanel/ConferenceLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HomeTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/MatchRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team A 1"
+horizontal_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="ConferencePanel/ConferenceLayout/MatchRow"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "0:2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AwayTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/MatchRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team B 1"
+
+[node name="@HBoxContainer@44804" type="HBoxContainer" parent="ConferencePanel/ConferenceLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HomeTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44804"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "FC Sporting Wolfsburg"
+horizontal_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44804"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "2:1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AwayTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44804"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team B 2"
+
+[node name="@HBoxContainer@44805" type="HBoxContainer" parent="ConferencePanel/ConferenceLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HomeTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44805"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team A 3"
+horizontal_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44805"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "4:3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AwayTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44805"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team B 3"
+
+[node name="@HBoxContainer@44806" type="HBoxContainer" parent="ConferencePanel/ConferenceLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HomeTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44806"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Babelsberger Film-Kicker"
+horizontal_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44806"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "0:3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AwayTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44806"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team B 4"
+
+[node name="@HBoxContainer@44807" type="HBoxContainer" parent="ConferencePanel/ConferenceLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HomeTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44807"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team A 5"
+horizontal_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44807"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "4:3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AwayTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44807"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team B 5"
+
+[node name="@HBoxContainer@44808" type="HBoxContainer" parent="ConferencePanel/ConferenceLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HomeTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44808"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team A 6"
+horizontal_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44808"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "3:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AwayTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44808"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team B 6"
+
+[node name="@HBoxContainer@44809" type="HBoxContainer" parent="ConferencePanel/ConferenceLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HomeTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44809"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team A 7"
+horizontal_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44809"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "4:3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AwayTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44809"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team B 7"
+
+[node name="@HBoxContainer@44810" type="HBoxContainer" parent="ConferencePanel/ConferenceLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HomeTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44810"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team A 8"
+horizontal_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44810"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "2:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AwayTeamLabel" type="Label" parent="ConferencePanel/ConferenceLayout/@HBoxContainer@44810"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 25
+text = "Team B 8"
+
+[node name="LineupButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1472.0
+offset_top = 432.0
+offset_right = 1920.0
+offset_bottom = 592.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_q08m8")
+text = "Aufstellung 
+bearbeiten"
+
+[node name="PauseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1048.0
+offset_top = 520.0
+offset_right = 1464.0
+offset_bottom = 592.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0dt5")
+text = "Pause"
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1048.0
+offset_top = 432.0
+offset_right = 1464.0
+offset_bottom = 520.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0dt5")
+text = "Spieltag beenden"

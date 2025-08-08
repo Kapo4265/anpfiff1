@@ -1,0 +1,57 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Windows-Style Ordner für Transfer & Gehälter -->
+  <defs>
+    <linearGradient id="folderGradientTransfer" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4169E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tabGradientTransfer" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4169E1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Ordner-Körper -->
+  <rect x="8" y="20" width="48" height="36" rx="2" ry="2" 
+        fill="url(#folderGradientTransfer)" 
+        stroke="#000080" stroke-width="1"/>
+  
+  <!-- Ordner-Tab -->
+  <rect x="8" y="14" width="20" height="8" rx="2" ry="2" 
+        fill="url(#tabGradientTransfer)" 
+        stroke="#000080" stroke-width="1"/>
+  
+  <!-- Fußball -->
+  <circle cx="32" cy="38" r="8" fill="white" stroke="#000" stroke-width="1"/>
+  
+  <!-- Fußball-Muster -->
+  <path d="M 32 30 L 29 34 L 32 38 L 35 34 Z" fill="black"/>
+  <path d="M 26 35 L 29 34 L 32 38 L 29 42 Z" fill="black"/>
+  <path d="M 38 35 L 35 34 L 32 38 L 35 42 Z" fill="black"/>
+  <path d="M 32 46 L 29 42 L 32 38 L 35 42 Z" fill="black"/>
+  
+  <!-- Transfer-Pfeile -->
+  <path d="M 16 32 L 22 32" stroke="#FFD700" stroke-width="2" 
+        marker-end="url(#arrowhead)" fill="none"/>
+  <path d="M 48 44 L 42 44" stroke="#FFD700" stroke-width="2" 
+        marker-end="url(#arrowhead)" fill="none"/>
+  
+  <!-- Pfeilspitzen -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#FFD700"/>
+    </marker>
+  </defs>
+  
+  <!-- Spieler-Silhouetten (Transfer) -->
+  <circle cx="18" cy="30" r="2" fill="#FFD700"/>
+  <rect x="16" y="32" width="4" height="6" rx="1" fill="#FFD700"/>
+  
+  <circle cx="46" cy="46" r="2" fill="#FFD700"/>
+  <rect x="44" y="48" width="4" height="6" rx="1" fill="#FFD700"/>
+  
+  <!-- Highlight-Effekt -->
+  <rect x="8" y="20" width="48" height="4" rx="2" ry="2" 
+        fill="rgba(255,255,255,0.3)"/>
+</svg>

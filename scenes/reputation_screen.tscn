@@ -1,0 +1,559 @@
+[gd_scene load_steps=15 format=3 uid="uid://cj8yavmh4k2lp"]
+
+[ext_resource type="FontFile" uid="uid://c3tlb7sw4njgv" path="res://assets/fonts/pressstart2p-regular-webfont.ttf" id="1_reputation"]
+[ext_resource type="Script" uid="uid://bnmv0o4teytc1" path="res://scripts/ui/reputation_screen.gd" id="2_75ej3"]
+[ext_resource type="Texture2D" uid="uid://svph2luja0mu" path="res://assets/images/ein pokalaustellungsraum von ein.jpg" id="3_4kdgk"]
+
+[sub_resource type="Theme" id="Theme_reputation"]
+default_font = ExtResource("1_reputation")
+default_font_size = 20
+Label/colors/font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header_panel"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trophy_panel"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.843137, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_status_panel"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_main_panel"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_coin_high"]
+bg_color = Color(0, 0.784314, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_coin_medium"]
+bg_color = Color(1, 0.647059, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_coin_low"]
+bg_color = Color(0.784314, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.329412, 0.345098, 0.360784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_pressed"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.843137, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_normal"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="reputation_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_reputation")
+script = ExtResource("2_75ej3")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("3_4kdgk")
+centered = false
+
+[node name="HeaderPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 20.0
+offset_right = 1880.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_header_panel")
+
+[node name="HeaderLabel" type="Label" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "🏆 BELIEBTHEIT & ANSEHEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CentralTrophyPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 296.0
+offset_right = 1180.0
+offset_bottom = 880.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_trophy_panel")
+
+[node name="TrophyBackground" type="ColorRect" parent="CentralTrophyPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.05, 0.05, 1)
+
+[node name="TrophyLabel" type="Label" parent="CentralTrophyPanel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 176.0
+scale = Vector2(1.05508, 1.76686)
+theme_override_font_sizes/font_size = 120
+text = "🏆"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TrainerStatusLabel" type="Label" parent="CentralTrophyPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 264.0
+offset_right = 488.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 28
+text = "TRAINER-STATUS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TrainerRankLabel" type="Label" parent="CentralTrophyPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 328.0
+offset_right = 488.0
+offset_bottom = 388.0
+theme_override_font_sizes/font_size = 32
+text = "TRAINEE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YearsExperienceLabel" type="Label" parent="CentralTrophyPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 392.0
+offset_right = 488.0
+offset_bottom = 452.0
+theme_override_font_sizes/font_size = 20
+text = "Erfahrung: 1 Jahre"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalSeminarLabel" type="Label" parent="CentralTrophyPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 472.0
+offset_right = 480.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 20
+text = "Seminare: 0/5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalPointsLabel" type="Label" parent="CentralTrophyPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 512.0
+offset_right = 480.0
+offset_bottom = 572.0
+theme_override_font_sizes/font_size = 24
+text = "Gesamtpunkte: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatusPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1224.0
+offset_top = 296.0
+offset_right = 1862.0
+offset_bottom = 872.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_status_panel")
+
+[node name="StatusTitle" type="Label" parent="StatusPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 580.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 24
+text = "TRAINER-STATUS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentSeasonLabel" type="Label" parent="StatusPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 580.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 18
+text = "Aktuelle Saison: 2025/26"
+horizontal_alignment = 1
+
+[node name="LeaguePositionLabel" type="Label" parent="StatusPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 130.0
+offset_right = 580.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 18
+text = "Liga-Position: - (0 Spiele)"
+horizontal_alignment = 1
+
+[node name="LastSeasonLabel" type="Label" parent="StatusPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 180.0
+offset_right = 580.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 18
+text = "Letzte Saison: 1. Platz"
+horizontal_alignment = 1
+
+[node name="TrophiesLabel" type="Label" parent="StatusPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 230.0
+offset_right = 580.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 18
+text = "Titel: 1 🏆"
+horizontal_alignment = 1
+
+[node name="CupRunsLabel" type="Label" parent="StatusPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 280.0
+offset_right = 580.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 18
+text = "Pokal: 1. Runde"
+horizontal_alignment = 1
+
+[node name="BestPlayerLabel" type="Label" parent="StatusPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 330.0
+offset_right = 580.0
+offset_bottom = 370.0
+theme_override_font_sizes/font_size = 18
+text = "Top-Spieler: Noch nicht ermittelt"
+horizontal_alignment = 1
+
+[node name="TeamMoraleLabel" type="Label" parent="StatusPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 380.0
+offset_right = 580.0
+offset_bottom = 420.0
+theme_override_font_sizes/font_size = 18
+text = "Team-Moral: Durchschnitt"
+horizontal_alignment = 1
+
+[node name="LeftDetailsPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 296.0
+offset_right = 614.0
+offset_bottom = 880.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_main_panel")
+
+[node name="DetailsTitle" type="Label" parent="LeftDetailsPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 580.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 24
+text = "BELIEBTHEIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoardCoin" type="Panel" parent="LeftDetailsPanel"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 80.0
+offset_right = 470.0
+offset_bottom = 192.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_coin_high")
+
+[node name="BoardLabel" type="Label" parent="LeftDetailsPanel/BoardCoin"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 232.0
+offset_bottom = 27.0
+scale = Vector2(1.269, 2.98745)
+theme_override_font_sizes/font_size = 16
+text = "Vorstand"
+horizontal_alignment = 1
+
+[node name="BoardCoinValue" type="Label" parent="LeftDetailsPanel/BoardCoin"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 64.0
+offset_right = 236.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 34
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FansCoin" type="Panel" parent="LeftDetailsPanel"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 256.0
+offset_right = 478.0
+offset_bottom = 384.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_coin_medium")
+
+[node name="FansLabel" type="Label" parent="LeftDetailsPanel/FansCoin"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 16.0
+offset_right = 224.0
+offset_bottom = 37.0
+scale = Vector2(1.269, 2.98745)
+theme_override_font_sizes/font_size = 16
+text = "Fans"
+horizontal_alignment = 1
+
+[node name="FansCoinValue" type="Label" parent="LeftDetailsPanel/FansCoin"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 88.0
+offset_right = 236.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 34
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PublicCoin" type="Panel" parent="LeftDetailsPanel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 432.0
+offset_right = 478.0
+offset_bottom = 552.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_coin_low")
+
+[node name="PublicLabel" type="Label" parent="LeftDetailsPanel/PublicCoin"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 16.0
+offset_right = 252.0
+offset_bottom = 32.0
+scale = Vector2(1.269, 2.98745)
+theme_override_font_sizes/font_size = 14
+text = "Öffentlichkeit"
+horizontal_alignment = 1
+
+[node name="PublicCoinValue" type="Label" parent="LeftDetailsPanel/PublicCoin"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 72.0
+offset_right = 236.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 34
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatusMessage" type="Label" parent="LeftDetailsPanel"]
+layout_mode = 0
+offset_left = 1224.0
+offset_top = 472.0
+offset_right = 1734.0
+offset_bottom = 502.0
+scale = Vector2(1.0146, 2.12882)
+theme_override_font_sizes/font_size = 16
+text = "Sie sind derzeit sicher im Amt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 952.0
+offset_right = 1280.0
+offset_bottom = 1032.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+text = "ZURÜCK"
+
+[node name="DifficultyPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 144.0
+offset_right = 890.0
+offset_bottom = 232.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_main_panel")
+
+[node name="DifficultyTitle" type="Label" parent="DifficultyPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 410.0
+offset_bottom = 59.0
+scale = Vector2(1.0372, 1.5266)
+theme_override_font_sizes/font_size = 20
+text = "SCHWIERIGKEITSGRAD:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DifficultyValue" type="Label" parent="DifficultyPanel"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 20.0
+offset_right = 830.0
+offset_bottom = 59.0
+scale = Vector2(1.0372, 1.5266)
+theme_override_font_sizes/font_size = 20
+text = "3 (PROFI)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="NationalCoachPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 128.0
+offset_right = 1889.0
+offset_bottom = 205.0
+scale = Vector2(0.991059, 1.45573)
+theme_override_styles/panel = SubResource("StyleBoxFlat_main_panel")
+
+[node name="NationalCoachTitle" type="Label" parent="NationalCoachPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 5.0
+offset_right = 920.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 20
+text = "NATIONALTRAINER-ZIEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YearsProgress" type="Label" parent="NationalCoachPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 300.0
+offset_bottom = 57.0
+scale = Vector2(1.0092, 1.83106)
+theme_override_font_sizes/font_size = 16
+text = "Jahre: 1/10"
+
+[node name="SeminarsProgress" type="Label" parent="NationalCoachPanel"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 38.0
+offset_right = 554.0
+offset_bottom = 56.0
+scale = Vector2(1.0092, 1.83106)
+theme_override_font_sizes/font_size = 16
+text = "Seminare: 0/5"
+horizontal_alignment = 1
+
+[node name="PublicProgress" type="Label" parent="NationalCoachPanel"]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 38.0
+offset_right = 941.0
+offset_bottom = 54.0
+scale = Vector2(1.0092, 1.83106)
+theme_override_font_sizes/font_size = 16
+text = "Öffentlichkeit: 50/80"
+horizontal_alignment = 2

@@ -1,0 +1,116 @@
+[gd_scene load_steps=14 format=3 uid="uid://bib0dmj3727s1"]
+
+[ext_resource type="Script" uid="uid://4fda1h311q0j" path="res://interview_screen.gd" id="1_2uy1e"]
+[ext_resource type="FontFile" uid="uid://c3tlb7sw4njgv" path="res://assets/fonts/pressstart2p-regular-webfont.ttf" id="1_ki4lc"]
+[ext_resource type="Texture2D" uid="uid://dlqotvk7kcwt7" path="res://assets/images/interview_background.png" id="2_ki4lc"]
+
+[sub_resource type="Theme" id="Theme_ojqig"]
+default_font = ExtResource("1_ki4lc")
+default_font_size = 24
+Button/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdpsn"]
+bg_color = Color(0, 0, 0, 0.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjess"]
+bg_color = Color(0, 0, 0, 0.2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vxsq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24fk1"]
+bg_color = Color(0, 0, 0, 0.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifvby"]
+bg_color = Color(0, 0, 0, 0.2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tje2k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcrjg"]
+bg_color = Color(0, 0, 0, 0.1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fd7gn"]
+bg_color = Color(0, 0, 0, 0.2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7it4"]
+
+[node name="interview" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 608.0
+offset_top = 136.0
+offset_right = 608.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ojqig")
+script = ExtResource("1_2uy1e")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("2_ki4lc")
+centered = false
+offset = Vector2(-600, -150)
+
+[node name="MainCenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -544.0
+offset_top = -144.0
+offset_right = -1208.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContentVBox" type="VBoxContainer" parent="MainCenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="MainCenterContainer/ContentVBox"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Ein Reporter fragt Sie...
+
+'Ihre Mannschaft wirkte müde.'[/center]"
+fit_content = true
+
+[node name="OptionsVBox" type="VBoxContainer" parent="MainCenterContainer/ContentVBox"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="OptionButton1" type="Button" parent="MainCenterContainer/ContentVBox/OptionsVBox"]
+custom_minimum_size = Vector2(800, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_jdpsn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pjess")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7vxsq")
+text = "Antwortmöglichkeit 1"
+
+[node name="OptionButton2" type="Button" parent="MainCenterContainer/ContentVBox/OptionsVBox"]
+custom_minimum_size = Vector2(800, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_24fk1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ifvby")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tje2k")
+text = "Antwortmöglichkeit 2"
+
+[node name="OptionButton3" type="Button" parent="MainCenterContainer/ContentVBox/OptionsVBox"]
+custom_minimum_size = Vector2(800, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_gcrjg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fd7gn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o7it4")
+text = "Antwortmöglichkeit 3"

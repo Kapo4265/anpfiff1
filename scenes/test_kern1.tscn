@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://btest_kern1"]
+
+[ext_resource type="Script" path="res://scripts/test_kern1.gd" id="1_test"]
+
+[node name="TestKern1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_test")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = "KERN 3 - KOMPLETTES LIGA-SYSTEM (1+2+3)"
+horizontal_alignment = 1
+
+[node name="TeamInfoLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = "Teams werden geladen..."
+horizontal_alignment = 1
+
+[node name="InstantButton" type="Button" parent="VBox"]
+layout_mode = 2
+text = "Simuliere Liga-Spieltag"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_policy = 0
+
+[node name="ResultLabel" type="Label" parent="VBox/ScrollContainer"]
+layout_mode = 2
+text = "Kein Match simuliert"
+horizontal_alignment = 0
+vertical_alignment = 0
+autowrap_mode = 3
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FormLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = ""
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBox/InstantButton" to="." method="_on_instant_match_pressed"]

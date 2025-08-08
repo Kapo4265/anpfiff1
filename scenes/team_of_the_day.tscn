@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ivkb5e37myr"]
+
+[ext_resource type="Script" uid="uid://cyvee811shrr1" path="res://scripts/ui/team_of_the_day.gd" id="1_team_of_day"]
+[ext_resource type="Texture2D" uid="uid://ceube7700yxvs" path="res://assets/images/statistik_11_background.png" id="2_udod5"]
+
+[node name="TeamOfTheDayScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_team_of_day")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="ButtonContainer/WeiterButton" to="." method="_on_weiter_button_pressed"]

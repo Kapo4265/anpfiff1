@@ -1,0 +1,582 @@
+[gd_scene load_steps=11 format=3 uid="uid://bruxb0t3dhisr"]
+
+[ext_resource type="Script" uid="uid://b54u8bul8nwxo" path="res://scripts/ui/lineup_pc_screen.gd" id="1_1g7r5"]
+[ext_resource type="Texture2D" uid="uid://c5o826ip0mxlx" path="res://assets/images/pc_background.png" id="2_mrasl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugqxh"]
+bg_color = Color(0.203922, 0.227451, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.286275, 0.313726, 0.341176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r0o4"]
+bg_color = Color(0.286275, 0.313726, 0.341176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ny20"]
+bg_color = Color(0.203922, 0.227451, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.286275, 0.313726, 0.341176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwrw3"]
+bg_color = Color(0.203922, 0.227451, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.286275, 0.313726, 0.341176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrbak"]
+bg_color = Color(0.203922, 0.227451, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.286275, 0.313726, 0.341176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fo3hr"]
+bg_color = Color(0.203922, 0.227451, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.286275, 0.313726, 0.341176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxq7j"]
+bg_color = Color(0.203922, 0.227451, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.286275, 0.313726, 0.341176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrxid"]
+bg_color = Color(0.203922, 0.227451, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.286275, 0.313726, 0.341176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="LineupPcScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1g7r5")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("2_mrasl")
+centered = false
+
+[node name="LeftPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 1115.0
+offset_bottom = 1000.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ugqxh")
+
+[node name="TitleLabel" type="Label" parent="LeftPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 1075.0
+offset_bottom = 50.0
+text = "Lade Spieldaten..."
+
+[node name="ListHeader" type="Panel" parent="LeftPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 1085.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3r0o4")
+
+[node name="@Label@32747" type="Label" parent="LeftPanel/ListHeader"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 10.0
+offset_right = 80.0
+offset_bottom = 10.0
+text = "Name"
+
+[node name="@Label@32748" type="Label" parent="LeftPanel/ListHeader"]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 10.0
+offset_right = 692.0
+offset_bottom = 26.0
+text = "Alter"
+
+[node name="@Label@32749" type="Label" parent="LeftPanel/ListHeader"]
+layout_mode = 0
+offset_left = 773.0
+offset_top = 10.0
+offset_right = 805.0
+offset_bottom = 26.0
+text = "St"
+
+[node name="@Label@32750" type="Label" parent="LeftPanel/ListHeader"]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 10.0
+offset_right = 865.0
+offset_bottom = 10.0
+text = "Fo"
+
+[node name="@Label@32751" type="Label" parent="LeftPanel/ListHeader"]
+layout_mode = 0
+offset_left = 969.0
+offset_top = 10.0
+offset_right = 1001.0
+offset_bottom = 26.0
+text = "GS"
+
+[node name="PlayerScrollContainer" type="ScrollContainer" parent="LeftPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 110.0
+offset_right = 1085.0
+offset_bottom = 990.0
+follow_focus = true
+
+[node name="PlayerListVBox" type="VBoxContainer" parent="LeftPanel/PlayerScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1166.0
+offset_right = 1896.0
+offset_bottom = 1000.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ny20")
+
+[node name="SonderrollenWidget" type="Panel" parent="RightPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 710.0
+offset_bottom = 260.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qwrw3")
+
+[node name="@Label@32752" type="Label" parent="RightPanel/SonderrollenWidget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 15.0
+offset_bottom = 10.0
+text = "Sonderrollen"
+
+[node name="@Label@32753" type="Label" parent="RightPanel/SonderrollenWidget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 50.0
+offset_right = 15.0
+offset_bottom = 50.0
+text = "Kapitän:"
+
+[node name="CaptainDropdown" type="OptionButton" parent="RightPanel/SonderrollenWidget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 45.0
+offset_right = 690.0
+offset_bottom = 80.0
+
+[node name="@Label@32760" type="Label" parent="RightPanel/SonderrollenWidget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 95.0
+offset_right = 15.0
+offset_bottom = 95.0
+text = "Elfmeter:"
+
+[node name="PenaltyDropdown" type="OptionButton" parent="RightPanel/SonderrollenWidget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 90.0
+offset_right = 690.0
+offset_bottom = 125.0
+
+[node name="@Label@32767" type="Label" parent="RightPanel/SonderrollenWidget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 140.0
+offset_right = 15.0
+offset_bottom = 140.0
+text = "Freistoß:"
+
+[node name="FreekickDropdown" type="OptionButton" parent="RightPanel/SonderrollenWidget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 135.0
+offset_right = 690.0
+offset_bottom = 170.0
+
+[node name="@Label@32774" type="Label" parent="RightPanel/SonderrollenWidget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 185.0
+offset_right = 15.0
+offset_bottom = 185.0
+text = "Libero:"
+
+[node name="SweeperDropdown" type="OptionButton" parent="RightPanel/SonderrollenWidget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 180.0
+offset_right = 690.0
+offset_bottom = 215.0
+
+[node name="DF_Widget" type="Panel" parent="RightPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 275.0
+offset_right = 179.0
+offset_bottom = 325.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrbak")
+
+[node name="DF_Label" type="Label" parent="RightPanel/DF_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 15.0
+offset_bottom = 15.0
+text = "DF:  9.4"
+
+[node name="Heim_Widget" type="Panel" parent="RightPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 340.0
+offset_right = 337.0
+offset_bottom = 580.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fo3hr")
+
+[node name="@Label@32782" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 15.0
+offset_bottom = 15.0
+text = "Heim"
+
+[node name="@Label@32783" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 50.0
+offset_right = 15.0
+offset_bottom = 50.0
+text = "TW"
+
+[node name="Heim_TW_Value" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 150.0
+offset_bottom = 50.0
+
+[node name="@Label@32785" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 75.0
+offset_right = 15.0
+offset_bottom = 75.0
+text = "AB"
+
+[node name="Heim_AB_Value" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 75.0
+offset_right = 150.0
+offset_bottom = 75.0
+text = "34.2"
+
+[node name="@Label@32787" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 100.0
+offset_right = 15.0
+offset_bottom = 100.0
+text = "MF"
+
+[node name="Heim_MF_Value" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 150.0
+offset_bottom = 100.0
+text = "35.1"
+
+[node name="_Label_32789" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 125.0
+offset_right = 15.0
+offset_bottom = 125.0
+text = "ST"
+
+[node name="Heim_ST_Value" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 125.0
+offset_right = 150.0
+offset_bottom = 125.0
+text = "22.9"
+
+[node name="@Label@32791" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 150.0
+offset_right = 15.0
+offset_bottom = 150.0
+text = "MO"
+
+[node name="Heim_MO_Value" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 150.0
+text = "4"
+
+[node name="@Label@32793" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 175.0
+offset_right = 15.0
+offset_bottom = 175.0
+text = "HE"
+
+[node name="Heim_HE_Value" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 175.0
+offset_right = 150.0
+offset_bottom = 175.0
+text = "4"
+
+[node name="@HSeparator@32795" type="HSeparator" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 200.0
+offset_right = 215.0
+offset_bottom = 205.0
+
+[node name="Heim_Sum_Value" type="Label" parent="RightPanel/Heim_Widget"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 210.0
+offset_right = 252.0
+offset_bottom = 226.0
+text = "=  49.0"
+
+[node name="Gast_Widget" type="Panel" parent="RightPanel"]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 340.0
+offset_right = 708.0
+offset_bottom = 580.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxq7j")
+
+[node name="@Label@32797" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 15.0
+offset_bottom = 15.0
+text = "Gast"
+
+[node name="@Label@32798" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 50.0
+offset_right = 15.0
+offset_bottom = 50.0
+text = "TW"
+
+[node name="Gast_TW_Value" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 150.0
+offset_bottom = 50.0
+text = "11.5"
+
+[node name="@Label@32800" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 75.0
+offset_right = 15.0
+offset_bottom = 75.0
+text = "AB"
+
+[node name="Gast_AB_Value" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 75.0
+offset_right = 150.0
+offset_bottom = 75.0
+text = "33.8"
+
+[node name="@Label@32802" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 100.0
+offset_right = 15.0
+offset_bottom = 100.0
+text = "MF"
+
+[node name="Gast_MF_Value" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 150.0
+offset_bottom = 100.0
+text = "36.0"
+
+[node name="@Label@32804" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 125.0
+offset_right = 15.0
+offset_bottom = 125.0
+text = "ST"
+
+[node name="Gast_ST_Value" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 125.0
+offset_right = 150.0
+offset_bottom = 125.0
+text = "21.7"
+
+[node name="@HSeparator@32806" type="HSeparator" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 200.0
+offset_right = 215.0
+offset_bottom = 205.0
+
+[node name="Gast_Sum_Value" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 211.0
+offset_right = 255.0
+offset_bottom = 227.0
+text = "=  48.0"
+
+[node name="_Label_32791" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 150.0
+offset_right = 15.0
+offset_bottom = 150.0
+text = "MO"
+
+[node name="HE" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 175.0
+offset_right = 15.0
+offset_bottom = 175.0
+text = "HE"
+
+[node name="Gast_MO_Value" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 150.0
+text = "4"
+
+[node name="Gast_HE_Value" type="Label" parent="RightPanel/Gast_Widget"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 175.0
+offset_right = 150.0
+offset_bottom = 175.0
+text = "0"
+
+[node name="HinspielWidget" type="Panel" parent="RightPanel"]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 275.0
+offset_right = 574.0
+offset_bottom = 325.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrxid")
+
+[node name="@Label@32808" type="Label" parent="RightPanel/HinspielWidget"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 15.0
+offset_bottom = 15.0
+text = "Hinspiel: 1 - 3 (A)"
+
+[node name="TrainingslagerButton" type="Button" parent="RightPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 870.0
+offset_right = 710.0
+offset_bottom = 920.0
+text = "Ins Trainingslager fahren"
+
+[node name="SelectionCountLabel" type="Label" parent="RightPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 955.0
+offset_right = 710.0
+offset_bottom = 995.0
+text = "Ausgewählt: 0 / 11"
+
+[node name="ConfirmButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 1010.0
+offset_right = 1531.0
+offset_bottom = 1070.0
+text = "Aufstellung bestätigen"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 1010.0
+offset_right = 200.0
+offset_bottom = 1070.0
+theme_override_font_sizes/font_size = 16
+text = "← ZURÜCK"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

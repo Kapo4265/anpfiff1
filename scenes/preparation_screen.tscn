@@ -1,0 +1,877 @@
+[gd_scene load_steps=16 format=3 uid="uid://b47yehwqs8424"]
+
+[ext_resource type="Script" uid="uid://be2e6mw0gy44o" path="res://scripts/ui/preparation_screen.gd" id="1_ctphs"]
+[ext_resource type="FontFile" uid="uid://c3tlb7sw4njgv" path="res://assets/fonts/pressstart2p-regular-webfont.ttf" id="1_jlo8u"]
+[ext_resource type="Texture2D" uid="uid://cxoca3yatjgo1" path="res://assets/images/Spielvorbereitung Icons/tr2.png" id="3_funeb"]
+[ext_resource type="Texture2D" uid="uid://ce4pr3b2lbdo3" path="res://assets/images/prepare_image.png" id="3_ih06i"]
+[ext_resource type="Texture2D" uid="uid://b1xpr4sovk1da" path="res://assets/images/Spielvorbereitung Icons/tk1.png" id="4_5ruvq"]
+
+[sub_resource type="Theme" id="Theme_ih06i"]
+default_font = ExtResource("1_jlo8u")
+default_font_size = 20
+Label/colors/font_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ruvq"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0cm8"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyhj5"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1srd"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r71g"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afeyt"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7g0me"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1sph"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fwrh"]
+bg_color = Color(0.129412, 0.145098, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="preparation_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -19.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ih06i")
+script = ExtResource("1_ctphs")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(1.00469, 1.02315)
+texture = ExtResource("3_ih06i")
+centered = false
+
+[node name="TitlePanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 20.0
+offset_right = 1880.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ruvq")
+
+[node name="TitleLabel" type="Label" parent="TitlePanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 24
+text = "SV Werder Bremen (BRD)  -  FK Teplice (TSR)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PricesPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 99.0
+offset_right = 601.0
+offset_bottom = 279.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j0cm8")
+
+[node name="PricesTitle" type="Label" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_font_sizes/font_size = 22
+text = "Eintrittspreise"
+
+[node name="StandingLabel" type="Label" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 53.0
+offset_right = 216.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 20
+text = "Stehplätze"
+
+[node name="StandingMinus" type="Button" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 37.0
+offset_right = 296.0
+offset_bottom = 77.0
+text = "-"
+
+[node name="StandingPlus" type="Button" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 37.0
+offset_right = 488.0
+offset_bottom = 77.0
+text = "+"
+
+[node name="SeatingLabel" type="Label" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 117.0
+offset_right = 216.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 20
+text = "Sitzplätze"
+
+[node name="SeatingValue" type="Label" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 117.0
+offset_right = 384.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 20
+text = "15"
+horizontal_alignment = 1
+
+[node name="SeatingMinus" type="Button" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 105.0
+offset_right = 296.0
+offset_bottom = 145.0
+text = "-"
+
+[node name="SeatingPlus" type="Button" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 105.0
+offset_right = 488.0
+offset_bottom = 145.0
+text = "+"
+
+[node name="StandingLabel2" type="Label" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 50.0
+offset_right = 428.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 20
+text = "€"
+
+[node name="StandingLabel3" type="Label" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 117.0
+offset_right = 428.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 20
+text = "€"
+
+[node name="StandingValue" type="Label" parent="PricesPanel"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 50.0
+offset_right = 384.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 20
+text = "5"
+horizontal_alignment = 1
+
+[node name="PlaystylePanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 342.0
+offset_right = 602.0
+offset_bottom = 1008.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xyhj5")
+
+[node name="PlaystyleLabel" type="Label" parent="PlaystylePanel"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 60.0
+offset_right = 372.0
+offset_bottom = 82.0
+scale = Vector2(1.02348, 2.03911)
+theme_override_font_sizes/font_size = 22
+text = "Spielweise"
+
+[node name="PlaystyleMinus" type="Button" parent="PlaystylePanel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 326.0
+offset_right = 62.0
+offset_bottom = 366.0
+text = "<"
+
+[node name="PlaystylePlus" type="Button" parent="PlaystylePanel"]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 326.0
+offset_right = 510.0
+offset_bottom = 366.0
+text = ">"
+
+[node name="PlaystyleTexture" type="TextureRect" parent="PlaystylePanel"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 142.0
+offset_right = 737.0
+offset_bottom = 705.0
+scale = Vector2(0.553153, 0.581916)
+texture = ExtResource("4_5ruvq")
+
+[node name="PlaystyleTitle" type="Label" parent="PlaystylePanel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 525.0
+offset_right = 389.0
+offset_bottom = 545.0
+scale = Vector2(1.19071, 2.11606)
+theme_override_font_sizes/font_size = 20
+text = "Abwehrriegel"
+horizontal_alignment = 1
+
+[node name="TrainingPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1113.0
+offset_top = 75.0
+offset_right = 1857.0
+offset_bottom = 591.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o1srd")
+
+[node name="TrainingLabel" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_font_sizes/font_size = 22
+text = "Trainingsschwerpunkt"
+
+[node name="freistößeLabel" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 43.0
+offset_right = 577.0
+offset_bottom = 63.0
+scale = Vector2(1.13108, 1.19768)
+theme_override_font_sizes/font_size = 20
+text = "Freistöße"
+
+[node name="FreistößeValue" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 40.0
+offset_right = 200.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="FreistößeMinus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 35.0
+offset_right = 93.0
+offset_bottom = 75.0
+scale = Vector2(2.73024, 0.870084)
+text = "-"
+
+[node name="FreistößePlus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 35.0
+offset_right = 309.0
+offset_bottom = 75.0
+scale = Vector2(1.96002, 0.935272)
+text = "+"
+
+[node name="ElfmeterLabel" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 93.0
+offset_right = 577.0
+offset_bottom = 113.0
+scale = Vector2(1.13108, 1.19768)
+theme_override_font_sizes/font_size = 20
+text = "Einfmeter"
+
+[node name="ElfmeterValue" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 90.0
+offset_right = 200.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="ElfmeterMinus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 85.0
+offset_right = 93.0
+offset_bottom = 125.0
+scale = Vector2(2.73024, 0.870084)
+text = "-"
+
+[node name="ElfmeterPlus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 85.0
+offset_right = 309.0
+offset_bottom = 125.0
+scale = Vector2(1.96002, 0.935272)
+text = "+"
+
+[node name="AlleingängeLabel" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 143.0
+offset_right = 617.0
+offset_bottom = 163.0
+scale = Vector2(1.13108, 1.19768)
+theme_override_font_sizes/font_size = 20
+text = "Alleingänge"
+
+[node name="AlleingängeValue" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 140.0
+offset_right = 200.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="AlleingängeMinus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 135.0
+offset_right = 93.0
+offset_bottom = 175.0
+scale = Vector2(2.73024, 0.870084)
+text = "-"
+
+[node name="AlleingängePlus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 135.0
+offset_right = 309.0
+offset_bottom = 175.0
+scale = Vector2(1.96002, 0.935272)
+text = "+"
+
+[node name="TacklingsLabel" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 193.0
+offset_right = 577.0
+offset_bottom = 213.0
+scale = Vector2(1.13108, 1.19768)
+theme_override_font_sizes/font_size = 20
+text = "Tacklings"
+
+[node name="TacklingsValue" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 190.0
+offset_right = 200.0
+offset_bottom = 190.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="TacklingsMinus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 185.0
+offset_right = 93.0
+offset_bottom = 225.0
+scale = Vector2(2.73024, 0.870084)
+text = "-"
+
+[node name="TacklingsPlus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 185.0
+offset_right = 309.0
+offset_bottom = 225.0
+scale = Vector2(1.96002, 0.935272)
+text = "+"
+
+[node name="SpielzügeLabel" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 243.0
+offset_right = 577.0
+offset_bottom = 263.0
+scale = Vector2(1.14144, 1.19768)
+theme_override_font_sizes/font_size = 20
+text = "Spielzüge"
+
+[node name="SpielzügeValue" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 240.0
+offset_right = 200.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="SpielzügeMinus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 235.0
+offset_right = 93.0
+offset_bottom = 275.0
+scale = Vector2(2.73024, 0.870084)
+text = "-"
+
+[node name="SpielzügePlus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 235.0
+offset_right = 309.0
+offset_bottom = 275.0
+scale = Vector2(1.96002, 0.935272)
+text = "+"
+
+[node name="AbseitsfalleLabel" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 293.0
+offset_right = 637.0
+offset_bottom = 313.0
+scale = Vector2(1.13108, 1.19768)
+theme_override_font_sizes/font_size = 20
+text = "Abseitsfalle"
+
+[node name="AbseitsfalleValue" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 290.0
+offset_right = 200.0
+offset_bottom = 290.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="AbseitsfalleMinus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 285.0
+offset_right = 93.0
+offset_bottom = 325.0
+scale = Vector2(2.73024, 0.870084)
+text = "-"
+
+[node name="AbseitsfallePlus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 285.0
+offset_right = 309.0
+offset_bottom = 325.0
+scale = Vector2(1.96002, 0.935272)
+text = "+"
+
+[node name="KonditionLabel" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 384.0
+offset_right = 577.0
+offset_bottom = 404.0
+scale = Vector2(1.13108, 1.19768)
+theme_override_font_sizes/font_size = 20
+text = "Kondition"
+
+[node name="KonditionValue" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 381.0
+offset_right = 220.0
+offset_bottom = 401.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="KonditionMinus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 376.0
+offset_right = 93.0
+offset_bottom = 416.0
+scale = Vector2(2.73024, 0.870084)
+text = "-"
+
+[node name="KonditionPlus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 376.0
+offset_right = 309.0
+offset_bottom = 416.0
+scale = Vector2(1.96002, 0.935272)
+text = "+"
+
+[node name="RegenerationLabel" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 434.0
+offset_right = 637.0
+offset_bottom = 454.0
+scale = Vector2(1.13108, 1.19768)
+theme_override_font_sizes/font_size = 20
+text = "Regeneration"
+
+[node name="RegenerationValue" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 431.0
+offset_right = 220.0
+offset_bottom = 451.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="RegenerationMinus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 426.0
+offset_right = 93.0
+offset_bottom = 466.0
+scale = Vector2(2.73024, 0.870084)
+text = "-"
+
+[node name="RegenerationPlus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 426.0
+offset_right = 309.0
+offset_bottom = 466.0
+scale = Vector2(1.96002, 0.935272)
+text = "+"
+
+[node name="IndividualTrainingPanel" type="Panel" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 463.0
+offset_right = 736.0
+offset_bottom = 509.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3r71g")
+
+[node name="ITLabel" type="Label" parent="TrainingPanel/IndividualTrainingPanel"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 10.0
+offset_right = 278.0
+offset_bottom = 30.0
+scale = Vector2(0.82009, 1.78398)
+theme_override_font_sizes/font_size = 20
+text = "Einzeltraining"
+
+[node name="PlayerNameLabel" type="Label" parent="TrainingPanel/IndividualTrainingPanel"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 10.0
+offset_right = 633.0
+offset_bottom = 30.0
+scale = Vector2(1.13879, 1.76125)
+theme_override_font_sizes/font_size = 20
+text = "T. Wiese (5 10)"
+
+[node name="PlayerPrev" type="Button" parent="TrainingPanel/IndividualTrainingPanel"]
+layout_mode = 0
+offset_left = 246.0
+offset_right = 286.0
+offset_bottom = 40.0
+scale = Vector2(1.39722, 1.20793)
+text = "<"
+
+[node name="PlayerNext" type="Button" parent="TrainingPanel/IndividualTrainingPanel"]
+layout_mode = 0
+offset_left = 686.0
+offset_top = 2.0
+offset_right = 726.0
+offset_bottom = 42.0
+scale = Vector2(1.18208, 1.12321)
+text = ">"
+
+[node name="GymnastikLabel" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 336.0
+offset_right = 637.0
+offset_bottom = 356.0
+scale = Vector2(1.13108, 1.19768)
+theme_override_font_sizes/font_size = 20
+text = "Gymnastik"
+
+[node name="GymnastikValue" type="Label" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 333.0
+offset_right = 220.0
+offset_bottom = 353.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="GymnastikMinus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 328.0
+offset_right = 93.0
+offset_bottom = 368.0
+scale = Vector2(2.73024, 0.870084)
+text = "-"
+
+[node name="GymnastikPlus" type="Button" parent="TrainingPanel"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 328.0
+offset_right = 309.0
+offset_bottom = 368.0
+scale = Vector2(1.96002, 0.935272)
+text = "+"
+
+[node name="OffsideTrapPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 99.0
+offset_right = 1091.0
+offset_bottom = 259.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_afeyt")
+
+[node name="OffsideLabel" type="Label" parent="OffsideTrapPanel"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 13.0
+offset_right = 341.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 20
+text = "Abseitsfalle"
+
+[node name="OffsideOn" type="Button" parent="OffsideTrapPanel"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 100.0
+offset_right = 117.0
+offset_bottom = 140.0
+scale = Vector2(1.44196, 1)
+text = "AN"
+
+[node name="OffsideOff" type="Button" parent="OffsideTrapPanel"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 100.0
+offset_right = 373.0
+offset_bottom = 140.0
+scale = Vector2(1.25155, 1)
+text = "AUS"
+
+[node name="OffsideStrengthLabel" type="Label" parent="OffsideTrapPanel"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 53.0
+offset_right = 305.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 20
+text = "Stärke: 6"
+
+[node name="DivingPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 321.0
+offset_right = 1091.0
+offset_bottom = 486.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7g0me")
+
+[node name="DivingLabel" type="Label" parent="DivingPanel"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 24.0
+offset_right = 305.0
+offset_bottom = 44.0
+scale = Vector2(1.09859, 1.56857)
+theme_override_font_sizes/font_size = 20
+text = "Schwalben"
+
+[node name="DivingYes" type="Button" parent="DivingPanel"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 72.0
+offset_right = 125.0
+offset_bottom = 112.0
+scale = Vector2(1.54367, 1.07203)
+text = "JA"
+
+[node name="DivingNo" type="Button" parent="DivingPanel"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 72.0
+offset_right = 389.0
+offset_bottom = 112.0
+scale = Vector2(1.25099, 1.22512)
+text = "NEIN"
+
+[node name="BonusPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 547.0
+offset_right = 1091.0
+offset_bottom = 715.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h1sph")
+
+[node name="BonusLabel" type="Label" parent="BonusPanel"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 24.0
+offset_right = 325.0
+offset_bottom = 44.0
+scale = Vector2(1.01248, 1.31907)
+theme_override_font_sizes/font_size = 20
+text = "Siegprämie"
+
+[node name="BonusValue" type="Label" parent="BonusPanel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 90.0
+offset_right = 240.0
+offset_bottom = 110.0
+scale = Vector2(1.13783, 1.4211)
+theme_override_font_sizes/font_size = 20
+text = "8000"
+
+[node name="BonusMinus" type="Button" parent="BonusPanel"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 84.0
+offset_right = 88.0
+offset_bottom = 124.0
+scale = Vector2(1.62988, 1.17393)
+text = "-"
+
+[node name="BonusPlus" type="Button" parent="BonusPanel"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 84.0
+offset_right = 389.0
+offset_bottom = 122.0
+scale = Vector2(1.94338, 1.24494)
+text = "+"
+
+[node name="StandingLabel3" type="Label" parent="BonusPanel"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 90.0
+offset_right = 316.0
+offset_bottom = 110.0
+scale = Vector2(1.67289, 1.88154)
+theme_override_font_sizes/font_size = 20
+text = "€"
+
+[node name="EffortPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1113.0
+offset_top = 619.0
+offset_right = 1856.0
+offset_bottom = 1008.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5fwrh")
+
+[node name="EffortLabel" type="Label" parent="EffortPanel"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 24.0
+offset_right = 420.0
+offset_bottom = 44.0
+scale = Vector2(1.19071, 2.11606)
+theme_override_font_sizes/font_size = 20
+text = "Einsatz"
+
+[node name="EffortTexture" type="TextureRect" parent="EffortPanel"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 80.0
+offset_right = 906.0
+offset_bottom = 536.0
+scale = Vector2(0.545705, 0.467569)
+texture = ExtResource("3_funeb")
+
+[node name="EffortMinus" type="Button" parent="EffortPanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 193.0
+offset_right = 110.0
+offset_bottom = 274.0
+text = "<"
+
+[node name="EffortPlus" type="Button" parent="EffortPanel"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 193.0
+offset_right = 703.0
+offset_bottom = 274.0
+text = ">"
+
+[node name="EffortTitel" type="Label" parent="EffortPanel"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 320.0
+offset_right = 471.0
+offset_bottom = 340.0
+scale = Vector2(1.19071, 2.11606)
+theme_override_font_sizes/font_size = 20
+text = "Normal"
+horizontal_alignment = 1
+
+[node name="ZurückButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 787.0
+offset_right = 1089.0
+offset_bottom = 851.0
+text = "Zurück"
+
+[node name="WeiterButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 915.0
+offset_right = 1090.0
+offset_bottom = 979.0
+text = "Bestätigen"

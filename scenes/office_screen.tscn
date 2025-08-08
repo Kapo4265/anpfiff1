@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://btn5ngw0gu8vd"]
+
+[ext_resource type="Script" uid="uid://bjgvt3s4fea2k" path="res://scripts/ui/office_screen.gd" id="1_office"]
+[ext_resource type="Texture2D" uid="uid://cdlv63aex0kn8" path="res://assets/images/managerbuero_background.png" id="2_i8yxn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.2, 0.2, 0.2, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.4, 0.4, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="office_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_office")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_i8yxn")
+centered = false
+
+[node name="LaptopButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = 84.0
+offset_right = -104.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+text = ""
+
+[node name="WindowSillButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 200.0
+offset_bottom = 200.0
+flat = true
+text = ""
+
+[node name="DoorButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 150.0
+offset_bottom = 400.0
+flat = true
+text = ""
+
+[node name="TrophyButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = 150.0
+offset_right = 320.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+text = ""
+
+
+
+
+
+
+
+
+
+[connection signal="pressed" from="LaptopButton" to="." method="_on_laptop_clicked"]
+[connection signal="pressed" from="WindowSillButton" to="." method="_on_window_sill_clicked"]
+[connection signal="pressed" from="DoorButton" to="." method="_on_door_clicked"]
+[connection signal="pressed" from="TrophyButton" to="." method="_on_trophy_clicked"]

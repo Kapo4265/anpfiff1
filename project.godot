@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Anpfiff1"
+run/main_scene="res://scenes/match_screen.tscn"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/core/GameManager.gd"
+MatchEngine="*res://scripts/core/MatchEngine.gd"
+FormSystem="*res://scripts/core/FormSystem.gd"
+EventEngine="*res://scripts/core/EventEngine.gd"
+SuspensionSystem="*res://scripts/core/SuspensionSystem.gd"
+LeagueManager="*res://scripts/core/LeagueManager.gd"
+ScheduleGenerator="*res://scripts/core/ScheduleGenerator.gd"
+MatchdayEngine="*res://scripts/core/MatchdayEngine.gd"
+StatisticsCollector="*res://scripts/core/StatisticsCollector.gd"
+CardStatistics="*res://scripts/core/CardStatistics.gd"
+
+[dotnet]
+
+project/assembly_name="Anpfiff1"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

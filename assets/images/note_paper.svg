@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320" height="120" viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Notizzettel-Background für Status-Nachrichten -->
+  <defs>
+    <linearGradient id="paperGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFEF7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5F5DC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Notizzettel-Körper -->
+  <rect x="5" y="5" width="310" height="110" fill="url(#paperGradient)" stroke="#DDD" stroke-width="1" rx="8"/>
+  
+  <!-- Linien wie auf Notizpapier -->
+  <line x1="20" y1="30" x2="300" y2="30" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="20" y1="50" x2="300" y2="50" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="20" y1="70" x2="300" y2="70" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="20" y1="90" x2="300" y2="90" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <!-- Seitlicher roter Rand -->
+  <line x1="40" y1="15" x2="40" y2="105" stroke="#FF6B6B" stroke-width="2"/>
+  
+  <!-- Kleine Löcher wie bei Ringbuch -->
+  <circle cx="20" cy="25" r="3" fill="#E0E0E0"/>
+  <circle cx="20" cy="60" r="3" fill="#E0E0E0"/>
+  <circle cx="20" cy="95" r="3" fill="#E0E0E0"/>
+</svg>
